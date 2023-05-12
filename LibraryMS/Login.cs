@@ -39,22 +39,7 @@ namespace LibraryMS
             form3.Show();
 
 
-            UCHome Home = new UCHome();
-            UCAddOrder Addorder = new UCAddOrder();
-            UCAddUser Adduser = new UCAddUser();
-            UCStatus Status = new UCStatus();
-            UCAbout About = new UCAbout();
-
-
-           
-
-            Addorder.Hide();
-            Adduser.Hide();
-            Status.Hide();
-            About.Hide();
-            Home.Show();
-            Home.BringToFront();
-           
+          
            
             
 

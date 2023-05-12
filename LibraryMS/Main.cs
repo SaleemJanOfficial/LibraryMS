@@ -22,10 +22,13 @@ namespace LibraryMS
 
            
 
-
-                ucHome2.Show();
-         
-
+            ucAddOrder1.Hide();
+            ucStatus1.Hide();
+            ucAddUser1.Hide();
+            ucAbout1.Hide();
+          
+            ucHome2.Show();
+            ucHome1.BringToFront();
 
 
         }
@@ -35,16 +38,28 @@ namespace LibraryMS
             
             ucHome2.Hide();
             ucAddOrder1.Show();
+            ucAddOrder1.BringToFront();
+            
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-           
+            ucHome2.Hide();
+            ucAddOrder1.Hide();
+            ucStatus1.Show();
+            ucStatus1.BringToFront();
+
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-           
+
+
+            ucHome2.Hide();
+            ucAddOrder1.Hide();
+            ucStatus1.Hide();
+            ucAddUser1.BringToFront();
+            ucAddUser1.Show();
 
 
            
@@ -52,6 +67,13 @@ namespace LibraryMS
 
         private void AboutButton_Click(object sender, EventArgs e)
         {
+
+            ucHome2.Hide();
+            ucAddOrder1.Hide();
+            ucStatus1.Hide(); 
+            ucAddUser1.Hide();
+            ucAbout1.Show();
+            ucAbout1.BringToFront();
         }
 
         private void ucStatus1_Load(object sender, EventArgs e)
@@ -60,6 +82,21 @@ namespace LibraryMS
         }
 
         private void Main_Load(object sender, EventArgs e)
+        {
+            ucAddOrder1.Hide();
+            ucStatus1.Hide();
+            ucAddUser1.Hide();
+            ucAbout1.Hide();
+            ucHome1.Show();
+            ucHome1.BringToFront();
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

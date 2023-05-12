@@ -73,34 +73,34 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCAbout.cs">
+    <Compile Include="UserControl\UCAbout.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCAbout.Designer.cs">
+    <Compile Include="UserControl\UCAbout.Designer.cs">
       <DependentUpon>UCAbout.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCAddUser.cs">
+    <Compile Include="UserControl\UCAddUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCAddUser.Designer.cs">
+    <Compile Include="UserControl\UCAddUser.Designer.cs">
       <DependentUpon>UCAddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCStatus.cs">
+    <Compile Include="UserControl\UCStatus.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCStatus.Designer.cs">
+    <Compile Include="UserControl\UCStatus.Designer.cs">
       <DependentUpon>UCStatus.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCHome.cs">
+    <Compile Include="UserControl\UCHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCHome.Designer.cs">
+    <Compile Include="UserControl\UCHome.Designer.cs">
       <DependentUpon>UCHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCAddOrder.cs">
+    <Compile Include="UserControl\UCAddOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCAddOrder.Designer.cs">
+    <Compile Include="UserControl\UCAddOrder.Designer.cs">
       <DependentUpon>UCAddOrder.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Login.resx">
@@ -121,19 +121,19 @@
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCAbout.resx">
+    <EmbeddedResource Include="UserControl\UCAbout.resx">
       <DependentUpon>UCAbout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCAddOrder.resx">
+    <EmbeddedResource Include="UserControl\UCAddOrder.resx">
       <DependentUpon>UCAddOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCAddUser.resx">
+    <EmbeddedResource Include="UserControl\UCAddUser.resx">
       <DependentUpon>UCAddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCHome.resx">
+    <EmbeddedResource Include="UserControl\UCHome.resx">
       <DependentUpon>UCHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCStatus.resx">
+    <EmbeddedResource Include="UserControl\UCStatus.resx">
       <DependentUpon>UCStatus.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
