@@ -37,28 +37,23 @@
             this.IssueButton = new FontAwesome.Sharp.IconButton();
             this.HomeButton = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.UCPanel = new System.Windows.Forms.Panel();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.HeaderPanel = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.ucAbout = new LibraryMS.UCAbout();
-            this.ucAddBooks = new LibraryMS.UCAddBooks();
-            this.ucPending = new LibraryMS.UCStatus();
+            this.UCPanel = new System.Windows.Forms.Panel();
             this.ucMainHome = new LibraryMS.UCHome();
             this.ucIssueBook = new LibraryMS.UCAddOrder();
             this.ucPanding = new LibraryMS.UCStatus();
             this.ucAddUser = new LibraryMS.UCAddUser();
-            this.ucHome1 = new LibraryMS.UCHome();
+            this.ucAbout = new LibraryMS.UCAbout();
+            this.ucAddBooks = new LibraryMS.UCAddBooks();
+            this.ucPending = new LibraryMS.UCStatus();
+            this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.UCPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).BeginInit();
-            this.panel5.SuspendLayout();
+            this.UCPanel.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +61,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Maroon;
             this.panel1.Controls.Add(this.buttonAddBook);
-            this.panel1.Controls.Add(this.ucHome1);
             this.panel1.Controls.Add(this.AboutButton);
             this.panel1.Controls.Add(this.ButtonAddUser);
             this.panel1.Controls.Add(this.PandingButton);
@@ -200,23 +194,6 @@
             this.panel2.Size = new System.Drawing.Size(136, 100);
             this.panel2.TabIndex = 1;
             // 
-            // UCPanel
-            // 
-            this.UCPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.UCPanel.Controls.Add(this.ucAddBooks);
-            this.UCPanel.Controls.Add(this.ucPending);
-            this.UCPanel.Controls.Add(this.ucMainHome);
-            this.UCPanel.Controls.Add(this.ucIssueBook);
-            this.UCPanel.Controls.Add(this.ucPanding);
-            this.UCPanel.Controls.Add(this.ucAddUser);
-            this.UCPanel.Controls.Add(this.ucAbout);
-            this.UCPanel.Location = new System.Drawing.Point(0, 98);
-            this.UCPanel.Name = "UCPanel";
-            this.UCPanel.Size = new System.Drawing.Size(751, 373);
-            this.UCPanel.TabIndex = 1;
-            // 
             // fileSystemWatcher1
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
@@ -227,99 +204,20 @@
             this.fileSystemWatcher2.EnableRaisingEvents = true;
             this.fileSystemWatcher2.SynchronizingObject = this;
             // 
-            // panel5
+            // UCPanel
             // 
-            this.panel5.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel5.Location = new System.Drawing.Point(136, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(664, 100);
-            this.panel5.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(203, 51);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(233, 29);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "GPGC Gohati Swabi";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(601, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "WELCOME TO LIBRARY  MANAGMENT SYSTEM";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(181, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 22);
-            this.label2.TabIndex = 0;
-            // 
-            // HeaderPanel
-            // 
-            this.HeaderPanel.Controls.Add(this.panel6);
-            this.HeaderPanel.Controls.Add(this.UCPanel);
-            this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.HeaderPanel.Location = new System.Drawing.Point(136, 0);
-            this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(754, 474);
-            this.HeaderPanel.TabIndex = 3;
-            // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(751, 100);
-            this.panel6.TabIndex = 2;
-            // 
-            // ucAbout
-            // 
-            this.ucAbout.AutoSize = true;
-            this.ucAbout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucAbout.Location = new System.Drawing.Point(0, 0);
-            this.ucAbout.Name = "ucAbout";
-            this.ucAbout.Size = new System.Drawing.Size(751, 373);
-            this.ucAbout.TabIndex = 4;
-            this.ucAbout.Visible = false;
-            // 
-            // ucAddBooks
-            // 
-            this.ucAddBooks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ucAddBooks.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ucAddBooks.Location = new System.Drawing.Point(0, 0);
-            this.ucAddBooks.Name = "ucAddBooks";
-            this.ucAddBooks.Size = new System.Drawing.Size(751, 373);
-            this.ucAddBooks.TabIndex = 5;
-            this.ucAddBooks.Visible = false;
-            // 
-            // ucPending
-            // 
-            this.ucPending.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucPending.Location = new System.Drawing.Point(0, 0);
-            this.ucPending.Name = "ucPending";
-            this.ucPending.Size = new System.Drawing.Size(751, 373);
-            this.ucPending.TabIndex = 6;
-            this.ucPending.Visible = false;
+            this.UCPanel.Controls.Add(this.ucMainHome);
+            this.UCPanel.Controls.Add(this.ucIssueBook);
+            this.UCPanel.Controls.Add(this.ucPanding);
+            this.UCPanel.Controls.Add(this.ucAddUser);
+            this.UCPanel.Controls.Add(this.ucAbout);
+            this.UCPanel.Controls.Add(this.ucAddBooks);
+            this.UCPanel.Controls.Add(this.ucPending);
+            this.UCPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UCPanel.Location = new System.Drawing.Point(136, 100);
+            this.UCPanel.Name = "UCPanel";
+            this.UCPanel.Size = new System.Drawing.Size(754, 374);
+            this.UCPanel.TabIndex = 1;
             // 
             // ucMainHome
             // 
@@ -330,7 +228,7 @@
             this.ucMainHome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucMainHome.Location = new System.Drawing.Point(0, 0);
             this.ucMainHome.Name = "ucMainHome";
-            this.ucMainHome.Size = new System.Drawing.Size(751, 373);
+            this.ucMainHome.Size = new System.Drawing.Size(754, 374);
             this.ucMainHome.TabIndex = 7;
             // 
             // ucIssueBook
@@ -340,7 +238,7 @@
             this.ucIssueBook.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucIssueBook.Location = new System.Drawing.Point(0, 0);
             this.ucIssueBook.Name = "ucIssueBook";
-            this.ucIssueBook.Size = new System.Drawing.Size(751, 373);
+            this.ucIssueBook.Size = new System.Drawing.Size(754, 374);
             this.ucIssueBook.TabIndex = 1;
             this.ucIssueBook.Visible = false;
             // 
@@ -349,7 +247,7 @@
             this.ucPanding.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucPanding.Location = new System.Drawing.Point(0, 0);
             this.ucPanding.Name = "ucPanding";
-            this.ucPanding.Size = new System.Drawing.Size(751, 373);
+            this.ucPanding.Size = new System.Drawing.Size(754, 374);
             this.ucPanding.TabIndex = 2;
             this.ucPanding.Visible = false;
             // 
@@ -359,38 +257,95 @@
             this.ucAddUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucAddUser.Location = new System.Drawing.Point(0, 0);
             this.ucAddUser.Name = "ucAddUser";
-            this.ucAddUser.Size = new System.Drawing.Size(751, 373);
+            this.ucAddUser.Size = new System.Drawing.Size(754, 374);
             this.ucAddUser.TabIndex = 3;
             this.ucAddUser.Visible = false;
             // 
-            // ucHome1
+            // ucAbout
             // 
-            this.ucHome1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ucHome1.Location = new System.Drawing.Point(133, 98);
-            this.ucHome1.Name = "ucHome1";
-            this.ucHome1.Size = new System.Drawing.Size(664, 349);
-            this.ucHome1.TabIndex = 2;
+            this.ucAbout.AutoSize = true;
+            this.ucAbout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAbout.Location = new System.Drawing.Point(0, 0);
+            this.ucAbout.Name = "ucAbout";
+            this.ucAbout.Size = new System.Drawing.Size(754, 374);
+            this.ucAbout.TabIndex = 4;
+            this.ucAbout.Visible = false;
+            // 
+            // ucAddBooks
+            // 
+            this.ucAddBooks.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.ucAddBooks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAddBooks.Location = new System.Drawing.Point(0, 0);
+            this.ucAddBooks.Name = "ucAddBooks";
+            this.ucAddBooks.Size = new System.Drawing.Size(754, 374);
+            this.ucAddBooks.TabIndex = 5;
+            this.ucAddBooks.Visible = false;
+            // 
+            // ucPending
+            // 
+            this.ucPending.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucPending.Location = new System.Drawing.Point(0, 0);
+            this.ucPending.Name = "ucPending";
+            this.ucPending.Size = new System.Drawing.Size(754, 374);
+            this.ucPending.TabIndex = 6;
+            this.ucPending.Visible = false;
+            // 
+            // HeaderPanel
+            // 
+            this.HeaderPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.HeaderPanel.Controls.Add(this.label5);
+            this.HeaderPanel.Controls.Add(this.label4);
+            this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HeaderPanel.Location = new System.Drawing.Point(136, 0);
+            this.HeaderPanel.Name = "HeaderPanel";
+            this.HeaderPanel.Size = new System.Drawing.Size(754, 100);
+            this.HeaderPanel.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(111, 49);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(520, 34);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Govt Postgraduate College Gohati (Swabi)";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(51, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(641, 43);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Welcome to Library Managment System ";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(890, 474);
+            this.Controls.Add(this.UCPanel);
             this.Controls.Add(this.HeaderPanel);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Library Managment System";
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
-            this.UCPanel.ResumeLayout(false);
-            this.UCPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.UCPanel.ResumeLayout(false);
+            this.UCPanel.PerformLayout();
             this.HeaderPanel.ResumeLayout(false);
+            this.HeaderPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -406,21 +361,17 @@
         private FontAwesome.Sharp.IconButton ButtonAddUser;
         private FontAwesome.Sharp.IconButton PandingButton;
         private FontAwesome.Sharp.IconButton IssueButton;
+        private FontAwesome.Sharp.IconButton buttonAddBook;
         private System.Windows.Forms.Panel UCPanel;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private UCHome ucHome1;
-        private System.Windows.Forms.Panel HeaderPanel;
-        private UCAddOrder ucIssueBook;
-        private UCStatus ucPanding;
         private UCAbout ucAbout;
-        private UCAddUser ucAddUser;
         private UCAddBooks ucAddBooks;
         private UCStatus ucPending;
-        private FontAwesome.Sharp.IconButton buttonAddBook;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel6;
         private UCHome ucMainHome;
+        private UCAddOrder ucIssueBook;
+        private UCStatus ucPanding;
+        private UCAddUser ucAddUser;
+        private System.Windows.Forms.Panel HeaderPanel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }

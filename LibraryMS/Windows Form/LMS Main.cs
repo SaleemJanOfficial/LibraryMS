@@ -28,12 +28,14 @@ namespace LibraryMS
             ucMainHome.Hide();
             ucAddBooks.Hide();
         }
+
+
+        //when form Load
         private void Main_Load(object sender, EventArgs e)
         {
             HideUc();
             ucMainHome.Visible = true;
         }
-
 
 
         //Home Button
@@ -42,7 +44,6 @@ namespace LibraryMS
             HideUc();
             ucMainHome.Visible = true;
         }
-
 
 
         //Issue book button 
@@ -67,6 +68,7 @@ namespace LibraryMS
             ucAddUser.Visible = true;
         }
 
+
         //Add book buttton
         private void buttonAddBook_Click(object sender, EventArgs e)
         {
@@ -74,6 +76,8 @@ namespace LibraryMS
             ucAddBooks.Visible = true;
         }
 
+
+        //About Button
         private void AboutButton_Click(object sender, EventArgs e)
         {
             HideUc();
@@ -81,16 +85,16 @@ namespace LibraryMS
           
         }
 
-
         
 
-   
 
-     
 
-       
-        
 
-       
+
+
+
+
+
+
     }
 }
