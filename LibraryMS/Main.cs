@@ -16,89 +16,81 @@ namespace LibraryMS
         {
             InitializeComponent();
         }
+         
 
+        //Hide all Usercontrol form
+        private void HideUc()
+        {
+            ucIssueBook.Hide();
+            ucPanding.Hide();
+            ucAddUser.Hide();
+            ucAbout.Hide();
+            ucMainHome.Hide();
+            ucAddBooks.Hide();
+        }
+        private void Main_Load(object sender, EventArgs e)
+        {
+            HideUc();
+            ucMainHome.Visible = true;
+        }
+
+
+
+        //Home Button
         private void HomeButton_Click(object sender, EventArgs e)
         {
-
-           
-
-            ucAddOrder1.Hide();
-            ucStatus1.Hide();
-            ucAddUser1.Hide();
-            ucAbout1.Hide();
-          
-            ucHome2.Show();
-            ucHome1.BringToFront();
-
-
+            HideUc();
+            ucMainHome.Visible = true;
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+
+
+        //Issue book button 
+        private void IssueButton_Click(object sender, EventArgs e)
         {
-            
-            ucHome2.Hide();
-            ucAddOrder1.Show();
-            ucAddOrder1.BringToFront();
-            
+            HideUc();
+            ucIssueBook.Visible = true;
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-            ucHome2.Hide();
-            ucAddOrder1.Hide();
-            ucStatus1.Show();
-            ucStatus1.BringToFront();
 
+        // Pending Button
+        private void PandingButton_Click(object sender, EventArgs e)
+        {
+            HideUc();
+            ucPanding.Visible = true;
         }
 
-        private void iconButton3_Click(object sender, EventArgs e)
+        //Add user button
+        private void ButtonAddUser_Click(object sender, EventArgs e)
         {
+            HideUc();
+            ucAddUser.Visible = true;
+        }
 
-
-            ucHome2.Hide();
-            ucAddOrder1.Hide();
-            ucStatus1.Hide();
-            ucAddUser1.BringToFront();
-            ucAddUser1.Show();
-
-
-           
+        //Add book buttton
+        private void buttonAddBook_Click(object sender, EventArgs e)
+        {
+            HideUc();
+            ucAddBooks.Visible = true;
         }
 
         private void AboutButton_Click(object sender, EventArgs e)
         {
-
-            ucHome2.Hide();
-            ucAddOrder1.Hide();
-            ucStatus1.Hide(); 
-            ucAddUser1.Hide();
-            ucAbout1.Show();
-            ucAbout1.BringToFront();
+            HideUc();
+            ucAbout.Visible = true;
+          
         }
 
-        private void ucStatus1_Load(object sender, EventArgs e)
-        {
 
-        }
+        
 
-        private void Main_Load(object sender, EventArgs e)
-        {
-            ucAddOrder1.Hide();
-            ucStatus1.Hide();
-            ucAddUser1.Hide();
-            ucAbout1.Hide();
-            ucHome1.Show();
-            ucHome1.BringToFront();
-        }
+   
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
+     
 
-        }
+       
+        
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

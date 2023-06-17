@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LibraryMS
 {
-    public partial class UCHome : UserControl
+    public partial class UCAddBooks : UserControl
     {
-        public UCHome()
+        public UCAddBooks()
         {
             InitializeComponent();
         }

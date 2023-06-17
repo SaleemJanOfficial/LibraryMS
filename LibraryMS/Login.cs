@@ -17,12 +17,16 @@ namespace LibraryMS
             InitializeComponent();
         }
 
+
+        //exite button
         private void buttonLoginExit_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
 
         }
 
+
+        //register button
         private void LableRegister0_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -31,21 +35,14 @@ namespace LibraryMS
             
         }
 
+        //login button
         public void bttonLogin1_Click(object sender, EventArgs e)
         {
             Main form3 = new Main();
 
             this.Hide();
             form3.Show();
-
-
-          
-           
-            
-
-            
-
-            
+       
         }
     }
 }

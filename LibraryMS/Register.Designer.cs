@@ -33,14 +33,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonRegisterBack = new System.Windows.Forms.Button();
             this.buttonRegister = new System.Windows.Forms.Button();
-            this.lable = new System.Windows.Forms.Label();
-            this.txtRegisterCMPassword = new System.Windows.Forms.TextBox();
-            this.Email = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtRegisterPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtUserNameRegister = new System.Windows.Forms.TextBox();
+            this.lable = new System.Windows.Forms.Label();
+            this.txtRegisterPassword = new System.Windows.Forms.TextBox();
+            this.txtRegisterCMPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.Email = new System.Windows.Forms.Label();
+            this.txtUserNameRegister = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,47 +108,6 @@
             this.buttonRegister.Text = "Register";
             this.buttonRegister.UseVisualStyleBackColor = false;
             // 
-            // lable
-            // 
-            this.lable.AutoSize = true;
-            this.lable.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lable.Location = new System.Drawing.Point(29, 207);
-            this.lable.Name = "lable";
-            this.lable.Size = new System.Drawing.Size(72, 19);
-            this.lable.TabIndex = 1;
-            this.lable.Text = "Password";
-            // 
-            // txtRegisterCMPassword
-            // 
-            this.txtRegisterCMPassword.Location = new System.Drawing.Point(32, 234);
-            this.txtRegisterCMPassword.Name = "txtRegisterCMPassword";
-            this.txtRegisterCMPassword.Size = new System.Drawing.Size(192, 20);
-            this.txtRegisterCMPassword.TabIndex = 0;
-            // 
-            // Email
-            // 
-            this.Email.AutoSize = true;
-            this.Email.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email.Location = new System.Drawing.Point(28, 107);
-            this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(47, 19);
-            this.Email.TabIndex = 1;
-            this.Email.Text = "Email";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(31, 134);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(192, 20);
-            this.txtEmail.TabIndex = 0;
-            // 
-            // txtRegisterPassword
-            // 
-            this.txtRegisterPassword.Location = new System.Drawing.Point(31, 184);
-            this.txtRegisterPassword.Name = "txtRegisterPassword";
-            this.txtRegisterPassword.Size = new System.Drawing.Size(192, 20);
-            this.txtRegisterPassword.TabIndex = 0;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -159,12 +118,29 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
-            // txtUserNameRegister
+            // lable
             // 
-            this.txtUserNameRegister.Location = new System.Drawing.Point(31, 84);
-            this.txtUserNameRegister.Name = "txtUserNameRegister";
-            this.txtUserNameRegister.Size = new System.Drawing.Size(192, 20);
-            this.txtUserNameRegister.TabIndex = 0;
+            this.lable.AutoSize = true;
+            this.lable.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lable.Location = new System.Drawing.Point(29, 207);
+            this.lable.Name = "lable";
+            this.lable.Size = new System.Drawing.Size(72, 19);
+            this.lable.TabIndex = 1;
+            this.lable.Text = "Password";
+            // 
+            // txtRegisterPassword
+            // 
+            this.txtRegisterPassword.Location = new System.Drawing.Point(31, 184);
+            this.txtRegisterPassword.Name = "txtRegisterPassword";
+            this.txtRegisterPassword.Size = new System.Drawing.Size(192, 20);
+            this.txtRegisterPassword.TabIndex = 0;
+            // 
+            // txtRegisterCMPassword
+            // 
+            this.txtRegisterCMPassword.Location = new System.Drawing.Point(32, 234);
+            this.txtRegisterCMPassword.Name = "txtRegisterCMPassword";
+            this.txtRegisterCMPassword.Size = new System.Drawing.Size(192, 20);
+            this.txtRegisterCMPassword.TabIndex = 0;
             // 
             // label3
             // 
@@ -176,6 +152,30 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "User Name";
             // 
+            // Email
+            // 
+            this.Email.AutoSize = true;
+            this.Email.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Email.Location = new System.Drawing.Point(28, 107);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(47, 19);
+            this.Email.TabIndex = 1;
+            this.Email.Text = "Email";
+            // 
+            // txtUserNameRegister
+            // 
+            this.txtUserNameRegister.Location = new System.Drawing.Point(31, 84);
+            this.txtUserNameRegister.Name = "txtUserNameRegister";
+            this.txtUserNameRegister.Size = new System.Drawing.Size(192, 20);
+            this.txtUserNameRegister.TabIndex = 0;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(31, 134);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(192, 20);
+            this.txtEmail.TabIndex = 0;
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,6 +183,7 @@
             this.ClientSize = new System.Drawing.Size(278, 415);
             this.Controls.Add(this.panel1);
             this.Name = "Register";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

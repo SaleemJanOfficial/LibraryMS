@@ -12,6 +12,23 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Dell\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +48,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D26D4FEC34BC0CF9D28506D4570DA4B32D9E297A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>LibraryMS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FontAwesome.Sharp, Version=6.1.1.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
@@ -73,6 +102,12 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\UCAddBooks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\UCAddBooks.Designer.cs">
+      <DependentUpon>UCAddBooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\UCAbout.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -85,23 +120,23 @@
     <Compile Include="UserControl\UCAddUser.Designer.cs">
       <DependentUpon>UCAddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\UCStatus.cs">
+    <Compile Include="UserControl\UCPanding.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\UCStatus.Designer.cs">
-      <DependentUpon>UCStatus.cs</DependentUpon>
+    <Compile Include="UserControl\UCPanding.Designer.cs">
+      <DependentUpon>UCPanding.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\UCHome.cs">
+    <Compile Include="UserControl\UHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\UCHome.Designer.cs">
-      <DependentUpon>UCHome.cs</DependentUpon>
+    <Compile Include="UserControl\UHome.Designer.cs">
+      <DependentUpon>UHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\UCAddOrder.cs">
+    <Compile Include="UserControl\UCIssueBooks.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\UCAddOrder.Designer.cs">
-      <DependentUpon>UCAddOrder.cs</DependentUpon>
+    <Compile Include="UserControl\UCIssueBooks.Designer.cs">
+      <DependentUpon>UCIssueBooks.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -121,21 +156,25 @@
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UCAddBooks.resx">
+      <DependentUpon>UCAddBooks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\UCAbout.resx">
       <DependentUpon>UCAbout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\UCAddOrder.resx">
-      <DependentUpon>UCAddOrder.cs</DependentUpon>
+    <EmbeddedResource Include="UserControl\UCIssueBooks.resx">
+      <DependentUpon>UCIssueBooks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\UCAddUser.resx">
       <DependentUpon>UCAddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\UCHome.resx">
-      <DependentUpon>UCHome.cs</DependentUpon>
+    <EmbeddedResource Include="UserControl\UHome.resx">
+      <DependentUpon>UHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\UCStatus.resx">
-      <DependentUpon>UCStatus.cs</DependentUpon>
+    <EmbeddedResource Include="UserControl\UCPanding.resx">
+      <DependentUpon>UCPanding.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="LibraryMS_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -149,6 +188,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

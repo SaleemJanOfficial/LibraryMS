@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Panel panel1;
-            System.Windows.Forms.Panel panel2;
             System.Windows.Forms.Label label1;
+            System.Windows.Forms.Panel panel2;
             panel1 = new System.Windows.Forms.Panel();
-            panel2 = new System.Windows.Forms.Panel();
             label1 = new System.Windows.Forms.Label();
+            panel2 = new System.Windows.Forms.Panel();
             panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +46,16 @@
             panel1.Size = new System.Drawing.Size(664, 54);
             panel1.TabIndex = 0;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label1.Location = new System.Drawing.Point(253, 9);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(130, 25);
+            label1.TabIndex = 0;
+            label1.Text = "Issue Books";
+            // 
             // panel2
             // 
             panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -53,16 +63,6 @@
             panel2.Name = "panel2";
             panel2.Size = new System.Drawing.Size(664, 295);
             panel2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label1.Location = new System.Drawing.Point(258, 11);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(112, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Add Order";
             // 
             // UCAddOrder
             // 
