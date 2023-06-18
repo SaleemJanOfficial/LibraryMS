@@ -40,6 +40,9 @@
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
             this.UCPanel = new System.Windows.Forms.Panel();
+            this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.ucMainHome = new LibraryMS.UCHome();
             this.ucIssueBook = new LibraryMS.UCAddOrder();
             this.ucPanding = new LibraryMS.UCStatus();
@@ -47,9 +50,6 @@
             this.ucAbout = new LibraryMS.UCAbout();
             this.ucAddBooks = new LibraryMS.UCAddBooks();
             this.ucPending = new LibraryMS.UCStatus();
-            this.HeaderPanel = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).BeginInit();
@@ -114,7 +114,7 @@
             this.ButtonAddUser.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ButtonAddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonAddUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ButtonAddUser.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
+            this.ButtonAddUser.IconChar = FontAwesome.Sharp.IconChar.User;
             this.ButtonAddUser.IconColor = System.Drawing.Color.White;
             this.ButtonAddUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ButtonAddUser.IconSize = 40;
@@ -123,7 +123,7 @@
             this.ButtonAddUser.Name = "ButtonAddUser";
             this.ButtonAddUser.Size = new System.Drawing.Size(139, 49);
             this.ButtonAddUser.TabIndex = 1;
-            this.ButtonAddUser.Text = "Add Users";
+            this.ButtonAddUser.Text = "Add Students";
             this.ButtonAddUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ButtonAddUser.UseVisualStyleBackColor = false;
             this.ButtonAddUser.Click += new System.EventHandler(this.ButtonAddUser_Click);
@@ -133,7 +133,7 @@
             this.PandingButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.PandingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PandingButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.PandingButton.IconChar = FontAwesome.Sharp.IconChar.GroupArrowsRotate;
+            this.PandingButton.IconChar = FontAwesome.Sharp.IconChar.Sync;
             this.PandingButton.IconColor = System.Drawing.Color.White;
             this.PandingButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.PandingButton.IconSize = 40;
@@ -152,7 +152,7 @@
             this.IssueButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.IssueButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IssueButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.IssueButton.IconChar = FontAwesome.Sharp.IconChar.Hive;
+            this.IssueButton.IconChar = FontAwesome.Sharp.IconChar.SpellCheck;
             this.IssueButton.IconColor = System.Drawing.Color.White;
             this.IssueButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.IssueButton.IconSize = 40;
@@ -218,6 +218,46 @@
             this.UCPanel.Name = "UCPanel";
             this.UCPanel.Size = new System.Drawing.Size(754, 374);
             this.UCPanel.TabIndex = 1;
+            // 
+            // HeaderPanel
+            // 
+            this.HeaderPanel.BackColor = System.Drawing.Color.OrangeRed;
+            this.HeaderPanel.Controls.Add(this.label5);
+            this.HeaderPanel.Controls.Add(this.label4);
+            this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HeaderPanel.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.HeaderPanel.Location = new System.Drawing.Point(136, 0);
+            this.HeaderPanel.Name = "HeaderPanel";
+            this.HeaderPanel.Size = new System.Drawing.Size(754, 100);
+            this.HeaderPanel.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Shia", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(139, 52);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(476, 35);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "گورنمٹ پوسٹ گریجویٹ کالج گوہاٹی (صوابی)";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(34, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(686, 43);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Welcome to Library Managment System ";
             // 
             // ucMainHome
             // 
@@ -289,43 +329,6 @@
             this.ucPending.Size = new System.Drawing.Size(754, 374);
             this.ucPending.TabIndex = 6;
             this.ucPending.Visible = false;
-            // 
-            // HeaderPanel
-            // 
-            this.HeaderPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.HeaderPanel.Controls.Add(this.label5);
-            this.HeaderPanel.Controls.Add(this.label4);
-            this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.HeaderPanel.Location = new System.Drawing.Point(136, 0);
-            this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(754, 100);
-            this.HeaderPanel.TabIndex = 2;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(111, 49);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(520, 34);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Govt Postgraduate College Gohati (Swabi)";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(51, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(641, 43);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Welcome to Library Managment System ";
             // 
             // Main
             // 

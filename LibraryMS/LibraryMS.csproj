@@ -114,11 +114,11 @@
     <Compile Include="UserControl\UCAbout.Designer.cs">
       <DependentUpon>UCAbout.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\UCAddUser.cs">
+    <Compile Include="UserControl\UCAddStudent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\UCAddUser.Designer.cs">
-      <DependentUpon>UCAddUser.cs</DependentUpon>
+    <Compile Include="UserControl\UCAddStudent.Designer.cs">
+      <DependentUpon>UCAddStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl\UCPanding.cs">
       <SubType>UserControl</SubType>
@@ -171,8 +171,8 @@
     <EmbeddedResource Include="UserControl\UCIssueBooks.resx">
       <DependentUpon>UCIssueBooks.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\UCAddUser.resx">
-      <DependentUpon>UCAddUser.cs</DependentUpon>
+    <EmbeddedResource Include="UserControl\UCAddStudent.resx">
+      <DependentUpon>UCAddStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\UHome.resx">
       <DependentUpon>UHome.cs</DependentUpon>
