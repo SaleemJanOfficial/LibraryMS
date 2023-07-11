@@ -59,11 +59,13 @@ namespace LibraryMS
             textBox4.Clear();
             textBox5.Clear();
             textBox6.Clear();
-            textBox7.Clear();
-            
             textBox9.Clear();
             textBox10.Clear();
             textBox11.Clear();
+            RadioMale.Checked = false;
+            RadioFemale.Checked = false;
+            RadioOther.Checked = false;
+
 
         }
 
@@ -88,6 +90,7 @@ namespace LibraryMS
 
         }
 
+        
     }
 
 
