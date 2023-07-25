@@ -31,6 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +51,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.panel2.Location = new System.Drawing.Point(0, 36);
@@ -67,6 +70,17 @@
             this.panel1.Size = new System.Drawing.Size(664, 36);
             this.panel1.TabIndex = 2;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.DarkOrchid;
+            this.label2.Font = new System.Drawing.Font("Modern No. 20", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(110, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(448, 29);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Project: Library Managment System";
+            // 
             // UCAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -75,6 +89,8 @@
             this.Controls.Add(this.panel1);
             this.Name = "UCAbout";
             this.Size = new System.Drawing.Size(664, 349);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -86,5 +102,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
     }
 }

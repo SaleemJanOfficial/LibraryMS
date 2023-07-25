@@ -30,10 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonAddBook = new FontAwesome.Sharp.IconButton();
             this.AboutButton = new FontAwesome.Sharp.IconButton();
             this.ButtonAddUser = new FontAwesome.Sharp.IconButton();
-            this.PandingButton = new FontAwesome.Sharp.IconButton();
+            this.ReturnButton = new FontAwesome.Sharp.IconButton();
             this.IssueButton = new FontAwesome.Sharp.IconButton();
             this.HomeButton = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -47,6 +48,7 @@
             this.ucAddBooks = new LibraryMS.UCAddBooks();
             this.ucPanding = new LibraryMS.UCStatus();
             this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -59,10 +61,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Maroon;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.buttonAddBook);
             this.panel1.Controls.Add(this.AboutButton);
             this.panel1.Controls.Add(this.ButtonAddUser);
-            this.panel1.Controls.Add(this.PandingButton);
+            this.panel1.Controls.Add(this.ReturnButton);
             this.panel1.Controls.Add(this.IssueButton);
             this.panel1.Controls.Add(this.HomeButton);
             this.panel1.Controls.Add(this.panel2);
@@ -71,6 +74,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(136, 474);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Maroon;
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(32, 452);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Version 1.1";
             // 
             // buttonAddBook
             // 
@@ -127,24 +142,24 @@
             this.ButtonAddUser.UseVisualStyleBackColor = false;
             this.ButtonAddUser.Click += new System.EventHandler(this.ButtonAddUser_Click);
             // 
-            // PandingButton
+            // ReturnButton
             // 
-            this.PandingButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.PandingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PandingButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.PandingButton.IconChar = FontAwesome.Sharp.IconChar.Sync;
-            this.PandingButton.IconColor = System.Drawing.Color.White;
-            this.PandingButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.PandingButton.IconSize = 40;
-            this.PandingButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.PandingButton.Location = new System.Drawing.Point(-3, 217);
-            this.PandingButton.Name = "PandingButton";
-            this.PandingButton.Size = new System.Drawing.Size(139, 49);
-            this.PandingButton.TabIndex = 1;
-            this.PandingButton.Text = "Pending";
-            this.PandingButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.PandingButton.UseVisualStyleBackColor = false;
-            this.PandingButton.Click += new System.EventHandler(this.PandingButton_Click);
+            this.ReturnButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ReturnButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReturnButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ReturnButton.IconChar = FontAwesome.Sharp.IconChar.Sync;
+            this.ReturnButton.IconColor = System.Drawing.Color.White;
+            this.ReturnButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ReturnButton.IconSize = 40;
+            this.ReturnButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ReturnButton.Location = new System.Drawing.Point(-3, 217);
+            this.ReturnButton.Name = "ReturnButton";
+            this.ReturnButton.Size = new System.Drawing.Size(139, 49);
+            this.ReturnButton.TabIndex = 1;
+            this.ReturnButton.Text = "Return Book";
+            this.ReturnButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ReturnButton.UseVisualStyleBackColor = false;
+            this.ReturnButton.Click += new System.EventHandler(this.PandingButton_Click);
             // 
             // IssueButton
             // 
@@ -231,6 +246,7 @@
             this.ucMainHome.Name = "ucMainHome";
             this.ucMainHome.Size = new System.Drawing.Size(754, 374);
             this.ucMainHome.TabIndex = 7;
+            this.ucMainHome.Load += new System.EventHandler(this.ucMainHome_Load);
             // 
             // ucIssueBook
             // 
@@ -283,6 +299,7 @@
             // HeaderPanel
             // 
             this.HeaderPanel.BackColor = System.Drawing.Color.OrangeRed;
+            this.HeaderPanel.Controls.Add(this.button1);
             this.HeaderPanel.Controls.Add(this.label5);
             this.HeaderPanel.Controls.Add(this.label4);
             this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -291,6 +308,16 @@
             this.HeaderPanel.Name = "HeaderPanel";
             this.HeaderPanel.Size = new System.Drawing.Size(754, 100);
             this.HeaderPanel.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(21, 56);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label5
             // 
@@ -333,6 +360,7 @@
             this.Text = "Library Managment System";
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).EndInit();
             this.UCPanel.ResumeLayout(false);
@@ -352,7 +380,7 @@
         private FontAwesome.Sharp.IconButton HomeButton;
         private FontAwesome.Sharp.IconButton AboutButton;
         private FontAwesome.Sharp.IconButton ButtonAddUser;
-        private FontAwesome.Sharp.IconButton PandingButton;
+        private FontAwesome.Sharp.IconButton ReturnButton;
         private FontAwesome.Sharp.IconButton IssueButton;
         private FontAwesome.Sharp.IconButton buttonAddBook;
         private System.Windows.Forms.Panel UCPanel;
@@ -365,5 +393,7 @@
         private System.Windows.Forms.Label label4;
         private UCHome ucMainHome;
         private UCAbout ucAbout;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

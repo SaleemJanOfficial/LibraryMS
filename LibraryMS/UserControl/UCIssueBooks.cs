@@ -16,5 +16,15 @@ namespace LibraryMS
         {
             InitializeComponent();
         }
+
+        private void IssuedBook_Click(object sender, EventArgs e)
+        {
+            DialogResult mb1= MessageBox.Show("Are You Sure?", "Warning", MessageBoxButtons.YesNo);
+            if(mb1==DialogResult.Yes)
+            {
+                MessageBox.Show("Successfully Issued", "Info", MessageBoxButtons.OK);
+            }
+            
+        }
     }
 }

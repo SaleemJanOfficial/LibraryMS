@@ -30,33 +30,33 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.PanelAddBook = new System.Windows.Forms.Panel();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.Bookdate = new System.Windows.Forms.DateTimePicker();
+            this.label13 = new System.Windows.Forms.Label();
+            this.Booksgrid = new System.Windows.Forms.DataGridView();
+            this.Quantity = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.ButtonDeleteAddBook = new FontAwesome.Sharp.IconButton();
             this.ButtonUpdateAddBook = new FontAwesome.Sharp.IconButton();
             this.ButtonSaveAddBook = new FontAwesome.Sharp.IconButton();
             this.ButtonBackAddStudents = new FontAwesome.Sharp.IconButton();
             this.ButtonClearAddBook = new FontAwesome.Sharp.IconButton();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Publisher = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Author = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Bkname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ViewAllBooksButton = new FontAwesome.Sharp.IconButton();
             this.AddNewBookButton = new FontAwesome.Sharp.IconButton();
-            this.label13 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.PanelAddBook.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Booksgrid)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -82,16 +82,6 @@
             this.panel1.Size = new System.Drawing.Size(763, 349);
             this.panel1.TabIndex = 1;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Blue;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(763, 36);
-            this.panel2.TabIndex = 2;
-            // 
             // PanelAddBook
             // 
             this.PanelAddBook.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -99,21 +89,21 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelAddBook.BackColor = System.Drawing.Color.SkyBlue;
             this.PanelAddBook.Controls.Add(this.guna2TextBox1);
-            this.PanelAddBook.Controls.Add(this.dateTimePicker1);
+            this.PanelAddBook.Controls.Add(this.Bookdate);
             this.PanelAddBook.Controls.Add(this.label13);
-            this.PanelAddBook.Controls.Add(this.dataGridView1);
-            this.PanelAddBook.Controls.Add(this.textBox10);
+            this.PanelAddBook.Controls.Add(this.Booksgrid);
+            this.PanelAddBook.Controls.Add(this.Quantity);
             this.PanelAddBook.Controls.Add(this.label11);
             this.PanelAddBook.Controls.Add(this.ButtonDeleteAddBook);
             this.PanelAddBook.Controls.Add(this.ButtonUpdateAddBook);
             this.PanelAddBook.Controls.Add(this.ButtonSaveAddBook);
             this.PanelAddBook.Controls.Add(this.ButtonBackAddStudents);
             this.PanelAddBook.Controls.Add(this.ButtonClearAddBook);
-            this.PanelAddBook.Controls.Add(this.textBox4);
+            this.PanelAddBook.Controls.Add(this.Publisher);
             this.PanelAddBook.Controls.Add(this.label5);
-            this.PanelAddBook.Controls.Add(this.textBox3);
+            this.PanelAddBook.Controls.Add(this.Author);
             this.PanelAddBook.Controls.Add(this.label4);
-            this.PanelAddBook.Controls.Add(this.textBox2);
+            this.PanelAddBook.Controls.Add(this.Bkname);
             this.PanelAddBook.Controls.Add(this.label3);
             this.PanelAddBook.Controls.Add(this.textBox1);
             this.PanelAddBook.Controls.Add(this.label2);
@@ -145,23 +135,44 @@
             this.guna2TextBox1.Size = new System.Drawing.Size(182, 24);
             this.guna2TextBox1.TabIndex = 8;
             // 
-            // dataGridView1
+            // Bookdate
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Bookdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Bookdate.CustomFormat = "dd/mm/yyyy";
+            this.Bookdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.Bookdate.Location = new System.Drawing.Point(146, 158);
+            this.Bookdate.Name = "Bookdate";
+            this.Bookdate.Size = new System.Drawing.Size(258, 20);
+            this.Bookdate.TabIndex = 4;
+            this.Bookdate.Value = new System.DateTime(2023, 6, 18, 0, 0, 0, 0);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(48, 160);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(42, 17);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Date";
+            // 
+            // Booksgrid
+            // 
+            this.Booksgrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 222);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(613, 67);
-            this.dataGridView1.TabIndex = 3;
+            this.Booksgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Booksgrid.Location = new System.Drawing.Point(0, 222);
+            this.Booksgrid.Name = "Booksgrid";
+            this.Booksgrid.Size = new System.Drawing.Size(613, 67);
+            this.Booksgrid.TabIndex = 3;
             // 
-            // textBox10
+            // Quantity
             // 
-            this.textBox10.Location = new System.Drawing.Point(146, 133);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(258, 20);
-            this.textBox10.TabIndex = 2;
+            this.Quantity.Location = new System.Drawing.Point(146, 133);
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Size = new System.Drawing.Size(258, 20);
+            this.Quantity.TabIndex = 2;
             // 
             // label11
             // 
@@ -169,9 +180,9 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(48, 135);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 17);
+            this.label11.Size = new System.Drawing.Size(69, 17);
             this.label11.TabIndex = 1;
-            this.label11.Text = "QUANTITY";
+            this.label11.Text = "Quantity";
             // 
             // ButtonDeleteAddBook
             // 
@@ -214,6 +225,7 @@
             this.ButtonSaveAddBook.TabIndex = 0;
             this.ButtonSaveAddBook.Text = "Save";
             this.ButtonSaveAddBook.UseVisualStyleBackColor = false;
+            this.ButtonSaveAddBook.Click += new System.EventHandler(this.ButtonSaveAddBook_Click);
             // 
             // ButtonBackAddStudents
             // 
@@ -249,12 +261,12 @@
             this.ButtonClearAddBook.UseVisualStyleBackColor = false;
             this.ButtonClearAddBook.Click += new System.EventHandler(this.ButtonClearAddBook_Click);
             // 
-            // textBox4
+            // Publisher
             // 
-            this.textBox4.Location = new System.Drawing.Point(146, 108);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(258, 20);
-            this.textBox4.TabIndex = 2;
+            this.Publisher.Location = new System.Drawing.Point(146, 108);
+            this.Publisher.Name = "Publisher";
+            this.Publisher.Size = new System.Drawing.Size(258, 20);
+            this.Publisher.TabIndex = 2;
             // 
             // label5
             // 
@@ -262,16 +274,16 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(48, 110);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 17);
+            this.label5.Size = new System.Drawing.Size(76, 17);
             this.label5.TabIndex = 1;
-            this.label5.Text = "COMPNAY";
+            this.label5.Text = "Publisher";
             // 
-            // textBox3
+            // Author
             // 
-            this.textBox3.Location = new System.Drawing.Point(146, 84);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(258, 20);
-            this.textBox3.TabIndex = 2;
+            this.Author.Location = new System.Drawing.Point(146, 84);
+            this.Author.Name = "Author";
+            this.Author.Size = new System.Drawing.Size(258, 20);
+            this.Author.TabIndex = 2;
             // 
             // label4
             // 
@@ -279,16 +291,16 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(48, 86);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 17);
+            this.label4.Size = new System.Drawing.Size(56, 17);
             this.label4.TabIndex = 1;
-            this.label4.Text = "WRITER";
+            this.label4.Text = "Author";
             // 
-            // textBox2
+            // Bkname
             // 
-            this.textBox2.Location = new System.Drawing.Point(146, 61);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(258, 20);
-            this.textBox2.TabIndex = 2;
+            this.Bkname.Location = new System.Drawing.Point(146, 61);
+            this.Bkname.Name = "Bkname";
+            this.Bkname.Size = new System.Drawing.Size(258, 20);
+            this.Bkname.TabIndex = 2;
             // 
             // label3
             // 
@@ -331,6 +343,7 @@
             this.ViewAllBooksButton.TabIndex = 4;
             this.ViewAllBooksButton.Text = "View All Books";
             this.ViewAllBooksButton.UseVisualStyleBackColor = false;
+            this.ViewAllBooksButton.Click += new System.EventHandler(this.ViewAllBooksButton_Click);
             // 
             // AddNewBookButton
             // 
@@ -347,26 +360,15 @@
             this.AddNewBookButton.UseVisualStyleBackColor = false;
             this.AddNewBookButton.Click += new System.EventHandler(this.AddNewBookButton_Click);
             // 
-            // label13
+            // panel2
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(48, 160);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 17);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Date";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dateTimePicker1.CustomFormat = "dd/mm/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(146, 158);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(258, 20);
-            this.dateTimePicker1.TabIndex = 4;
-            this.dateTimePicker1.Value = new System.DateTime(2023, 6, 18, 0, 0, 0, 0);
+            this.panel2.BackColor = System.Drawing.Color.Blue;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(763, 36);
+            this.panel2.TabIndex = 2;
             // 
             // UCAddBooks
             // 
@@ -378,11 +380,11 @@
             this.Name = "UCAddBooks";
             this.Size = new System.Drawing.Size(763, 349);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.PanelAddBook.ResumeLayout(false);
             this.PanelAddBook.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Booksgrid)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -394,25 +396,25 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel PanelAddBook;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.DataGridView Booksgrid;
+        private System.Windows.Forms.TextBox Quantity;
         private System.Windows.Forms.Label label11;
         private FontAwesome.Sharp.IconButton ButtonDeleteAddBook;
         private FontAwesome.Sharp.IconButton ButtonUpdateAddBook;
         private FontAwesome.Sharp.IconButton ButtonSaveAddBook;
         private FontAwesome.Sharp.IconButton ButtonBackAddStudents;
         private FontAwesome.Sharp.IconButton ButtonClearAddBook;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox Publisher;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Author;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Bkname;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton ViewAllBooksButton;
         private FontAwesome.Sharp.IconButton AddNewBookButton;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker Bookdate;
         private System.Windows.Forms.Label label13;
     }
 }

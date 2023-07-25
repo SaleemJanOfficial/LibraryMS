@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 
@@ -16,11 +11,34 @@ namespace LibraryMS.Windows_Form
         public ViewAllStudent()
         {
             InitializeComponent();
-        }
-       
+            
 
+        }
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True");
+        private void GetStudentRecord2()
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True");
+            SqlCommand cmd1 = new SqlCommand("Select * from Students", con);
+
+            DataTable dt1 = new DataTable();
+
+            con.Open();
+            SqlDataReader sdr1 = cmd1.ExecuteReader();
+            dt1.Load(sdr1);
+            con.Close();
+            ViewAllstudentGrid.DataSource = dt1;
+
+
+
+        }
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
+            
+        }
+
+        private void ViewAllStudent_Load(object sender, EventArgs e)
+        {
+            GetStudentRecord2();
             
         }
     }
