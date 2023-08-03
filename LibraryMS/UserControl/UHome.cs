@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using LibraryMS.Classes;
@@ -6,27 +7,31 @@ namespace LibraryMS
 {
     public partial class UCHome : UserControl
     {
+       public static string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         public static UCHome Instense;
         public UCHome()
         {     
             InitializeComponent();
             Instense = this;
+
+
             StudentCount();
             BookCount();
+            TotalIssueBook();
+            CurrentIssueBook();
         }
 
-      
-
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True");
+       SqlConnection con = new SqlConnection(Constr);
 
         private void TstudentLable_Click(object sender, EventArgs e)
         {
 
         }
         
-        // Count Total Students
+        // Total Students
         public void StudentCount()
         {
+            
             try
             {
                SqlCommand cmd = new SqlCommand("select COUNT(*) from Students", con);
@@ -37,18 +42,18 @@ namespace LibraryMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"Not Retrived Total Student");
             }
             finally
             {
                 con.Close();
             }
         }
-        
-        //Count Total Books
 
+        //Count Total Book
         public void BookCount()
         {
+        
             try
             {
                 SqlCommand cmd = new SqlCommand("select COUNT(*) from Books", con);
@@ -58,7 +63,7 @@ namespace LibraryMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"Total Books Not Retrived");
             }
 
             finally
@@ -66,12 +71,52 @@ namespace LibraryMS
                 con.Close();
             }
         }
-        
-        private void button1_Click(object sender, EventArgs e)
+
+
+        //Count Total IssueBook
+
+        public void TotalIssueBook()
         {
-            //StudentCount();
-            //BookCount();
-            
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select COUNT(*) from IssuedBooks", con);
+                con.Open();
+                int StudentCount = Convert.ToInt32(cmd.ExecuteScalar());
+                lblTIssueBook.Text = Convert.ToString(StudentCount);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Not Retrived Total Issue Book");
+            }
+
+            finally
+            {
+                con.Close();
+            }
         }
+
+
+        //Count Total Current IssueBook
+
+        public void CurrentIssueBook()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select COUNT(*) from IssuedBooks where Return_Date IS NULL ", con);
+                con.Open();
+                int StudentCount = Convert.ToInt32(cmd.ExecuteScalar());
+                lblCurrentIssue.Text = Convert.ToString(StudentCount);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Not Retrived Total Issue Book");
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        }
+
     }
 }

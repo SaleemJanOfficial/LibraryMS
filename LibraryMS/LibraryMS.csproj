@@ -74,6 +74,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
@@ -148,6 +149,12 @@
     <Compile Include="UserControl\UCIssueBooks.Designer.cs">
       <DependentUpon>UCIssueBooks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows Form\ViewAllbooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows Form\ViewAllbooks.Designer.cs">
+      <DependentUpon>ViewAllbooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows Form\ViewAllStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +198,9 @@
     <EmbeddedResource Include="UserControl\UCPanding.resx">
       <DependentUpon>UCPanding.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows Form\ViewAllbooks.resx">
+      <DependentUpon>ViewAllbooks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows Form\ViewAllStudent.resx">
       <DependentUpon>ViewAllStudent.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +242,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\download %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

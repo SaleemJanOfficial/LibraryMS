@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -8,6 +9,7 @@ namespace LibraryMS.Windows_Form
 {
     public partial class ViewAllStudent : Form
     {
+        
         public ViewAllStudent()
         {
             InitializeComponent();
@@ -15,7 +17,7 @@ namespace LibraryMS.Windows_Form
 
         }
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True");
-        private void GetStudentRecord2()
+        private void GetStudentRecord()
         {
             SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True");
             SqlCommand cmd1 = new SqlCommand("Select * from Students", con);
@@ -27,9 +29,7 @@ namespace LibraryMS.Windows_Form
             dt1.Load(sdr1);
             con.Close();
             ViewAllstudentGrid.DataSource = dt1;
-
-
-
+            
         }
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
@@ -38,7 +38,7 @@ namespace LibraryMS.Windows_Form
 
         private void ViewAllStudent_Load(object sender, EventArgs e)
         {
-            GetStudentRecord2();
+            GetStudentRecord();
             
         }
     }

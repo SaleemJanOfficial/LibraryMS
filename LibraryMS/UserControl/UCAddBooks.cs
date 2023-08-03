@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using LibraryMS.Classes;
+using LibraryMS.Windows_Form;
 
 namespace LibraryMS
 {
@@ -144,9 +145,12 @@ namespace LibraryMS
                 Bkname.Focus();
 
 }
-
+        
+        
         private void ViewAllBooksButton_Click(object sender, EventArgs e)
         {
-            
+            ViewAllbooks vab = new ViewAllbooks();
+            vab.ShowDialog();
+
         }
     }        }

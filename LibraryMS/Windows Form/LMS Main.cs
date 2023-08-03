@@ -8,10 +8,12 @@ namespace LibraryMS
 {
     public partial class Main : Form
     {
-     
+       
+        
         public Main()
         {
-            InitializeComponent();          
+            InitializeComponent();
+           
         }
         //Hide all Usercontrol form
         private void HideUc()
