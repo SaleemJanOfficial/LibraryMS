@@ -7,10 +7,10 @@ namespace LibraryMS
 {
     public partial class UCHome : UserControl
     {
-       public static string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        public static string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         public static UCHome Instense;
         public UCHome()
-        {     
+        {
             InitializeComponent();
             Instense = this;
 
@@ -21,28 +21,28 @@ namespace LibraryMS
             CurrentIssueBook();
         }
 
-       SqlConnection con = new SqlConnection(Constr);
+        SqlConnection con = new SqlConnection(Constr);
 
         private void TstudentLable_Click(object sender, EventArgs e)
         {
 
         }
-        
+
         // Total Students
         public void StudentCount()
         {
-            
+
             try
             {
-               SqlCommand cmd = new SqlCommand("select COUNT(*) from Students", con);
+                SqlCommand cmd = new SqlCommand("select COUNT(*) from Students", con);
                 con.Open();
                 int StudentCount = Convert.ToInt32(cmd.ExecuteScalar());
                 TstudentLable.Text = Convert.ToString(StudentCount);
-                
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message,"Not Retrived Total Student");
+                MessageBox.Show(ex.Message, "Not Retrived Total Student");
             }
             finally
             {
@@ -53,7 +53,7 @@ namespace LibraryMS
         //Count Total Book
         public void BookCount()
         {
-        
+
             try
             {
                 SqlCommand cmd = new SqlCommand("select COUNT(*) from Books", con);
@@ -63,7 +63,7 @@ namespace LibraryMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message,"Total Books Not Retrived");
+                MessageBox.Show(ex.Message, "Total Books Not Retrived");
             }
 
             finally
@@ -86,7 +86,7 @@ namespace LibraryMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message,"Not Retrived Total Issue Book");
+                MessageBox.Show(ex.Message, "Not Retrived Total Issue Book");
             }
 
             finally

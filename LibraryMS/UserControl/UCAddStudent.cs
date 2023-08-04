@@ -99,29 +99,39 @@ namespace LibraryMS
         {
             if (isvalid())
             {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Students VALUES ( @Name, @F_Name, @Gender, @Roll_No, @Program, @Department, @Year_Semester, @Address_, @Mobile_No, @Enrl_Date) ", con);
+                    cmd.CommandType = CommandType.Text;
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO Students VALUES ( @Name, @F_Name, @Gender, @Roll_No, @Program, @Department, @Year_Semester, @Address_, @Mobile_No, @Enrl_Date) ", con);
-                cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@Name", UName.Text);
+                    cmd.Parameters.AddWithValue("@F_Name", Fname.Text);
+                    cmd.Parameters.AddWithValue("@Gender", gender1);
+                    cmd.Parameters.AddWithValue("@Roll_No", UserRNo.Text);
+                    cmd.Parameters.AddWithValue("@Program", Programe.Text);
+                    cmd.Parameters.AddWithValue("@Department", UserDepartment.Text);
+                    cmd.Parameters.AddWithValue("@Year_Semester", UserYearSem.Text);
+                    cmd.Parameters.AddWithValue("@Address_", UserAddress.Text);
+                    cmd.Parameters.AddWithValue("@Mobile_No", UserMNo.Text);
+                    cmd.Parameters.AddWithValue("@Enrl_Date", UserEdate.Text);
 
-                cmd.Parameters.AddWithValue("@Name", UName.Text);
-                cmd.Parameters.AddWithValue("@F_Name", Fname.Text);
-                cmd.Parameters.AddWithValue("@Gender", gender1);
-                cmd.Parameters.AddWithValue("@Roll_No", UserRNo.Text);
-                cmd.Parameters.AddWithValue("@Program", Programe.Text);
-                cmd.Parameters.AddWithValue("@Department", UserDepartment.Text);
-                cmd.Parameters.AddWithValue("@Year_Semester", UserYearSem.Text);
-                cmd.Parameters.AddWithValue("@Address_", UserAddress.Text);
-                cmd.Parameters.AddWithValue("@Mobile_No", UserMNo.Text);
-                cmd.Parameters.AddWithValue("@Enrl_Date", UserEdate.Text);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                   
 
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
-
-                MessageBox.Show("Successfully Saved Student", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                GetStudentRecord();
-                ClearAllValueAdduser();
-                UCHome.Instense.StudentCount();
+                    MessageBox.Show("Successfully Saved Student", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GetStudentRecord();
+                    ClearAllValueAdduser();
+                    UCHome.Instense.StudentCount();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
             }
         }
 

@@ -31,21 +31,26 @@
             System.Windows.Forms.Panel panel1;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Panel panel2;
-            this.button3 = new System.Windows.Forms.Button();
+            this.ClearButtonst = new System.Windows.Forms.Button();
+            this.ClearbtnBk = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.IssuedBook = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtClass = new System.Windows.Forms.TextBox();
+            this.txtremaining = new System.Windows.Forms.TextBox();
             this.txtIsuued = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtsRno = new System.Windows.Forms.TextBox();
+            this.txtAuthor = new System.Windows.Forms.TextBox();
+            this.txtPublisher = new System.Windows.Forms.TextBox();
             this.txtquantity = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtStuName = new System.Windows.Forms.TextBox();
             this.txtbookname = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSID = new System.Windows.Forms.TextBox();
             this.txtbookid = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -54,12 +59,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtremaining = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtAuthor = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtPublisher = new System.Windows.Forms.TextBox();
             panel1 = new System.Windows.Forms.Panel();
             label1 = new System.Windows.Forms.Label();
             panel2 = new System.Windows.Forms.Panel();
@@ -91,22 +90,21 @@
             // panel2
             // 
             panel2.BackColor = System.Drawing.Color.DeepSkyBlue;
-            panel2.Controls.Add(this.button3);
+            panel2.Controls.Add(this.ClearButtonst);
+            panel2.Controls.Add(this.ClearbtnBk);
             panel2.Controls.Add(this.button2);
             panel2.Controls.Add(this.IssuedBook);
-            panel2.Controls.Add(this.dateTimePicker1);
-            panel2.Controls.Add(this.textBox8);
+            panel2.Controls.Add(this.txtClass);
             panel2.Controls.Add(this.txtremaining);
             panel2.Controls.Add(this.txtIsuued);
-            panel2.Controls.Add(this.textBox7);
+            panel2.Controls.Add(this.txtsRno);
             panel2.Controls.Add(this.txtAuthor);
             panel2.Controls.Add(this.txtPublisher);
             panel2.Controls.Add(this.txtquantity);
-            panel2.Controls.Add(this.textBox6);
+            panel2.Controls.Add(this.txtStuName);
             panel2.Controls.Add(this.txtbookname);
-            panel2.Controls.Add(this.textBox1);
+            panel2.Controls.Add(this.txtSID);
             panel2.Controls.Add(this.txtbookid);
-            panel2.Controls.Add(this.label13);
             panel2.Controls.Add(this.label6);
             panel2.Controls.Add(this.label12);
             panel2.Controls.Add(this.label5);
@@ -126,109 +124,138 @@
             panel2.Size = new System.Drawing.Size(664, 313);
             panel2.TabIndex = 1;
             // 
-            // button3
+            // ClearButtonst
             // 
-            this.button3.BackColor = System.Drawing.Color.Yellow;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(187, 232);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 37);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Back";
-            this.button3.UseVisualStyleBackColor = false;
+            this.ClearButtonst.BackColor = System.Drawing.Color.Red;
+            this.ClearButtonst.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearButtonst.ForeColor = System.Drawing.Color.White;
+            this.ClearButtonst.Location = new System.Drawing.Point(478, 144);
+            this.ClearButtonst.Name = "ClearButtonst";
+            this.ClearButtonst.Size = new System.Drawing.Size(130, 30);
+            this.ClearButtonst.TabIndex = 6;
+            this.ClearButtonst.Text = "CLEAR STUDENT";
+            this.ClearButtonst.UseVisualStyleBackColor = false;
+            this.ClearButtonst.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // ClearbtnBk
+            // 
+            this.ClearbtnBk.BackColor = System.Drawing.Color.Red;
+            this.ClearbtnBk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearbtnBk.ForeColor = System.Drawing.Color.White;
+            this.ClearbtnBk.Location = new System.Drawing.Point(148, 236);
+            this.ClearbtnBk.Name = "ClearbtnBk";
+            this.ClearbtnBk.Size = new System.Drawing.Size(130, 30);
+            this.ClearbtnBk.TabIndex = 6;
+            this.ClearbtnBk.Text = "CLEAR BOOK";
+            this.ClearbtnBk.UseVisualStyleBackColor = false;
+            this.ClearbtnBk.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(277, 232);
+            this.button2.Location = new System.Drawing.Point(439, 208);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 37);
+            this.button2.Size = new System.Drawing.Size(80, 35);
             this.button2.TabIndex = 6;
-            this.button2.Text = "Reset";
+            this.button2.Text = "RESET";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // IssuedBook
             // 
             this.IssuedBook.BackColor = System.Drawing.Color.GreenYellow;
             this.IssuedBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IssuedBook.ForeColor = System.Drawing.Color.Black;
-            this.IssuedBook.Location = new System.Drawing.Point(381, 232);
+            this.IssuedBook.Location = new System.Drawing.Point(528, 208);
             this.IssuedBook.Name = "IssuedBook";
-            this.IssuedBook.Size = new System.Drawing.Size(84, 37);
+            this.IssuedBook.Size = new System.Drawing.Size(80, 35);
             this.IssuedBook.TabIndex = 6;
-            this.IssuedBook.Text = "Issue";
+            this.IssuedBook.Text = "ISSUE";
             this.IssuedBook.UseVisualStyleBackColor = false;
             this.IssuedBook.Click += new System.EventHandler(this.IssuedBook_Click);
             // 
-            // dateTimePicker1
+            // txtClass
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(462, 158);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(167, 24);
-            this.dateTimePicker1.TabIndex = 5;
-            this.dateTimePicker1.Value = new System.DateTime(2023, 7, 12, 18, 46, 45, 0);
+            this.txtClass.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClass.Location = new System.Drawing.Point(463, 115);
+            this.txtClass.Name = "txtClass";
+            this.txtClass.Size = new System.Drawing.Size(167, 24);
+            this.txtClass.TabIndex = 4;
             // 
-            // textBox8
+            // txtremaining
             // 
-            this.textBox8.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(463, 130);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(167, 24);
-            this.textBox8.TabIndex = 4;
+            this.txtremaining.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtremaining.Location = new System.Drawing.Point(129, 206);
+            this.txtremaining.Name = "txtremaining";
+            this.txtremaining.Size = new System.Drawing.Size(167, 24);
+            this.txtremaining.TabIndex = 4;
             // 
             // txtIsuued
             // 
             this.txtIsuued.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIsuued.Location = new System.Drawing.Point(129, 180);
+            this.txtIsuued.Location = new System.Drawing.Point(129, 178);
             this.txtIsuued.Name = "txtIsuued";
             this.txtIsuued.Size = new System.Drawing.Size(167, 24);
             this.txtIsuued.TabIndex = 4;
             // 
-            // textBox7
+            // txtsRno
             // 
-            this.textBox7.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(463, 104);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(167, 24);
-            this.textBox7.TabIndex = 4;
+            this.txtsRno.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsRno.Location = new System.Drawing.Point(463, 89);
+            this.txtsRno.Name = "txtsRno";
+            this.txtsRno.Size = new System.Drawing.Size(167, 24);
+            this.txtsRno.TabIndex = 4;
+            // 
+            // txtAuthor
+            // 
+            this.txtAuthor.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAuthor.Location = new System.Drawing.Point(129, 94);
+            this.txtAuthor.Name = "txtAuthor";
+            this.txtAuthor.Size = new System.Drawing.Size(167, 24);
+            this.txtAuthor.TabIndex = 4;
+            // 
+            // txtPublisher
+            // 
+            this.txtPublisher.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPublisher.Location = new System.Drawing.Point(129, 122);
+            this.txtPublisher.Name = "txtPublisher";
+            this.txtPublisher.Size = new System.Drawing.Size(167, 24);
+            this.txtPublisher.TabIndex = 4;
             // 
             // txtquantity
             // 
             this.txtquantity.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtquantity.Location = new System.Drawing.Point(129, 152);
+            this.txtquantity.Location = new System.Drawing.Point(129, 150);
             this.txtquantity.Name = "txtquantity";
             this.txtquantity.Size = new System.Drawing.Size(167, 24);
             this.txtquantity.TabIndex = 4;
             // 
-            // textBox6
+            // txtStuName
             // 
-            this.textBox6.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(463, 78);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(167, 24);
-            this.textBox6.TabIndex = 4;
+            this.txtStuName.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStuName.Location = new System.Drawing.Point(463, 63);
+            this.txtStuName.Name = "txtStuName";
+            this.txtStuName.Size = new System.Drawing.Size(167, 24);
+            this.txtStuName.TabIndex = 4;
             // 
             // txtbookname
             // 
             this.txtbookname.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbookname.Location = new System.Drawing.Point(129, 67);
+            this.txtbookname.Location = new System.Drawing.Point(129, 66);
             this.txtbookname.Name = "txtbookname";
             this.txtbookname.Size = new System.Drawing.Size(167, 24);
             this.txtbookname.TabIndex = 4;
             // 
-            // textBox1
+            // txtSID
             // 
-            this.textBox1.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(463, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 24);
-            this.textBox1.TabIndex = 4;
+            this.txtSID.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSID.Location = new System.Drawing.Point(463, 37);
+            this.txtSID.Name = "txtSID";
+            this.txtSID.Size = new System.Drawing.Size(167, 24);
+            this.txtSID.TabIndex = 4;
+            this.txtSID.TextChanged += new System.EventHandler(this.txtSID_TextChanged);
             // 
             // txtbookid
             // 
@@ -239,21 +266,21 @@
             this.txtbookid.TabIndex = 4;
             this.txtbookid.TextChanged += new System.EventHandler(this.textbookid_TextChanged);
             // 
-            // label13
+            // label6
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(332, 158);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(43, 18);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "Date";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(28, 208);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 18);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Remaining";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(332, 132);
+            this.label12.Location = new System.Drawing.Point(333, 117);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(129, 18);
             this.label12.TabIndex = 3;
@@ -263,17 +290,37 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(28, 182);
+            this.label5.Location = new System.Drawing.Point(28, 180);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 18);
             this.label5.TabIndex = 3;
             this.label5.Text = "Issued";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(28, 96);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(57, 18);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Author";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(28, 124);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(78, 18);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Publisher";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(332, 106);
+            this.label11.Location = new System.Drawing.Point(333, 91);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(65, 18);
             this.label11.TabIndex = 3;
@@ -283,7 +330,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(28, 154);
+            this.label4.Location = new System.Drawing.Point(28, 152);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 18);
             this.label4.TabIndex = 3;
@@ -293,7 +340,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(332, 80);
+            this.label10.Location = new System.Drawing.Point(333, 65);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(114, 18);
             this.label10.TabIndex = 3;
@@ -313,7 +360,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 69);
+            this.label3.Location = new System.Drawing.Point(28, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 18);
             this.label3.TabIndex = 3;
@@ -323,7 +370,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(332, 54);
+            this.label8.Location = new System.Drawing.Point(333, 39);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 18);
             this.label8.TabIndex = 3;
@@ -348,60 +395,6 @@
             this.label2.Size = new System.Drawing.Size(69, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "Book ID";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(28, 208);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 18);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Remaining";
-            // 
-            // txtremaining
-            // 
-            this.txtremaining.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtremaining.Location = new System.Drawing.Point(129, 206);
-            this.txtremaining.Name = "txtremaining";
-            this.txtremaining.Size = new System.Drawing.Size(167, 24);
-            this.txtremaining.TabIndex = 4;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(28, 97);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(57, 18);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Author";
-            // 
-            // txtAuthor
-            // 
-            this.txtAuthor.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAuthor.Location = new System.Drawing.Point(129, 95);
-            this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(167, 24);
-            this.txtAuthor.TabIndex = 4;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(28, 128);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(78, 18);
-            this.label15.TabIndex = 3;
-            this.label15.Text = "Publisher";
-            // 
-            // txtPublisher
-            // 
-            this.txtPublisher.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPublisher.Location = new System.Drawing.Point(129, 125);
-            this.txtPublisher.Name = "txtPublisher";
-            this.txtPublisher.Size = new System.Drawing.Size(167, 24);
-            this.txtPublisher.TabIndex = 4;
             // 
             // UCAddOrder
             // 
@@ -432,18 +425,15 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtClass;
+        private System.Windows.Forms.TextBox txtsRno;
+        private System.Windows.Forms.TextBox txtStuName;
+        private System.Windows.Forms.TextBox txtSID;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button IssuedBook;
         private System.Windows.Forms.TextBox txtremaining;
@@ -452,5 +442,7 @@
         private System.Windows.Forms.TextBox txtPublisher;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button ClearButtonst;
+        private System.Windows.Forms.Button ClearbtnBk;
     }
 }
