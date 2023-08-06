@@ -38,7 +38,7 @@ namespace LibraryMS
                             cmd.Parameters.AddWithValue("@bookId", txtbookid.Text);
                             cmd.Parameters.AddWithValue("@issueBy", "Saleem Jan");
                             cmd.Parameters.AddWithValue("@returnBy", "NULL");
-                           
+
 
 
                             con.Open();
@@ -228,9 +228,6 @@ namespace LibraryMS
             txtStuName.Clear();
             txtsRno.Clear();
             txtClass.Clear();
-
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
