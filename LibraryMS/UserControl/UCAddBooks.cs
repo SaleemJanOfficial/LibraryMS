@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -9,16 +10,18 @@ namespace LibraryMS
 {
     public partial class UCAddBooks : UserControl
     {
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True");
-     
+        public static string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        SqlConnection con = new SqlConnection(Constr);
+
+
         public UCAddBooks()
         {
-            InitializeComponent();           
+            InitializeComponent();
             GetBookRecord();
-            
-            
+            Bookdate.Value = DateTime.Today;
+
         }
-        
+
         private void AddNewBookButton_Click(object sender, EventArgs e)
         {
             if (PanelAddBook.Visible == false)
@@ -33,7 +36,7 @@ namespace LibraryMS
 
         private void ButtonClearAddBook_Click(object sender, EventArgs e)
         {
-            //use for clear all value in add book
+            //Use for clear all value in add book
             ClearAllValueAddbook();
         }
         // add Book
@@ -53,7 +56,10 @@ namespace LibraryMS
                     cmd.Parameters.AddWithValue("@Quantity", Quantity.Text);
                     cmd.Parameters.AddWithValue("@Date", Bookdate.Text);
 
-                    con.Open();
+                    if (con.State != ConnectionState.Open)
+                    {
+                        con.Open();
+                    }
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Successfully Add Book", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearAllValueAddbook();
@@ -72,10 +78,10 @@ namespace LibraryMS
                 GetBookRecord();
             }
         }
-        
 
-            private void GetBookRecord()
-            {
+
+        public void GetBookRecord()
+        {
 
 
             try
@@ -86,13 +92,16 @@ namespace LibraryMS
 
                 DataTable dt = new DataTable();
 
-                con.Open();
+                if (con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                }
                 SqlDataReader sdr = cmd.ExecuteReader();
                 dt.Load(sdr);
                 Booksgrid.DataSource = dt;
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -100,9 +109,9 @@ namespace LibraryMS
             {
                 con.Close();
             }
-               
 
-            
+
+
 
 
 
@@ -136,21 +145,120 @@ namespace LibraryMS
             }
             return true;
         }
-            private void ClearAllValueAddbook()
-            {
-                Bkname.Clear();
-                Author.Clear();
-                Publisher.Clear();
-                Quantity.Clear();
-                Bkname.Focus();
+        private void ClearAllValueAddbook()
+        {
+            txtBookId.Clear();
+            Bkname.Clear();
+            Author.Clear();
+            Publisher.Clear();
+            Quantity.Clear();
+            Bookdate.Value = DateTime.Today;
+            Bkname.Focus();
 
-}
-        
-        
+
+        }
+
+
         private void ViewAllBooksButton_Click(object sender, EventArgs e)
         {
             ViewAllbooks vab = new ViewAllbooks();
             vab.ShowDialog();
 
         }
-    }        }
+
+        public int BookId;
+        private void Booksgrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtBookId.Text = Booksgrid.SelectedRows[0].Cells[0].Value.ToString();
+            BookId = Convert.ToInt32(txtBookId.Text);
+            Bkname.Text = Booksgrid.SelectedRows[0].Cells[1].Value.ToString();
+            Author.Text = Booksgrid.SelectedRows[0].Cells[2].Value.ToString();
+            Publisher.Text = Booksgrid.SelectedRows[0].Cells[3].Value.ToString();
+            Quantity.Text = Booksgrid.SelectedRows[0].Cells[4].Value.ToString();
+            Bookdate.Text = Booksgrid.SelectedRows[0].Cells[5].Value.ToString();
+
+        }
+
+        private void ButtonUpdateAddBook_Click(object sender, EventArgs e)
+        {
+
+            if (isvalid())
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("UPDATE Books set Book_Name=@Book_Name, Author=@Author, Publisher=@Publisher, Quantity=@Quantity, Date=@Date where Book_Id=@Book_Id;", con);
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.Parameters.AddWithValue("@Book_Id", BookId);
+                    cmd.Parameters.AddWithValue("@Book_Name", Bkname.Text);
+                    cmd.Parameters.AddWithValue("@Author", Author.Text);
+                    cmd.Parameters.AddWithValue("@Publisher", Publisher.Text);
+                    cmd.Parameters.AddWithValue("@Quantity", Quantity.Text);
+                    cmd.Parameters.AddWithValue("@Date", Bookdate.Text);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Successfully Update Book", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearAllValueAddbook();
+                    txtBookId.Clear();
+
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
+
+                GetBookRecord();
+            }
+        }
+        // For Delete Book 
+        private void ButtonDeleteAddBook_Click(object sender, EventArgs e)
+        {
+            if (txtBookId.Text != string.Empty)
+            {
+
+
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("delete from Books where Book_Id=@Book_Id", con);
+
+                    cmd.Parameters.AddWithValue("@Book_Id", BookId);
+
+                    if (con.State != ConnectionState.Open)
+                    {
+                        con.Open();
+                    }
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Successfuly Delete Book from DATABASE ", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    UCHome.Instense.StudentCount();
+                    GetBookRecord();
+                    ClearAllValueAddbook();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "When Deleting User");
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Select Book From GridView", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+    }
+        
+    
+        
+    
+}
+
+

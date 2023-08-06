@@ -12,17 +12,17 @@ namespace LibraryMS.Windows_Form
         public ViewAllbooks()
         {
             InitializeComponent();
-   
+
         }
-        
-        
+
+
 
         private void GetBookRecord()
         {
             SqlConnection con = new SqlConnection(Constr);
             SqlCommand cmd1 = new SqlCommand("Select * from Books", con);
-            SqlDataAdapter sda = new SqlDataAdapter();
-            
+
+
             DataTable dt1 = new DataTable();
 
             con.Open();

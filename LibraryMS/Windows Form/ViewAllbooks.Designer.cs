@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ViewAllBookGrid = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.ViewAllBookGrid)).BeginInit();
+            this.ViewAllBookGrid = new System.Windows.Forms.DataGridView();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewAllBookGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -44,15 +44,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(944, 43);
             this.panel2.TabIndex = 5;
-            // 
-            // ViewAllBookGrid
-            // 
-            this.ViewAllBookGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ViewAllBookGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ViewAllBookGrid.Location = new System.Drawing.Point(0, 0);
-            this.ViewAllBookGrid.Name = "ViewAllBookGrid";
-            this.ViewAllBookGrid.Size = new System.Drawing.Size(944, 459);
-            this.ViewAllBookGrid.TabIndex = 0;
             // 
             // panel3
             // 
@@ -74,6 +65,15 @@
             this.panel1.Size = new System.Drawing.Size(944, 42);
             this.panel1.TabIndex = 4;
             // 
+            // ViewAllBookGrid
+            // 
+            this.ViewAllBookGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ViewAllBookGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ViewAllBookGrid.Location = new System.Drawing.Point(0, 0);
+            this.ViewAllBookGrid.Name = "ViewAllBookGrid";
+            this.ViewAllBookGrid.Size = new System.Drawing.Size(944, 459);
+            this.ViewAllBookGrid.TabIndex = 0;
+            // 
             // ViewAllbooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -85,8 +85,8 @@
             this.Name = "ViewAllbooks";
             this.Text = "ViewAllbooks";
             this.Load += new System.EventHandler(this.ViewAllbooks_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ViewAllBookGrid)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ViewAllBookGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -94,8 +94,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        protected System.Windows.Forms.DataGridView ViewAllBookGrid;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView ViewAllBookGrid;
     }
 }

@@ -48,7 +48,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Bkname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBookId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ViewAllBooksButton = new FontAwesome.Sharp.IconButton();
             this.AddNewBookButton = new FontAwesome.Sharp.IconButton();
@@ -105,7 +105,7 @@
             this.PanelAddBook.Controls.Add(this.label4);
             this.PanelAddBook.Controls.Add(this.Bkname);
             this.PanelAddBook.Controls.Add(this.label3);
-            this.PanelAddBook.Controls.Add(this.textBox1);
+            this.PanelAddBook.Controls.Add(this.txtBookId);
             this.PanelAddBook.Controls.Add(this.label2);
             this.PanelAddBook.Location = new System.Drawing.Point(150, 36);
             this.PanelAddBook.Name = "PanelAddBook";
@@ -143,8 +143,8 @@
             this.Bookdate.Location = new System.Drawing.Point(146, 158);
             this.Bookdate.Name = "Bookdate";
             this.Bookdate.Size = new System.Drawing.Size(258, 20);
-            this.Bookdate.TabIndex = 4;
-            this.Bookdate.Value = new System.DateTime(2023, 6, 18, 0, 0, 0, 0);
+            this.Bookdate.TabIndex = 6;
+            this.Bookdate.Value = new System.DateTime(2023, 8, 6, 0, 0, 0, 0);
             // 
             // label13
             // 
@@ -164,8 +164,10 @@
             this.Booksgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Booksgrid.Location = new System.Drawing.Point(0, 222);
             this.Booksgrid.Name = "Booksgrid";
+            this.Booksgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Booksgrid.Size = new System.Drawing.Size(613, 67);
             this.Booksgrid.TabIndex = 3;
+            this.Booksgrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Booksgrid_CellClick);
             // 
             // Quantity
             // 
@@ -197,6 +199,7 @@
             this.ButtonDeleteAddBook.TabIndex = 0;
             this.ButtonDeleteAddBook.Text = "Delete";
             this.ButtonDeleteAddBook.UseVisualStyleBackColor = false;
+            this.ButtonDeleteAddBook.Click += new System.EventHandler(this.ButtonDeleteAddBook_Click);
             // 
             // ButtonUpdateAddBook
             // 
@@ -211,6 +214,7 @@
             this.ButtonUpdateAddBook.TabIndex = 0;
             this.ButtonUpdateAddBook.Text = "Update";
             this.ButtonUpdateAddBook.UseVisualStyleBackColor = false;
+            this.ButtonUpdateAddBook.Click += new System.EventHandler(this.ButtonUpdateAddBook_Click);
             // 
             // ButtonSaveAddBook
             // 
@@ -312,13 +316,13 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Name";
             // 
-            // textBox1
+            // txtBookId
             // 
-            this.textBox1.Location = new System.Drawing.Point(146, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(258, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtBookId.Location = new System.Drawing.Point(146, 37);
+            this.txtBookId.Name = "txtBookId";
+            this.txtBookId.ReadOnly = true;
+            this.txtBookId.Size = new System.Drawing.Size(258, 20);
+            this.txtBookId.TabIndex = 2;
             // 
             // label2
             // 
@@ -410,7 +414,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox Bkname;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBookId;
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton ViewAllBooksButton;
         private FontAwesome.Sharp.IconButton AddNewBookButton;

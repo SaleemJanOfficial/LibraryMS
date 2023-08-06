@@ -31,34 +31,34 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.PanelAddUser = new System.Windows.Forms.Panel();
-            this.UserMNo = new System.Windows.Forms.TextBox();
+            this.txtUserMNo = new System.Windows.Forms.TextBox();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.RadioOther = new System.Windows.Forms.RadioButton();
             this.RadioFemale = new System.Windows.Forms.RadioButton();
             this.RadioMale = new System.Windows.Forms.RadioButton();
-            this.UserEdate = new System.Windows.Forms.DateTimePicker();
+            this.txtUserEdate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.GridStudentRecord = new System.Windows.Forms.DataGridView();
-            this.Programe = new System.Windows.Forms.TextBox();
+            this.txtPrograme = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.ButtonDeleteAddStudents = new FontAwesome.Sharp.IconButton();
             this.ButtonUpdateAddStudents = new FontAwesome.Sharp.IconButton();
             this.ButtonSaveAddStudents = new FontAwesome.Sharp.IconButton();
             this.ButtonBackAddStudents = new FontAwesome.Sharp.IconButton();
             this.ButtonClearAddStudents = new FontAwesome.Sharp.IconButton();
-            this.UserYearSem = new System.Windows.Forms.TextBox();
+            this.txtUserYearSem = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.UserDepartment = new System.Windows.Forms.TextBox();
+            this.txtUserDepartment = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.UserAddress = new System.Windows.Forms.TextBox();
+            this.txtUserAddress = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.UserRNo = new System.Windows.Forms.TextBox();
+            this.txtUserRNo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.Fname = new System.Windows.Forms.TextBox();
+            this.txtFname = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.UName = new System.Windows.Forms.TextBox();
+            this.txtUName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.UserId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -101,34 +101,34 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelAddUser.BackColor = System.Drawing.Color.SkyBlue;
-            this.PanelAddUser.Controls.Add(this.UserMNo);
+            this.PanelAddUser.Controls.Add(this.txtUserMNo);
             this.PanelAddUser.Controls.Add(this.guna2TextBox1);
             this.PanelAddUser.Controls.Add(this.RadioOther);
             this.PanelAddUser.Controls.Add(this.RadioFemale);
             this.PanelAddUser.Controls.Add(this.RadioMale);
-            this.PanelAddUser.Controls.Add(this.UserEdate);
+            this.PanelAddUser.Controls.Add(this.txtUserEdate);
             this.PanelAddUser.Controls.Add(this.label6);
             this.PanelAddUser.Controls.Add(this.label13);
             this.PanelAddUser.Controls.Add(this.GridStudentRecord);
-            this.PanelAddUser.Controls.Add(this.Programe);
+            this.PanelAddUser.Controls.Add(this.txtPrograme);
             this.PanelAddUser.Controls.Add(this.label11);
             this.PanelAddUser.Controls.Add(this.ButtonDeleteAddStudents);
             this.PanelAddUser.Controls.Add(this.ButtonUpdateAddStudents);
             this.PanelAddUser.Controls.Add(this.ButtonSaveAddStudents);
             this.PanelAddUser.Controls.Add(this.ButtonBackAddStudents);
             this.PanelAddUser.Controls.Add(this.ButtonClearAddStudents);
-            this.PanelAddUser.Controls.Add(this.UserYearSem);
+            this.PanelAddUser.Controls.Add(this.txtUserYearSem);
             this.PanelAddUser.Controls.Add(this.label12);
-            this.PanelAddUser.Controls.Add(this.UserDepartment);
+            this.PanelAddUser.Controls.Add(this.txtUserDepartment);
             this.PanelAddUser.Controls.Add(this.label10);
-            this.PanelAddUser.Controls.Add(this.UserAddress);
+            this.PanelAddUser.Controls.Add(this.txtUserAddress);
             this.PanelAddUser.Controls.Add(this.label7);
-            this.PanelAddUser.Controls.Add(this.UserRNo);
+            this.PanelAddUser.Controls.Add(this.txtUserRNo);
             this.PanelAddUser.Controls.Add(this.label5);
-            this.PanelAddUser.Controls.Add(this.Fname);
+            this.PanelAddUser.Controls.Add(this.txtFname);
             this.PanelAddUser.Controls.Add(this.label9);
             this.PanelAddUser.Controls.Add(this.label4);
-            this.PanelAddUser.Controls.Add(this.UName);
+            this.PanelAddUser.Controls.Add(this.txtUName);
             this.PanelAddUser.Controls.Add(this.label3);
             this.PanelAddUser.Controls.Add(this.UserId);
             this.PanelAddUser.Controls.Add(this.label2);
@@ -138,12 +138,12 @@
             this.PanelAddUser.TabIndex = 3;
             this.PanelAddUser.Visible = false;
             // 
-            // UserMNo
+            // txtUserMNo
             // 
-            this.UserMNo.Location = new System.Drawing.Point(385, 103);
-            this.UserMNo.Name = "UserMNo";
-            this.UserMNo.Size = new System.Drawing.Size(168, 20);
-            this.UserMNo.TabIndex = 9;
+            this.txtUserMNo.Location = new System.Drawing.Point(385, 103);
+            this.txtUserMNo.Name = "txtUserMNo";
+            this.txtUserMNo.Size = new System.Drawing.Size(168, 20);
+            this.txtUserMNo.TabIndex = 9;
             // 
             // guna2TextBox1
             // 
@@ -203,16 +203,16 @@
             this.RadioMale.UseVisualStyleBackColor = true;
             this.RadioMale.CheckedChanged += new System.EventHandler(this.RadioMale_CheckedChanged);
             // 
-            // UserEdate
+            // txtUserEdate
             // 
-            this.UserEdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.UserEdate.CustomFormat = "dd/mm/yyyy";
-            this.UserEdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.UserEdate.Location = new System.Drawing.Point(385, 127);
-            this.UserEdate.Name = "UserEdate";
-            this.UserEdate.Size = new System.Drawing.Size(168, 20);
-            this.UserEdate.TabIndex = 4;
-            this.UserEdate.Value = new System.DateTime(2023, 7, 22, 0, 0, 0, 0);
+            this.txtUserEdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtUserEdate.CustomFormat = "dd/mm/yyyy";
+            this.txtUserEdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtUserEdate.Location = new System.Drawing.Point(385, 127);
+            this.txtUserEdate.Name = "txtUserEdate";
+            this.txtUserEdate.Size = new System.Drawing.Size(168, 20);
+            this.txtUserEdate.TabIndex = 4;
+            this.txtUserEdate.Value = new System.DateTime(2023, 8, 30, 0, 0, 0, 0);
             // 
             // label6
             // 
@@ -242,15 +242,17 @@
             this.GridStudentRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridStudentRecord.Location = new System.Drawing.Point(0, 222);
             this.GridStudentRecord.Name = "GridStudentRecord";
+            this.GridStudentRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridStudentRecord.Size = new System.Drawing.Size(613, 67);
             this.GridStudentRecord.TabIndex = 3;
+            this.GridStudentRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridStudentRecord_CellClick);
             // 
-            // Programe
+            // txtPrograme
             // 
-            this.Programe.Location = new System.Drawing.Point(96, 152);
-            this.Programe.Name = "Programe";
-            this.Programe.Size = new System.Drawing.Size(167, 20);
-            this.Programe.TabIndex = 2;
+            this.txtPrograme.Location = new System.Drawing.Point(96, 152);
+            this.txtPrograme.Name = "txtPrograme";
+            this.txtPrograme.Size = new System.Drawing.Size(167, 20);
+            this.txtPrograme.TabIndex = 2;
             // 
             // label11
             // 
@@ -342,12 +344,12 @@
             this.ButtonClearAddStudents.UseVisualStyleBackColor = false;
             this.ButtonClearAddStudents.Click += new System.EventHandler(this.ButtonClearAdduser_Click);
             // 
-            // UserYearSem
+            // txtUserYearSem
             // 
-            this.UserYearSem.Location = new System.Drawing.Point(385, 58);
-            this.UserYearSem.Name = "UserYearSem";
-            this.UserYearSem.Size = new System.Drawing.Size(168, 20);
-            this.UserYearSem.TabIndex = 2;
+            this.txtUserYearSem.Location = new System.Drawing.Point(385, 58);
+            this.txtUserYearSem.Name = "txtUserYearSem";
+            this.txtUserYearSem.Size = new System.Drawing.Size(168, 20);
+            this.txtUserYearSem.TabIndex = 2;
             // 
             // label12
             // 
@@ -359,12 +361,12 @@
             this.label12.TabIndex = 1;
             this.label12.Text = "Year/Sem";
             // 
-            // UserDepartment
+            // txtUserDepartment
             // 
-            this.UserDepartment.Location = new System.Drawing.Point(385, 35);
-            this.UserDepartment.Name = "UserDepartment";
-            this.UserDepartment.Size = new System.Drawing.Size(168, 20);
-            this.UserDepartment.TabIndex = 2;
+            this.txtUserDepartment.Location = new System.Drawing.Point(385, 35);
+            this.txtUserDepartment.Name = "txtUserDepartment";
+            this.txtUserDepartment.Size = new System.Drawing.Size(168, 20);
+            this.txtUserDepartment.TabIndex = 2;
             // 
             // label10
             // 
@@ -376,12 +378,12 @@
             this.label10.TabIndex = 1;
             this.label10.Text = "Department";
             // 
-            // UserAddress
+            // txtUserAddress
             // 
-            this.UserAddress.Location = new System.Drawing.Point(385, 81);
-            this.UserAddress.Name = "UserAddress";
-            this.UserAddress.Size = new System.Drawing.Size(168, 20);
-            this.UserAddress.TabIndex = 2;
+            this.txtUserAddress.Location = new System.Drawing.Point(385, 81);
+            this.txtUserAddress.Name = "txtUserAddress";
+            this.txtUserAddress.Size = new System.Drawing.Size(168, 20);
+            this.txtUserAddress.TabIndex = 2;
             // 
             // label7
             // 
@@ -393,12 +395,12 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Address";
             // 
-            // UserRNo
+            // txtUserRNo
             // 
-            this.UserRNo.Location = new System.Drawing.Point(95, 127);
-            this.UserRNo.Name = "UserRNo";
-            this.UserRNo.Size = new System.Drawing.Size(167, 20);
-            this.UserRNo.TabIndex = 2;
+            this.txtUserRNo.Location = new System.Drawing.Point(95, 127);
+            this.txtUserRNo.Name = "txtUserRNo";
+            this.txtUserRNo.Size = new System.Drawing.Size(167, 20);
+            this.txtUserRNo.TabIndex = 2;
             // 
             // label5
             // 
@@ -410,12 +412,12 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Roll No";
             // 
-            // Fname
+            // txtFname
             // 
-            this.Fname.Location = new System.Drawing.Point(95, 84);
-            this.Fname.Name = "Fname";
-            this.Fname.Size = new System.Drawing.Size(167, 20);
-            this.Fname.TabIndex = 2;
+            this.txtFname.Location = new System.Drawing.Point(95, 84);
+            this.txtFname.Name = "txtFname";
+            this.txtFname.Size = new System.Drawing.Size(167, 20);
+            this.txtFname.TabIndex = 2;
             // 
             // label9
             // 
@@ -437,12 +439,12 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "F Name";
             // 
-            // UName
+            // txtUName
             // 
-            this.UName.Location = new System.Drawing.Point(95, 61);
-            this.UName.Name = "UName";
-            this.UName.Size = new System.Drawing.Size(167, 20);
-            this.UName.TabIndex = 2;
+            this.txtUName.Location = new System.Drawing.Point(95, 61);
+            this.txtUName.Name = "txtUName";
+            this.txtUName.Size = new System.Drawing.Size(167, 20);
+            this.txtUName.TabIndex = 2;
             // 
             // label3
             // 
@@ -540,33 +542,33 @@
         private System.Windows.Forms.RadioButton RadioOther;
         private System.Windows.Forms.RadioButton RadioFemale;
         private System.Windows.Forms.RadioButton RadioMale;
-        private System.Windows.Forms.DateTimePicker UserEdate;
+        private System.Windows.Forms.DateTimePicker txtUserEdate;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox Programe;
+        private System.Windows.Forms.TextBox txtPrograme;
         private System.Windows.Forms.Label label11;
         private FontAwesome.Sharp.IconButton ButtonDeleteAddStudents;
         private FontAwesome.Sharp.IconButton ButtonUpdateAddStudents;
         private FontAwesome.Sharp.IconButton ButtonSaveAddStudents;
         private FontAwesome.Sharp.IconButton ButtonBackAddStudents;
         private FontAwesome.Sharp.IconButton ButtonClearAddStudents;
-        private System.Windows.Forms.TextBox UserYearSem;
+        private System.Windows.Forms.TextBox txtUserYearSem;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox UserDepartment;
+        private System.Windows.Forms.TextBox txtUserDepartment;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox UserAddress;
+        private System.Windows.Forms.TextBox txtUserAddress;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox UserRNo;
+        private System.Windows.Forms.TextBox txtUserRNo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox Fname;
+        private System.Windows.Forms.TextBox txtFname;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox UName;
+        private System.Windows.Forms.TextBox txtUName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox UserId;
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton ViewAllStudentsButton;
         private FontAwesome.Sharp.IconButton AddNewStudentsButton;
-        private System.Windows.Forms.TextBox UserMNo;
+        private System.Windows.Forms.TextBox txtUserMNo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView GridStudentRecord;
     }

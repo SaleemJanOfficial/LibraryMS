@@ -38,8 +38,7 @@ namespace LibraryMS
                             cmd.Parameters.AddWithValue("@bookId", txtbookid.Text);
                             cmd.Parameters.AddWithValue("@issueBy", "Saleem Jan");
                             cmd.Parameters.AddWithValue("@returnBy", "NULL");
-                            //  cmd.Parameters.AddWithValue("@issueDate", "GETDATE()");
-                            //  cmd.Parameters.AddWithValue("@Return_Date", "NULL");
+                           
 
 
                             con.Open();
@@ -182,7 +181,7 @@ namespace LibraryMS
             {
 
                 SqlCommand cmd = new SqlCommand("Select * from Students where S_Id=@S_Id", con);
-                SqlCommand cmd2 = new SqlCommand("SELECT CONCAT(Programe, ' ', Department, ' ', Year_Semester) FROM Students where S_Id=@S_Id", con);
+                SqlCommand cmd2 = new SqlCommand("SELECT CONCAT(Program, ' ', Department, ' ', Year_Semester) FROM Students where S_Id=@S_Id", con);
 
                 con.Open();
                 cmd.Parameters.AddWithValue("S_Id", txtSID.Text);

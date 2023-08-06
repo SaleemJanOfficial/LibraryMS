@@ -9,17 +9,15 @@ namespace LibraryMS.Windows_Form
 {
     public partial class ViewAllStudent : Form
     {
-        
+        static string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        SqlConnection con = new SqlConnection(Constr);
         public ViewAllStudent()
         {
             InitializeComponent();
-            
 
         }
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True");
         private void GetStudentRecord()
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True");
             SqlCommand cmd1 = new SqlCommand("Select * from Students", con);
 
             DataTable dt1 = new DataTable();
@@ -29,17 +27,20 @@ namespace LibraryMS.Windows_Form
             dt1.Load(sdr1);
             con.Close();
             ViewAllstudentGrid.DataSource = dt1;
-            
+
+
+
+
         }
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
         private void ViewAllStudent_Load(object sender, EventArgs e)
         {
             GetStudentRecord();
-            
+
         }
     }
 }
