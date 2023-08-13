@@ -42,7 +42,7 @@
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
             this.UCPanel = new System.Windows.Forms.Panel();
             this.ucMainHome = new LibraryMS.UCHome();
-            this.ucIssueBook = new LibraryMS.UCAddOrder();
+            this.ucIssueBook = new LibraryMS.UCIssueBooks();
             this.ucAddUser = new LibraryMS.UCAddUser();
             this.ucAbout = new LibraryMS.UCAbout();
             this.ucAddBooks = new LibraryMS.UCAddBooks();
@@ -245,7 +245,6 @@
             this.ucMainHome.Name = "ucMainHome";
             this.ucMainHome.Size = new System.Drawing.Size(754, 374);
             this.ucMainHome.TabIndex = 7;
-            this.ucMainHome.Load += new System.EventHandler(this.ucMainHome_Load);
             // 
             // ucIssueBook
             // 
@@ -374,9 +373,9 @@
         private System.Windows.Forms.Panel UCPanel;
         private UCAddBooks ucAddBooks;
         private UCStatus ucPanding;
-        private UCAddOrder ucIssueBook;
+        private UCIssueBooks ucIssueBook;
         private UCAddUser ucAddUser;
-        private System.Windows.Forms.Panel HeaderPanel;
+       private System.Windows.Forms.Panel HeaderPanel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private UCHome ucMainHome;

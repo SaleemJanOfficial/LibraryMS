@@ -3,23 +3,20 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using LibraryMS.Classes;
 using LibraryMS.Windows_Form;
 
 namespace LibraryMS
 {
     public partial class UCAddBooks : UserControl
     {
-        public static string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-        SqlConnection con = new SqlConnection(Constr);
+       // string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
 
 
         public UCAddBooks()
         {
             InitializeComponent();
             GetBookRecord();
-            Bookdate.Value = DateTime.Today;
-
         }
 
         private void AddNewBookButton_Click(object sender, EventArgs e)
@@ -42,6 +39,7 @@ namespace LibraryMS
         // add Book
         private void ButtonSaveAddBook_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(Constr);
             if (isvalid())
             {
                 try
@@ -63,7 +61,7 @@ namespace LibraryMS
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Successfully Add Book", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearAllValueAddbook();
-                    UCHome.Instense.BookCount();
+                    // UCHome.Instense.BookCount();
                 }
 
                 catch (Exception ex)
@@ -82,7 +80,7 @@ namespace LibraryMS
 
         public void GetBookRecord()
         {
-
+            SqlConnection con = new SqlConnection(Constr);
 
             try
             {
@@ -152,7 +150,7 @@ namespace LibraryMS
             Author.Clear();
             Publisher.Clear();
             Quantity.Clear();
-            Bookdate.Value = DateTime.Today;
+            //Bookdate.Value = DateTime.Today;
             Bkname.Focus();
 
 
@@ -181,7 +179,7 @@ namespace LibraryMS
 
         private void ButtonUpdateAddBook_Click(object sender, EventArgs e)
         {
-
+            SqlConnection con = new SqlConnection(Constr);
             if (isvalid())
             {
                 try
@@ -219,6 +217,7 @@ namespace LibraryMS
         // For Delete Book 
         private void ButtonDeleteAddBook_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(Constr);
             if (txtBookId.Text != string.Empty)
             {
 
@@ -236,7 +235,7 @@ namespace LibraryMS
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Successfuly Delete Book from DATABASE ", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    UCHome.Instense.StudentCount();
+                    // UCHome.Instense.StudentCount();
                     GetBookRecord();
                     ClearAllValueAddbook();
                 }
@@ -255,10 +254,10 @@ namespace LibraryMS
             }
         }
     }
-        
-    
-        
-    
+
+
+
+
 }
 
 

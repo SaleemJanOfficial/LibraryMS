@@ -1,20 +1,21 @@
 ﻿using System;
-using System.Windows.Forms;
+using System.Configuration;
 using System.Data.SqlClient;
-using System.Data;
-using LibraryMS.Classes;
+using System.Windows.Forms;
 
 namespace LibraryMS
 {
     public partial class Main : Form
     {
-       
-        
+         
+
         public Main()
         {
             InitializeComponent();
-           
+
         }
+       
+
         //Hide all Usercontrol form
         private void HideUc()
         {
@@ -23,13 +24,13 @@ namespace LibraryMS
             ucAddUser.Hide();
             ucAbout.Hide();
             ucMainHome.Hide();
-            ucAddBooks.Hide();    
+            ucAddBooks.Hide();
         }
         //when form Load
         private void Main_Load(object sender, EventArgs e)
         {
             HideUc();
-            ucMainHome.Visible = true;         
+            ucMainHome.Visible = true;
         }
         //Home Button
         private void HomeButton_Click(object sender, EventArgs e)
@@ -67,17 +68,11 @@ namespace LibraryMS
         {
             HideUc();
             ucAbout.Visible = true;
-          
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            UCHome.Instense.BookCount();
-        }
-
-        private void ucMainHome_Load(object sender, EventArgs e)
-        {
 
         }
+
+
+
+
     }
 }

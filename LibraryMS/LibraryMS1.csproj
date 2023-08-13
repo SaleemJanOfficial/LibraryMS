@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E75A9C51-231E-44A9-A119-9E0755FD426E}</ProjectGuid>
+    <ProjectGuid>{BFF13AF8-03A7-4D79-85C8-83BBA53A7AC6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>LibraryMS</RootNamespace>
     <AssemblyName>LibraryMS</AssemblyName>
@@ -75,7 +75,6 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
@@ -98,6 +97,10 @@
     </Compile>
     <Compile Include="Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows Form\LMS Main.cs" />
+    <Compile Include="Windows Form\LMS Main.Designer.cs">
+      <DependentUpon>LMS Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -125,11 +128,11 @@
     <Compile Include="UserControl\UCAddStudent.Designer.cs">
       <DependentUpon>UCAddStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\UCReturn.cs">
+    <Compile Include="UserControl\UCPanding.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\UCReturn.Designer.cs">
-      <DependentUpon>UCReturn.cs</DependentUpon>
+    <Compile Include="UserControl\UCPanding.Designer.cs">
+      <DependentUpon>UCPanding.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl\UHome.cs">
       <SubType>UserControl</SubType>
@@ -143,11 +146,9 @@
     <Compile Include="UserControl\UCIssueBooks.Designer.cs">
       <DependentUpon>UCIssueBooks.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows Form\LMS Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows Form\LMS Main.Designer.cs">
-      <DependentUpon>LMS Main.cs</DependentUpon>
+    <Compile Include="Windows Form\LMS Main1.cs" />
+    <Compile Include="Windows Form\LMS Main1.Designer.cs">
+      <DependentUpon>LMS Main1.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows Form\ViewAllbooks.cs">
       <SubType>Form</SubType>
@@ -163,6 +164,9 @@
     </Compile>
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows Form\LMS Main.resx">
+      <DependentUpon>LMS Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -192,11 +196,11 @@
     <EmbeddedResource Include="UserControl\UHome.resx">
       <DependentUpon>UHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\UCReturn.resx">
-      <DependentUpon>UCReturn.cs</DependentUpon>
+    <EmbeddedResource Include="UserControl\UCPanding.resx">
+      <DependentUpon>UCPanding.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows Form\LMS Main.resx">
-      <DependentUpon>LMS Main.cs</DependentUpon>
+    <EmbeddedResource Include="Windows Form\LMS Main1.resx">
+      <DependentUpon>LMS Main1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows Form\ViewAllbooks.resx">
       <DependentUpon>ViewAllbooks.cs</DependentUpon>
@@ -217,9 +221,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

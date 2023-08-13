@@ -10,18 +10,19 @@ namespace LibraryMS
     public partial class UCAddUser : UserControl
     {
         // Connection String from App.config
-        public static string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-        SqlConnection con = new SqlConnection(Constr);
-
+        //  string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
         public UCAddUser()
         {
             InitializeComponent();
-            txtUserEdate.Value = DateTime.Today;
+            //txtUserEdate.Value = DateTime.Today;
         }
-        
-        
+
+
         public void GetStudentRecord()
+
         {
+            SqlConnection con = new SqlConnection(Constr);
             SqlCommand cmd = new SqlCommand("Select * from Students", con);
             DataTable dt = new DataTable();
             if (con.State != ConnectionState.Open)
@@ -89,12 +90,13 @@ namespace LibraryMS
             PanelAddUser.Hide();
         }
 
-        string gender1 = null;
+        string gender1;
 
 
         //For Add User
         private void ButtonSaveAddUser_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(Constr);
             if (isvalid())
             {
                 try
@@ -122,7 +124,7 @@ namespace LibraryMS
                     MessageBox.Show("Successfully Saved Student", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     GetStudentRecord();
                     ClearAllValueAdduser();
-                    UCHome.Instense.StudentCount();
+                    // UCHome.Instense.StudentCount();
                 }
                 catch (Exception ex)
                 {
@@ -196,6 +198,7 @@ namespace LibraryMS
 
         private void ButtonUpdateAdduser_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(Constr);
             if (isvalid())
             {
                 try
@@ -238,6 +241,7 @@ namespace LibraryMS
         // For Delete Students
         private void ButtonDeleteAdduser_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(Constr);
             if (txtUName.Text != string.Empty)
             {
                 try
@@ -253,7 +257,7 @@ namespace LibraryMS
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Successfuly Delete User from DATABASE ", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    UCHome.Instense.StudentCount();
+                    // UCHome.Instense.StudentCount();
                     GetStudentRecord();
                     ClearAllValueAdduser();
                 }
@@ -271,7 +275,7 @@ namespace LibraryMS
                 MessageBox.Show("Please Select Students From GridView", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-            
+
         private void RadioMale_CheckedChanged(object sender, EventArgs e)
         {
             gender1 = "Male";

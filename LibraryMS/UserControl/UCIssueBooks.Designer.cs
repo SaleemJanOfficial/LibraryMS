@@ -1,6 +1,6 @@
 ﻿namespace LibraryMS
 {
-    partial class UCAddOrder
+    partial class UCIssueBooks
     {
         /// <summary> 
         /// Required designer variable.
@@ -396,7 +396,7 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Book ID";
             // 
-            // UCAddOrder
+            // UCIssueBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -404,7 +404,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(panel2);
             this.Controls.Add(panel1);
-            this.Name = "UCAddOrder";
+            this.Name = "UCIssueBooks";
             this.Size = new System.Drawing.Size(664, 349);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

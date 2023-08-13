@@ -2,18 +2,18 @@
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using LibraryMS.Classes;
 namespace LibraryMS
 {
     public partial class UCHome : UserControl
     {
-        public static string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-        public static UCHome Instense;
+
+        // string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        string Constr=@"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
+        //  public static UCHome Instense;
         public UCHome()
         {
             InitializeComponent();
-            Instense = this;
-
+            // Instense = this;
 
             StudentCount();
             BookCount();
@@ -21,7 +21,7 @@ namespace LibraryMS
             CurrentIssueBook();
         }
 
-        SqlConnection con = new SqlConnection(Constr);
+
 
         private void TstudentLable_Click(object sender, EventArgs e)
         {
@@ -31,6 +31,7 @@ namespace LibraryMS
         // Total Students
         public void StudentCount()
         {
+            SqlConnection con = new SqlConnection(Constr);
 
             try
             {
@@ -53,6 +54,7 @@ namespace LibraryMS
         //Count Total Book
         public void BookCount()
         {
+            SqlConnection con = new SqlConnection(Constr);
 
             try
             {
@@ -77,6 +79,7 @@ namespace LibraryMS
 
         public void TotalIssueBook()
         {
+            SqlConnection con = new SqlConnection(Constr);
             try
             {
                 SqlCommand cmd = new SqlCommand("select COUNT(*) from IssuedBooks", con);
@@ -100,6 +103,7 @@ namespace LibraryMS
 
         public void CurrentIssueBook()
         {
+            SqlConnection con = new SqlConnection(Constr);
             try
             {
                 SqlCommand cmd = new SqlCommand("select COUNT(*) from IssuedBooks where Return_Date IS NULL ", con);

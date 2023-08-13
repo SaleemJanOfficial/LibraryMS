@@ -6,18 +6,18 @@ using System.Windows.Forms;
 
 namespace LibraryMS
 {
-    public partial class UCAddOrder : UserControl
+    public partial class UCIssueBooks : UserControl
     {
-        public static string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-        SqlConnection con = new SqlConnection(Constr);
-        public UCAddOrder()
+        // string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
+        public UCIssueBooks()
         {
             InitializeComponent();
         }
 
         private void IssuedBook_Click(object sender, EventArgs e)
         {
-
+            SqlConnection con = new SqlConnection(Constr);
             int Quantity = Int32.Parse(txtquantity.Text);
             if (Quantity > 0)
             {
@@ -37,7 +37,7 @@ namespace LibraryMS
                             cmd.Parameters.AddWithValue("@studentId", txtSID.Text);
                             cmd.Parameters.AddWithValue("@bookId", txtbookid.Text);
                             cmd.Parameters.AddWithValue("@issueBy", "Saleem Jan");
-                            cmd.Parameters.AddWithValue("@returnBy", "NULL");
+                            //  cmd.Parameters.AddWithValue("@returnBy", "NULL");
 
 
 
@@ -45,8 +45,8 @@ namespace LibraryMS
                             cmd.ExecuteNonQuery();
 
                             // For SHow Count
-                            UCHome.Instense.CurrentIssueBook();
-                            UCHome.Instense.TotalIssueBook();
+                            // UCHome.Instense.CurrentIssueBook();
+                            // UCHome.Instense.TotalIssueBook();
 
 
                             ClearAllIssueValue();
@@ -115,6 +115,7 @@ namespace LibraryMS
         // Load Books from Database
         private void textbookid_TextChanged(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(Constr);
             try
             {
                 SqlCommand cmd = new SqlCommand("Select * from Books where Book_Id=@Book_Id", con);
@@ -176,6 +177,7 @@ namespace LibraryMS
         //Load Student from Database
         private void txtSID_TextChanged(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(Constr);
 
             try
             {

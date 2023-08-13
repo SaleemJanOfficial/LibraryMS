@@ -9,8 +9,9 @@ namespace LibraryMS.Windows_Form
 {
     public partial class ViewAllStudent : Form
     {
-        static string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-        SqlConnection con = new SqlConnection(Constr);
+        //  static string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
+       
         public ViewAllStudent()
         {
             InitializeComponent();
@@ -18,6 +19,7 @@ namespace LibraryMS.Windows_Form
         }
         private void GetStudentRecord()
         {
+            SqlConnection con = new SqlConnection(Constr);
             SqlCommand cmd1 = new SqlCommand("Select * from Students", con);
 
             DataTable dt1 = new DataTable();

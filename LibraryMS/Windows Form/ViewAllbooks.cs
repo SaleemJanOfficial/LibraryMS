@@ -8,7 +8,8 @@ namespace LibraryMS.Windows_Form
 {
     public partial class ViewAllbooks : Form
     {
-        string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        //  string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
         public ViewAllbooks()
         {
             InitializeComponent();
