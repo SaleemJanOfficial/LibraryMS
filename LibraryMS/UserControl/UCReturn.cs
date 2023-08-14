@@ -50,12 +50,14 @@ namespace LibraryMS
         // For select text from Add Student Grid View
         public int issueid;
         public int issuedate;
+        public int bookid;
         private void GridIssuebook_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //Book Detail 
             lblissueid.Text = GridIssuebook.SelectedRows[0].Cells[0].Value.ToString();
             issueid = Convert.ToInt32(lblissueid.Text);
             lblbookid.Text = GridIssuebook.SelectedRows[0].Cells[5].Value.ToString();
+            bookid = Convert.ToInt32(lblbookid.Text);
             lblbookname.Text = GridIssuebook.SelectedRows[0].Cells[6].Value.ToString();
             lblIssueby.Text = GridIssuebook.SelectedRows[0].Cells[7].Value.ToString();
             lblIssuedate.Text = GridIssuebook.SelectedRows[0].Cells[8].Value.ToString();
@@ -80,9 +82,10 @@ namespace LibraryMS
             SqlConnection con = new SqlConnection(Constr);
             try
             {
-                SqlCommand cmd = new SqlCommand("Update IssuedBooks set Return_by='Admin', Return_Date=GETDATE() where Issue_Id=@issueid", con);
+                SqlCommand cmd = new SqlCommand("Update IssuedBooks set Return_by='Admin', Return_Date=GETDATE() where Issue_Id=@issueid; UPDATE Books SET Issued_Books = Issued_Books - 1 WHERE Book_Id = @bookId;", con);
 
                 cmd.Parameters.AddWithValue("@issueid", issueid);
+                cmd.Parameters.AddWithValue("@bookId", bookid);
                 if (con.State != ConnectionState.Open)
                 {
                     con.Open();

@@ -31,7 +31,7 @@ namespace LibraryMS
                     {
                         try
                         {
-                            SqlCommand cmd = new SqlCommand("INSERT INTO IssuedBooks VALUES(@studentId, @bookId, @issueBy,GETDATE() ,NULL , NULL); ", con);
+                            SqlCommand cmd = new SqlCommand("INSERT INTO IssuedBooks VALUES(@studentId, @bookId, @issueBy,GETDATE() ,NULL , NULL); UPDATE Books SET Issued_Books = Issued_Books + 1 WHERE Book_Id = @bookId; ", con);
                             cmd.CommandType = CommandType.Text;
 
                             cmd.Parameters.AddWithValue("@studentId", txtSID.Text);
@@ -180,22 +180,20 @@ namespace LibraryMS
             try
             {
 
-                SqlCommand cmd = new SqlCommand("Select * from Students where S_Id=@S_Id", con);
-                SqlCommand cmd2 = new SqlCommand("SELECT CONCAT(Program, ' ', Department, ' ', Year_Semester) FROM Students where S_Id=@S_Id", con);
+                SqlCommand cmd = new SqlCommand("Select Name,Roll_No, Program + ' ' +Department +' ' + Year_Semester as Class from Students where S_Id=@S_Id", con);
 
                 con.Open();
                 cmd.Parameters.AddWithValue("S_Id", txtSID.Text);
-                cmd2.Parameters.AddWithValue("S_Id", txtSID.Text);
 
-                txtClass.Text = Convert.ToString(cmd2.ExecuteScalar());
 
                 SqlDataReader sdr1;
                 sdr1 = cmd.ExecuteReader();
 
                 if (sdr1.Read())
                 {
-                    txtStuName.Text = sdr1.GetValue(1).ToString();
-                    txtsRno.Text = sdr1.GetValue(4).ToString();
+                    txtStuName.Text = sdr1.GetValue(0).ToString();
+                    txtsRno.Text = sdr1.GetValue(1).ToString();
+                    txtClass.Text = sdr1.GetValue(2).ToString();
 
                 }
 
