@@ -21,18 +21,31 @@ namespace LibraryMS.Windows_Form
         private void GetBookRecord()
         {
             SqlConnection con = new SqlConnection(Constr);
-            SqlCommand cmd1 = new SqlCommand("Select * from Books", con);
+            try
+            {
+                SqlCommand cmd1 = new SqlCommand("Select * from Books", con);
 
 
-            DataTable dt1 = new DataTable();
+                DataTable dt1 = new DataTable();
 
-            con.Open();
-            SqlDataReader sdr1 = cmd1.ExecuteReader();
-            dt1.Load(sdr1);
-            con.Close();
-            ViewAllBookGrid.DataSource = dt1;
+                con.Open();
+                SqlDataReader sdr1 = cmd1.ExecuteReader();
+                dt1.Load(sdr1);
+
+                ViewAllBookGrid.DataSource = dt1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error in Get Book Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                con.Close();
+            }
+
         }
 
+       
 
         private void ViewAllbooks_Load(object sender, EventArgs e)
         {

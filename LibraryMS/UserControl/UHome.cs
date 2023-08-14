@@ -9,11 +9,11 @@ namespace LibraryMS
 
         // string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         string Constr=@"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
-        //  public static UCHome Instense;
+          public static UCHome FromHome;
         public UCHome()
         {
             InitializeComponent();
-            // Instense = this;
+            FromHome = this;
 
             StudentCount();
             BookCount();

@@ -15,7 +15,8 @@ namespace LibraryMS
         public UCAddUser()
         {
             InitializeComponent();
-            //txtUserEdate.Value = DateTime.Today;
+
+            txtUserEdate.Value = DateTime.Today;
         }
 
 
@@ -23,16 +24,27 @@ namespace LibraryMS
 
         {
             SqlConnection con = new SqlConnection(Constr);
-            SqlCommand cmd = new SqlCommand("Select * from Students", con);
-            DataTable dt = new DataTable();
-            if (con.State != ConnectionState.Open)
+            try
             {
-                con.Open();
+
+                SqlCommand cmd = new SqlCommand("Select * from Students", con);
+                DataTable dt = new DataTable();
+                if (con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                }
+                SqlDataReader sdr = cmd.ExecuteReader();
+                dt.Load(sdr);
+                GridStudentRecord.DataSource = dt;
             }
-            SqlDataReader sdr = cmd.ExecuteReader();
-            dt.Load(sdr);
-            con.Close();
-            GridStudentRecord.DataSource = dt;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Eror in GitStudentRecord", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
 
         //view all form object created
@@ -124,7 +136,7 @@ namespace LibraryMS
                     MessageBox.Show("Successfully Saved Student", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     GetStudentRecord();
                     ClearAllValueAdduser();
-                    // UCHome.Instense.StudentCount();
+                    UCHome.FromHome.StudentCount();
                 }
                 catch (Exception ex)
                 {
@@ -257,7 +269,7 @@ namespace LibraryMS
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Successfuly Delete User from DATABASE ", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // UCHome.Instense.StudentCount();
+                    UCHome.FromHome.StudentCount();
                     GetStudentRecord();
                     ClearAllValueAdduser();
                 }

@@ -21,10 +21,12 @@ namespace LibraryMS
         {
             ucIssueBook.Hide();
             ucPanding.Hide();
+            
             ucAddUser.Hide();
             ucAbout.Hide();
             ucMainHome.Hide();
             ucAddBooks.Hide();
+            
         }
         //when form Load
         private void Main_Load(object sender, EventArgs e)
@@ -43,18 +45,24 @@ namespace LibraryMS
         {
             HideUc();
             ucIssueBook.Visible = true;
+            
         }
         // Pending Button
         private void PandingButton_Click(object sender, EventArgs e)
         {
-            HideUc();
+            HideUc();          
             ucPanding.Visible = true;
+            UCStatus.ucpandig.GetIssuebook();
+
         }
         //Add user button
         private void ButtonAddUser_Click(object sender, EventArgs e)
         {
             HideUc();
+           
             ucAddUser.Visible = true;
+            
+            
         }
         //Add book buttton
         private void buttonAddBook_Click(object sender, EventArgs e)

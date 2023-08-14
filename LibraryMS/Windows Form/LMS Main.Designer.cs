@@ -41,15 +41,15 @@
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
             this.UCPanel = new System.Windows.Forms.Panel();
+            this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.ucMainHome = new LibraryMS.UCHome();
             this.ucIssueBook = new LibraryMS.UCIssueBooks();
             this.ucAddUser = new LibraryMS.UCAddUser();
             this.ucAbout = new LibraryMS.UCAbout();
             this.ucAddBooks = new LibraryMS.UCAddBooks();
             this.ucPanding = new LibraryMS.UCStatus();
-            this.HeaderPanel = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).BeginInit();
@@ -233,6 +233,46 @@
             this.UCPanel.Size = new System.Drawing.Size(754, 374);
             this.UCPanel.TabIndex = 1;
             // 
+            // HeaderPanel
+            // 
+            this.HeaderPanel.BackColor = System.Drawing.Color.OrangeRed;
+            this.HeaderPanel.Controls.Add(this.label5);
+            this.HeaderPanel.Controls.Add(this.label4);
+            this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HeaderPanel.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.HeaderPanel.Location = new System.Drawing.Point(136, 0);
+            this.HeaderPanel.Name = "HeaderPanel";
+            this.HeaderPanel.Size = new System.Drawing.Size(754, 100);
+            this.HeaderPanel.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Shia", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(139, 52);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(476, 35);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "گورنمٹ پوسٹ گریجویٹ کالج گوہاٹی (صوابی)";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(34, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(686, 43);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Welcome to Library Managment System ";
+            // 
             // ucMainHome
             // 
             this.ucMainHome.AutoScroll = true;
@@ -294,46 +334,6 @@
             this.ucPanding.TabIndex = 6;
             this.ucPanding.Visible = false;
             // 
-            // HeaderPanel
-            // 
-            this.HeaderPanel.BackColor = System.Drawing.Color.OrangeRed;
-            this.HeaderPanel.Controls.Add(this.label5);
-            this.HeaderPanel.Controls.Add(this.label4);
-            this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.HeaderPanel.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.HeaderPanel.Location = new System.Drawing.Point(136, 0);
-            this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(754, 100);
-            this.HeaderPanel.TabIndex = 2;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Shia", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(139, 52);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(476, 35);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "گورنمٹ پوسٹ گریجویٹ کالج گوہاٹی (صوابی)";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(34, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(686, 43);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Welcome to Library Managment System ";
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,6 +342,8 @@
             this.Controls.Add(this.HeaderPanel);
             this.Controls.Add(this.UCPanel);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(906, 513);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Library Managment System";

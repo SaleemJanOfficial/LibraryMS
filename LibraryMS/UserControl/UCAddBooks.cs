@@ -9,7 +9,7 @@ namespace LibraryMS
 {
     public partial class UCAddBooks : UserControl
     {
-       // string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        // string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
 
 
@@ -61,7 +61,7 @@ namespace LibraryMS
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Successfully Add Book", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearAllValueAddbook();
-                    // UCHome.Instense.BookCount();
+                    UCHome.FromHome.BookCount();
                 }
 
                 catch (Exception ex)
@@ -235,7 +235,7 @@ namespace LibraryMS
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Successfuly Delete Book from DATABASE ", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // UCHome.Instense.StudentCount();
+                    UCHome.FromHome.StudentCount();
                     GetBookRecord();
                     ClearAllValueAddbook();
                 }

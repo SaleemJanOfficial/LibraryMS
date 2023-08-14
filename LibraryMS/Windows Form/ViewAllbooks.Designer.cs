@@ -30,8 +30,8 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.ViewAllBookGrid = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewAllBookGrid)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +55,17 @@
             this.panel3.Size = new System.Drawing.Size(944, 459);
             this.panel3.TabIndex = 6;
             // 
+            // ViewAllBookGrid
+            // 
+            this.ViewAllBookGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ViewAllBookGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ViewAllBookGrid.ColumnHeadersVisible = false;
+            this.ViewAllBookGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ViewAllBookGrid.Location = new System.Drawing.Point(0, 0);
+            this.ViewAllBookGrid.Name = "ViewAllBookGrid";
+            this.ViewAllBookGrid.Size = new System.Drawing.Size(944, 459);
+            this.ViewAllBookGrid.TabIndex = 0;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
@@ -64,15 +75,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(944, 42);
             this.panel1.TabIndex = 4;
-            // 
-            // ViewAllBookGrid
-            // 
-            this.ViewAllBookGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ViewAllBookGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ViewAllBookGrid.Location = new System.Drawing.Point(0, 0);
-            this.ViewAllBookGrid.Name = "ViewAllBookGrid";
-            this.ViewAllBookGrid.Size = new System.Drawing.Size(944, 459);
-            this.ViewAllBookGrid.TabIndex = 0;
             // 
             // ViewAllbooks
             // 

@@ -31,22 +31,20 @@ namespace LibraryMS
                     {
                         try
                         {
-                            SqlCommand cmd = new SqlCommand("INSERT INTO IssuedBooks VALUES(@studentId, @bookId, @issueBy, @returnBy, GETDATE(), NULL); ", con);
+                            SqlCommand cmd = new SqlCommand("INSERT INTO IssuedBooks VALUES(@studentId, @bookId, @issueBy,GETDATE() ,NULL , NULL); ", con);
                             cmd.CommandType = CommandType.Text;
 
                             cmd.Parameters.AddWithValue("@studentId", txtSID.Text);
                             cmd.Parameters.AddWithValue("@bookId", txtbookid.Text);
                             cmd.Parameters.AddWithValue("@issueBy", "Saleem Jan");
-                            //  cmd.Parameters.AddWithValue("@returnBy", "NULL");
-
-
+                           // cmd.Parameters.AddWithValue("@returnBy", "NULL");
 
                             con.Open();
                             cmd.ExecuteNonQuery();
 
                             // For SHow Count
-                            // UCHome.Instense.CurrentIssueBook();
-                            // UCHome.Instense.TotalIssueBook();
+                            UCHome.FromHome.CurrentIssueBook();
+                            UCHome.FromHome.TotalIssueBook();
 
 
                             ClearAllIssueValue();

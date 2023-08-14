@@ -38,6 +38,7 @@
             // 
             // ViewAllstudentGrid
             // 
+            this.ViewAllstudentGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ViewAllstudentGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ViewAllstudentGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ViewAllstudentGrid.Location = new System.Drawing.Point(0, 0);
