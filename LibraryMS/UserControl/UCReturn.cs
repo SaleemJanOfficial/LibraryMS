@@ -80,32 +80,43 @@ namespace LibraryMS
         {
 
             SqlConnection con = new SqlConnection(Constr);
-            try
+            if (issueid > 0 && lblissueid.Text != string.Empty)
             {
-                SqlCommand cmd = new SqlCommand("Update IssuedBooks set Return_by='Admin', Return_Date=GETDATE() where Issue_Id=@issueid; UPDATE Books SET Issued_Books = Issued_Books - 1 WHERE Book_Id = @bookId;", con);
-
-                cmd.Parameters.AddWithValue("@issueid", issueid);
-                cmd.Parameters.AddWithValue("@bookId", bookid);
-                if (con.State != ConnectionState.Open)
+                DialogResult mbx = MessageBox.Show("Are You Sure?", "Return", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (mbx == DialogResult.Yes)
                 {
-                    con.Open();
+                    try
+                    {
+                        SqlCommand cmd = new SqlCommand("Update IssuedBooks set Return_by='Admin', Return_Date=GETDATE() where Issue_Id=@issueid; UPDATE Books SET Issued_Books = Issued_Books - 1 WHERE Book_Id = @bookId;", con);
+
+                        cmd.Parameters.AddWithValue("@issueid", issueid);
+                        cmd.Parameters.AddWithValue("@bookId", bookid);
+                        if (con.State != ConnectionState.Open)
+                        {
+                            con.Open();
+                        }
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Succefuly Return Books", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearValueLabel();
+                        GetIssuebook();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error While Return Book", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
                 }
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Succefuly Return Books", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ClearValueLabel();
-                GetIssuebook();
-
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error While Return Book", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please Select On Grid Videw", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
-            finally
-            {
-                con.Close();
-            }
+            
         }
-
         private void ClearValueLabel()
         {
             lblissueid.Text = string.Empty;

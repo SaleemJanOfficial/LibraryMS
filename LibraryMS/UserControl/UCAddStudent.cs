@@ -111,40 +111,61 @@ namespace LibraryMS
             SqlConnection con = new SqlConnection(Constr);
             if (isvalid())
             {
-                try
+                DialogResult mbx = MessageBox.Show("Are You Sure?", "Saving", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (mbx == DialogResult.Yes)
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Students VALUES ( @Name, @F_Name, @Gender, @Roll_No, @Program, @Department, @Year_Semester, @Address_, @Mobile_No, @Enrl_Date) ", con);
-                    cmd.CommandType = CommandType.Text;
+                    string query = "SELECT COUNT(*) FROM Students WHERE Roll_No = @RollNo";
 
-                    cmd.Parameters.AddWithValue("@Name", txtUName.Text);
-                    cmd.Parameters.AddWithValue("@F_Name", txtFname.Text);
-                    cmd.Parameters.AddWithValue("@Gender", gender1);
-                    cmd.Parameters.AddWithValue("@Roll_No", txtUserRNo.Text);
-                    cmd.Parameters.AddWithValue("@Program", txtPrograme.Text);
-                    cmd.Parameters.AddWithValue("@Department", txtUserDepartment.Text);
-                    cmd.Parameters.AddWithValue("@Year_Semester", txtUserYearSem.Text);
-                    cmd.Parameters.AddWithValue("@Address_", txtUserAddress.Text);
-                    cmd.Parameters.AddWithValue("@Mobile_No", txtUserMNo.Text);
-                    cmd.Parameters.AddWithValue("@Enrl_Date", txtUserEdate.Text);
+                    SqlCommand command = new SqlCommand(query, con);
+                    con.Open();
+                    command.Parameters.AddWithValue("@RollNo", txtUserRNo.Text);
 
-                    if (con.State != ConnectionState.Open)
+                    int DuplicateBookcheck = (int)command.ExecuteScalar();
+                    con.Close();
+                    if (DuplicateBookcheck > 0)
                     {
-                        con.Open();
+                        MessageBox.Show("This Roll No is Already Exist", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
                     }
 
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Successfully Saved Student", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    GetStudentRecord();
-                    ClearAllValueAdduser();
-                    UCHome.FromHome.StudentCount();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    con.Close();
+                    else
+                    {
+                        try
+                        {
+                            SqlCommand cmd = new SqlCommand("INSERT INTO Students VALUES ( @Name, @F_Name, @Gender, @Roll_No, @Program, @Department, @Year_Semester, @Address_, @Mobile_No, @Enrl_Date) ", con);
+                            cmd.CommandType = CommandType.Text;
+
+                            cmd.Parameters.AddWithValue("@Name", txtUName.Text);
+                            cmd.Parameters.AddWithValue("@F_Name", txtFname.Text);
+                            cmd.Parameters.AddWithValue("@Gender", gender1);
+                            cmd.Parameters.AddWithValue("@Roll_No", txtUserRNo.Text);
+                            cmd.Parameters.AddWithValue("@Program", txtPrograme.Text);
+                            cmd.Parameters.AddWithValue("@Department", txtUserDepartment.Text);
+                            cmd.Parameters.AddWithValue("@Year_Semester", txtUserYearSem.Text);
+                            cmd.Parameters.AddWithValue("@Address_", txtUserAddress.Text);
+                            cmd.Parameters.AddWithValue("@Mobile_No", txtUserMNo.Text);
+                            cmd.Parameters.AddWithValue("@Enrl_Date", txtUserEdate.Text);
+
+                            if (con.State != ConnectionState.Open)
+                            {
+                                con.Open();
+                            }
+
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Successfully Saved Student", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            GetStudentRecord();
+                            ClearAllValueAdduser();
+                            UCHome.FromHome.StudentCount();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                        finally
+                        {
+                            con.Close();
+                        }
+                    }
                 }
             }
         }
@@ -213,39 +234,43 @@ namespace LibraryMS
             SqlConnection con = new SqlConnection(Constr);
             if (isvalid())
             {
-                try
+                DialogResult mbx = MessageBox.Show("Are You Sure?", "Updating", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (mbx == DialogResult.Yes)
                 {
-                    SqlCommand cmd = new SqlCommand("UPDATE Students SET  Name=@Name, F_Name=@F_Name, Gender=@Gender, Roll_No=@Roll_No, Program=@Program, Department=@Department, Year_Semester=@Year_Semester, Address_=@Address_, Mobile_No=@Mobile_No, Enrl_Date=@Enrl_Date where S_Id=@S_Id ", con);
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.AddWithValue("@S_Id", StudentID);
-                    cmd.Parameters.AddWithValue("@Name", txtUName.Text);
-                    cmd.Parameters.AddWithValue("@F_Name", txtFname.Text);
-                    cmd.Parameters.AddWithValue("@Gender", gender1);
-                    cmd.Parameters.AddWithValue("@Roll_No", txtUserRNo.Text);
-                    cmd.Parameters.AddWithValue("@Program", txtPrograme.Text);
-                    cmd.Parameters.AddWithValue("@Department", txtUserDepartment.Text);
-                    cmd.Parameters.AddWithValue("@Year_Semester", txtUserYearSem.Text);
-                    cmd.Parameters.AddWithValue("@Address_", txtUserAddress.Text);
-                    cmd.Parameters.AddWithValue("@Mobile_No", txtUserMNo.Text);
-                    cmd.Parameters.AddWithValue("@Enrl_Date", txtUserEdate.Text);
-
-                    if (con.State != ConnectionState.Open)
+                    try
                     {
-                        con.Open();
+                        SqlCommand cmd = new SqlCommand("UPDATE Students SET  Name=@Name, F_Name=@F_Name, Gender=@Gender, Roll_No=@Roll_No, Program=@Program, Department=@Department, Year_Semester=@Year_Semester, Address_=@Address_, Mobile_No=@Mobile_No, Enrl_Date=@Enrl_Date where S_Id=@S_Id ", con);
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@S_Id", StudentID);
+                        cmd.Parameters.AddWithValue("@Name", txtUName.Text);
+                        cmd.Parameters.AddWithValue("@F_Name", txtFname.Text);
+                        cmd.Parameters.AddWithValue("@Gender", gender1);
+                        cmd.Parameters.AddWithValue("@Roll_No", txtUserRNo.Text);
+                        cmd.Parameters.AddWithValue("@Program", txtPrograme.Text);
+                        cmd.Parameters.AddWithValue("@Department", txtUserDepartment.Text);
+                        cmd.Parameters.AddWithValue("@Year_Semester", txtUserYearSem.Text);
+                        cmd.Parameters.AddWithValue("@Address_", txtUserAddress.Text);
+                        cmd.Parameters.AddWithValue("@Mobile_No", txtUserMNo.Text);
+                        cmd.Parameters.AddWithValue("@Enrl_Date", txtUserEdate.Text);
+
+                        if (con.State != ConnectionState.Open)
+                        {
+                            con.Open();
+                        }
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Successfully Update Student", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        GetStudentRecord();
+                        UserId.Clear();
+                        ClearAllValueAdduser();
                     }
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Successfully Update Student", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    GetStudentRecord();
-                    UserId.Clear();
-                    ClearAllValueAdduser();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    con.Close();
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
                 }
             }
         }
@@ -256,35 +281,39 @@ namespace LibraryMS
             SqlConnection con = new SqlConnection(Constr);
             if (txtUName.Text != string.Empty)
             {
-                try
+                DialogResult mbx = MessageBox.Show("Are You Sure?", "Deleteing", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (mbx == DialogResult.Yes)
                 {
-                    SqlCommand cmd = new SqlCommand("delete from students where S_Id=@S_Id", con);
-
-                    cmd.Parameters.AddWithValue("@S_Id", StudentID);
-
-                    if (con.State != ConnectionState.Open)
+                    try
                     {
-                        con.Open();
-                    }
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Successfuly Delete User from DATABASE ", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        SqlCommand cmd = new SqlCommand("delete from students where S_Id=@S_Id", con);
 
-                    UCHome.FromHome.StudentCount();
-                    GetStudentRecord();
-                    ClearAllValueAdduser();
+                        cmd.Parameters.AddWithValue("@S_Id", StudentID);
+
+                        if (con.State != ConnectionState.Open)
+                        {
+                            con.Open();
+                        }
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Successfuly Delete User from DATABASE ", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        UCHome.FromHome.StudentCount();
+                        GetStudentRecord();
+                        ClearAllValueAdduser();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "When Deleting User");
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message, "When Deleting User");
+                    MessageBox.Show("Please Select Students From GridView", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                finally
-                {
-                    con.Close();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please Select Students From GridView", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

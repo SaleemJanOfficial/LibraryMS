@@ -93,7 +93,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 36);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(763, 313);
-            this.panel2.TabIndex = 3;
+            this.panel2.TabIndex = 0;
             // 
             // PanelAddUser
             // 
@@ -135,7 +135,7 @@
             this.PanelAddUser.Location = new System.Drawing.Point(150, 0);
             this.PanelAddUser.Name = "PanelAddUser";
             this.PanelAddUser.Size = new System.Drawing.Size(613, 289);
-            this.PanelAddUser.TabIndex = 3;
+            this.PanelAddUser.TabIndex = 0;
             this.PanelAddUser.Visible = false;
             // 
             // txtUserMNo
@@ -143,7 +143,7 @@
             this.txtUserMNo.Location = new System.Drawing.Point(385, 103);
             this.txtUserMNo.Name = "txtUserMNo";
             this.txtUserMNo.Size = new System.Drawing.Size(168, 20);
-            this.txtUserMNo.TabIndex = 9;
+            this.txtUserMNo.TabIndex = 12;
             // 
             // guna2TextBox1
             // 
@@ -165,7 +165,7 @@
             this.guna2TextBox1.PlaceholderText = "Search Here!";
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.Size = new System.Drawing.Size(182, 24);
-            this.guna2TextBox1.TabIndex = 8;
+            this.guna2TextBox1.TabIndex = 0;
             // 
             // RadioOther
             // 
@@ -185,7 +185,7 @@
             this.RadioFemale.Location = new System.Drawing.Point(147, 107);
             this.RadioFemale.Name = "RadioFemale";
             this.RadioFemale.Size = new System.Drawing.Size(59, 17);
-            this.RadioFemale.TabIndex = 6;
+            this.RadioFemale.TabIndex = 5;
             this.RadioFemale.TabStop = true;
             this.RadioFemale.Text = "Female";
             this.RadioFemale.UseVisualStyleBackColor = true;
@@ -197,7 +197,7 @@
             this.RadioMale.Location = new System.Drawing.Point(97, 107);
             this.RadioMale.Name = "RadioMale";
             this.RadioMale.Size = new System.Drawing.Size(48, 17);
-            this.RadioMale.TabIndex = 5;
+            this.RadioMale.TabIndex = 4;
             this.RadioMale.TabStop = true;
             this.RadioMale.Text = "Male";
             this.RadioMale.UseVisualStyleBackColor = true;
@@ -211,7 +211,7 @@
             this.txtUserEdate.Location = new System.Drawing.Point(385, 127);
             this.txtUserEdate.Name = "txtUserEdate";
             this.txtUserEdate.Size = new System.Drawing.Size(168, 20);
-            this.txtUserEdate.TabIndex = 4;
+            this.txtUserEdate.TabIndex = 13;
             this.txtUserEdate.Value = new System.DateTime(2023, 8, 30, 0, 0, 0, 0);
             // 
             // label6
@@ -252,7 +252,7 @@
             this.txtPrograme.Location = new System.Drawing.Point(96, 152);
             this.txtPrograme.Name = "txtPrograme";
             this.txtPrograme.Size = new System.Drawing.Size(167, 20);
-            this.txtPrograme.TabIndex = 2;
+            this.txtPrograme.TabIndex = 8;
             // 
             // label11
             // 
@@ -261,7 +261,7 @@
             this.label11.Location = new System.Drawing.Point(11, 154);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(82, 18);
-            this.label11.TabIndex = 1;
+            this.label11.TabIndex = 13;
             this.label11.Text = "Programe";
             // 
             // ButtonDeleteAddStudents
@@ -274,7 +274,7 @@
             this.ButtonDeleteAddStudents.Location = new System.Drawing.Point(375, 184);
             this.ButtonDeleteAddStudents.Name = "ButtonDeleteAddStudents";
             this.ButtonDeleteAddStudents.Size = new System.Drawing.Size(102, 34);
-            this.ButtonDeleteAddStudents.TabIndex = 0;
+            this.ButtonDeleteAddStudents.TabIndex = 17;
             this.ButtonDeleteAddStudents.Text = "Delete";
             this.ButtonDeleteAddStudents.UseVisualStyleBackColor = false;
             this.ButtonDeleteAddStudents.Click += new System.EventHandler(this.ButtonDeleteAdduser_Click);
@@ -289,7 +289,7 @@
             this.ButtonUpdateAddStudents.Location = new System.Drawing.Point(267, 184);
             this.ButtonUpdateAddStudents.Name = "ButtonUpdateAddStudents";
             this.ButtonUpdateAddStudents.Size = new System.Drawing.Size(102, 34);
-            this.ButtonUpdateAddStudents.TabIndex = 0;
+            this.ButtonUpdateAddStudents.TabIndex = 16;
             this.ButtonUpdateAddStudents.Text = "Update";
             this.ButtonUpdateAddStudents.UseVisualStyleBackColor = false;
             this.ButtonUpdateAddStudents.Click += new System.EventHandler(this.ButtonUpdateAdduser_Click);
@@ -304,7 +304,7 @@
             this.ButtonSaveAddStudents.Location = new System.Drawing.Point(159, 184);
             this.ButtonSaveAddStudents.Name = "ButtonSaveAddStudents";
             this.ButtonSaveAddStudents.Size = new System.Drawing.Size(102, 34);
-            this.ButtonSaveAddStudents.TabIndex = 0;
+            this.ButtonSaveAddStudents.TabIndex = 15;
             this.ButtonSaveAddStudents.Text = "Save";
             this.ButtonSaveAddStudents.UseVisualStyleBackColor = false;
             this.ButtonSaveAddStudents.Click += new System.EventHandler(this.ButtonSaveAddUser_Click);
@@ -323,7 +323,7 @@
             this.ButtonBackAddStudents.Location = new System.Drawing.Point(567, 3);
             this.ButtonBackAddStudents.Name = "ButtonBackAddStudents";
             this.ButtonBackAddStudents.Size = new System.Drawing.Size(43, 28);
-            this.ButtonBackAddStudents.TabIndex = 0;
+            this.ButtonBackAddStudents.TabIndex = 17;
             this.ButtonBackAddStudents.Text = "X";
             this.ButtonBackAddStudents.UseMnemonic = false;
             this.ButtonBackAddStudents.UseVisualStyleBackColor = false;
@@ -339,7 +339,7 @@
             this.ButtonClearAddStudents.Location = new System.Drawing.Point(50, 184);
             this.ButtonClearAddStudents.Name = "ButtonClearAddStudents";
             this.ButtonClearAddStudents.Size = new System.Drawing.Size(102, 34);
-            this.ButtonClearAddStudents.TabIndex = 0;
+            this.ButtonClearAddStudents.TabIndex = 14;
             this.ButtonClearAddStudents.Text = "Clear";
             this.ButtonClearAddStudents.UseVisualStyleBackColor = false;
             this.ButtonClearAddStudents.Click += new System.EventHandler(this.ButtonClearAdduser_Click);
@@ -349,7 +349,7 @@
             this.txtUserYearSem.Location = new System.Drawing.Point(385, 58);
             this.txtUserYearSem.Name = "txtUserYearSem";
             this.txtUserYearSem.Size = new System.Drawing.Size(168, 20);
-            this.txtUserYearSem.TabIndex = 2;
+            this.txtUserYearSem.TabIndex = 10;
             // 
             // label12
             // 
@@ -358,7 +358,7 @@
             this.label12.Location = new System.Drawing.Point(285, 57);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(81, 18);
-            this.label12.TabIndex = 1;
+            this.label12.TabIndex = 0;
             this.label12.Text = "Year/Sem";
             // 
             // txtUserDepartment
@@ -366,7 +366,7 @@
             this.txtUserDepartment.Location = new System.Drawing.Point(385, 35);
             this.txtUserDepartment.Name = "txtUserDepartment";
             this.txtUserDepartment.Size = new System.Drawing.Size(168, 20);
-            this.txtUserDepartment.TabIndex = 2;
+            this.txtUserDepartment.TabIndex = 9;
             // 
             // label10
             // 
@@ -383,7 +383,7 @@
             this.txtUserAddress.Location = new System.Drawing.Point(385, 81);
             this.txtUserAddress.Name = "txtUserAddress";
             this.txtUserAddress.Size = new System.Drawing.Size(168, 20);
-            this.txtUserAddress.TabIndex = 2;
+            this.txtUserAddress.TabIndex = 11;
             // 
             // label7
             // 
@@ -400,7 +400,7 @@
             this.txtUserRNo.Location = new System.Drawing.Point(95, 127);
             this.txtUserRNo.Name = "txtUserRNo";
             this.txtUserRNo.Size = new System.Drawing.Size(167, 20);
-            this.txtUserRNo.TabIndex = 2;
+            this.txtUserRNo.TabIndex = 7;
             // 
             // label5
             // 
@@ -417,7 +417,7 @@
             this.txtFname.Location = new System.Drawing.Point(95, 84);
             this.txtFname.Name = "txtFname";
             this.txtFname.Size = new System.Drawing.Size(167, 20);
-            this.txtFname.TabIndex = 2;
+            this.txtFname.TabIndex = 3;
             // 
             // label9
             // 
@@ -462,7 +462,7 @@
             this.UserId.Name = "UserId";
             this.UserId.ReadOnly = true;
             this.UserId.Size = new System.Drawing.Size(167, 20);
-            this.UserId.TabIndex = 2;
+            this.UserId.TabIndex = 1;
             // 
             // label2
             // 
@@ -471,7 +471,7 @@
             this.label2.Location = new System.Drawing.Point(11, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 18);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 26;
             this.label2.Text = "User ID";
             // 
             // ViewAllStudentsButton
@@ -484,7 +484,7 @@
             this.ViewAllStudentsButton.Location = new System.Drawing.Point(9, 75);
             this.ViewAllStudentsButton.Name = "ViewAllStudentsButton";
             this.ViewAllStudentsButton.Size = new System.Drawing.Size(126, 34);
-            this.ViewAllStudentsButton.TabIndex = 0;
+            this.ViewAllStudentsButton.TabIndex = 2;
             this.ViewAllStudentsButton.Text = "View All Students";
             this.ViewAllStudentsButton.UseVisualStyleBackColor = false;
             this.ViewAllStudentsButton.Click += new System.EventHandler(this.ViewAllUserButton_Click);
@@ -499,7 +499,7 @@
             this.AddNewStudentsButton.Location = new System.Drawing.Point(9, 34);
             this.AddNewStudentsButton.Name = "AddNewStudentsButton";
             this.AddNewStudentsButton.Size = new System.Drawing.Size(126, 34);
-            this.AddNewStudentsButton.TabIndex = 0;
+            this.AddNewStudentsButton.TabIndex = 1;
             this.AddNewStudentsButton.Text = "Add New Student";
             this.AddNewStudentsButton.UseVisualStyleBackColor = false;
             this.AddNewStudentsButton.Click += new System.EventHandler(this.AddNewUserButton_Click);
@@ -512,7 +512,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(763, 36);
-            this.panel1.TabIndex = 2;
+            this.panel1.TabIndex = 0;
             // 
             // UCAddUser
             // 

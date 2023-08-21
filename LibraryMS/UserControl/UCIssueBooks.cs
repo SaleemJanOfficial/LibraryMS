@@ -18,74 +18,73 @@ namespace LibraryMS
         private void IssuedBook_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(Constr);
-            int Quantity = Int32.Parse(txtquantity.Text);
-            if (Quantity > 0)
+            int Remaining = -1;
+            if (txtremaining.Text != string.Empty)
             {
+                Remaining = Int32.Parse(txtremaining.Text);
 
 
-                DialogResult mb1 = MessageBox.Show("Are You Sure?", "Warning", MessageBoxButtons.YesNo);
-                if (mb1 == DialogResult.Yes)
+                if (Remaining > 0)
                 {
 
-                    if (isvalid())
+
+                    DialogResult mb1 = MessageBox.Show(" You Sure?", "Warning", MessageBoxButtons.YesNo);
+                    if (mb1 == DialogResult.Yes)
                     {
-                        try
+
+                        if (isvalid())
                         {
-                            SqlCommand cmd = new SqlCommand("INSERT INTO IssuedBooks VALUES(@studentId, @bookId, @issueBy,GETDATE() ,NULL , NULL); UPDATE Books SET Issued_Books = Issued_Books + 1 WHERE Book_Id = @bookId; ", con);
-                            cmd.CommandType = CommandType.Text;
+                            try
+                            {
+                                SqlCommand cmd = new SqlCommand("INSERT INTO IssuedBooks VALUES(@studentId, @bookId, @issueBy,GETDATE() ,NULL , NULL); UPDATE Books SET Issued_Books = Issued_Books + 1 WHERE Book_Id = @bookId; ", con);
+                                cmd.CommandType = CommandType.Text;
 
-                            cmd.Parameters.AddWithValue("@studentId", txtSID.Text);
-                            cmd.Parameters.AddWithValue("@bookId", txtbookid.Text);
-                            cmd.Parameters.AddWithValue("@issueBy", "Saleem Jan");
-                           // cmd.Parameters.AddWithValue("@returnBy", "NULL");
+                                cmd.Parameters.AddWithValue("@studentId", txtSID.Text);
+                                cmd.Parameters.AddWithValue("@bookId", txtbookid.Text);
+                                cmd.Parameters.AddWithValue("@issueBy", "Saleem Jan");
+                                // cmd.Parameters.AddWithValue("@returnBy", "NULL");
 
-                            con.Open();
-                            cmd.ExecuteNonQuery();
+                                con.Open();
+                                cmd.ExecuteNonQuery();
 
-                            // For SHow Count
-                            UCHome.FromHome.CurrentIssueBook();
-                            UCHome.FromHome.TotalIssueBook();
-
-
-                            ClearAllIssueValue();
+                                // For SHow Count
+                                UCHome.FromHome.CurrentIssueBook();
+                                UCHome.FromHome.TotalIssueBook();
 
 
-                            MessageBox.Show("Successfully Issued", "Info", MessageBoxButtons.OK);
+                                ClearAllIssueValue();
+
+
+                                MessageBox.Show("Successfully Issued", "Info", MessageBoxButtons.OK);
+                            }
+
+
+
+
+                            catch (Exception ex)
+                            {
+
+                                MessageBox.Show(ex.Message);
+                            }
+
+                            finally
+                            {
+                                con.Close();
+                            }
+
+
                         }
-
-
-
-
-                        catch (Exception ex)
-                        {
-
-                            MessageBox.Show(ex.Message);
-                        }
-
-                        finally
-                        {
-                            con.Close();
-                        }
-
-
                     }
                 }
+
+                else if (Remaining == 0)
+                {
+                    MessageBox.Show("All Book Are Issued ", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
             }
-
-
-            else if (txtbookid.Text != string.Empty)
+            else if (Remaining == -1)
             {
-                MessageBox.Show("Please Select Book ", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            else if (txtSID.Text != string.Empty)
-            {
-                MessageBox.Show("Please Select Student ", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            else
-            {
-                MessageBox.Show("All Book Are Issued ", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("Book is Not Selected Correctly ", "Eror", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -143,6 +142,7 @@ namespace LibraryMS
                 }
                 else
                 {
+                    
                     MessageBox.Show("No Book Found");
                     ClearSelectBookvalue();
 
@@ -199,13 +199,13 @@ namespace LibraryMS
 
                 else if (txtbookid.Text == string.Empty)
                 {
+
                     ClearSelectStudentvalue();
 
                 }
                 else
                 {
                     MessageBox.Show("NO STUDENT FOUND");
-
                     ClearSelectStudentvalue();
                 }
 

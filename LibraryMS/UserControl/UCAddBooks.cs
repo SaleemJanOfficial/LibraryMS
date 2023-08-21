@@ -42,38 +42,43 @@ namespace LibraryMS
             SqlConnection con = new SqlConnection(Constr);
             if (isvalid())
             {
-                try
+                DialogResult mbx = MessageBox.Show("Are You Sure?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (mbx == DialogResult.Yes)
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Books VALUES (@Book_Name, @Author, @Publisher, @Quantity, @Date) ", con);
-                    cmd.CommandType = CommandType.Text;
-
-
-                    cmd.Parameters.AddWithValue("@Book_Name", Bkname.Text);
-                    cmd.Parameters.AddWithValue("@Author", Author.Text);
-                    cmd.Parameters.AddWithValue("@Publisher", Publisher.Text);
-                    cmd.Parameters.AddWithValue("@Quantity", Quantity.Text);
-                    cmd.Parameters.AddWithValue("@Date", Bookdate.Text);
-
-                    if (con.State != ConnectionState.Open)
+                    try
                     {
-                        con.Open();
+                        SqlCommand cmd = new SqlCommand("INSERT INTO Books VALUES (@Book_Name, @Author, @Publisher, @Quantity, GETDATE(),'') ", con);
+                        cmd.CommandType = CommandType.Text;
+
+
+                        cmd.Parameters.AddWithValue("@Book_Name", Bkname.Text);
+                        cmd.Parameters.AddWithValue("@Author", Author.Text);
+                        cmd.Parameters.AddWithValue("@Publisher", Publisher.Text);
+                        cmd.Parameters.AddWithValue("@Quantity", Quantity.Text);
+                        //  cmd.Parameters.AddWithValue("@Date", Bookdate.Text);
+
+                        if (con.State != ConnectionState.Open)
+                        {
+                            con.Open();
+                        }
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Successfully Add Book", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearAllValueAddbook();
+                        UCHome.FromHome.BookCount();
                     }
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Successfully Add Book", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ClearAllValueAddbook();
-                    UCHome.FromHome.BookCount();
-                }
 
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    con.Close();
-                }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Eror While Book Adding");
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
 
-                GetBookRecord();
+                    GetBookRecord();
+
+                }
             }
         }
 
@@ -182,36 +187,40 @@ namespace LibraryMS
             SqlConnection con = new SqlConnection(Constr);
             if (isvalid())
             {
-                try
+                DialogResult mbx = MessageBox.Show("Are You Sure?", "Updating", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (mbx == DialogResult.Yes)
                 {
-                    SqlCommand cmd = new SqlCommand("UPDATE Books set Book_Name=@Book_Name, Author=@Author, Publisher=@Publisher, Quantity=@Quantity, Date=@Date where Book_Id=@Book_Id;", con);
-                    cmd.CommandType = CommandType.Text;
+                    try
+                    {
+                        SqlCommand cmd = new SqlCommand("UPDATE Books set Book_Name=@Book_Name, Author=@Author, Publisher=@Publisher, Quantity=@Quantity, Date=@Date where Book_Id=@Book_Id;", con);
+                        cmd.CommandType = CommandType.Text;
 
-                    cmd.Parameters.AddWithValue("@Book_Id", BookId);
-                    cmd.Parameters.AddWithValue("@Book_Name", Bkname.Text);
-                    cmd.Parameters.AddWithValue("@Author", Author.Text);
-                    cmd.Parameters.AddWithValue("@Publisher", Publisher.Text);
-                    cmd.Parameters.AddWithValue("@Quantity", Quantity.Text);
-                    cmd.Parameters.AddWithValue("@Date", Bookdate.Text);
+                        cmd.Parameters.AddWithValue("@Book_Id", BookId);
+                        cmd.Parameters.AddWithValue("@Book_Name", Bkname.Text);
+                        cmd.Parameters.AddWithValue("@Author", Author.Text);
+                        cmd.Parameters.AddWithValue("@Publisher", Publisher.Text);
+                        cmd.Parameters.AddWithValue("@Quantity", Quantity.Text);
+                        cmd.Parameters.AddWithValue("@Date", Bookdate.Text);
 
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Successfully Update Book", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ClearAllValueAddbook();
-                    txtBookId.Clear();
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Successfully Update Book", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearAllValueAddbook();
+                        txtBookId.Clear();
 
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
+
+                    GetBookRecord();
                 }
-
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    con.Close();
-                }
-
-                GetBookRecord();
             }
         }
         // For Delete Book 
@@ -220,33 +229,36 @@ namespace LibraryMS
             SqlConnection con = new SqlConnection(Constr);
             if (txtBookId.Text != string.Empty)
             {
-
-
-                try
+                DialogResult mbx = MessageBox.Show("Are You Sure?", "Deleteing", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (mbx == DialogResult.Yes)
                 {
-                    SqlCommand cmd = new SqlCommand("delete from Books where Book_Id=@Book_Id", con);
-
-                    cmd.Parameters.AddWithValue("@Book_Id", BookId);
-
-                    if (con.State != ConnectionState.Open)
+                    try
                     {
-                        con.Open();
-                    }
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Successfuly Delete Book from DATABASE ", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        SqlCommand cmd = new SqlCommand("delete from Books where Book_Id=@Book_Id", con);
 
-                    UCHome.FromHome.StudentCount();
-                    GetBookRecord();
-                    ClearAllValueAddbook();
+                        cmd.Parameters.AddWithValue("@Book_Id", BookId);
+
+                        if (con.State != ConnectionState.Open)
+                        {
+                            con.Open();
+                        }
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Successfuly Delete Book from DATABASE ", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        UCHome.FromHome.BookCount();
+                        GetBookRecord();
+                        ClearAllValueAddbook();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "When Deleting User");
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "When Deleting User");
-                }
-                finally
-                {
-                    con.Close();
-                }
+
             }
             else
             {

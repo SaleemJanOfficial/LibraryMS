@@ -133,17 +133,17 @@
             this.guna2TextBox1.PlaceholderText = "Search Here!";
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.Size = new System.Drawing.Size(182, 24);
-            this.guna2TextBox1.TabIndex = 8;
+            this.guna2TextBox1.TabIndex = 1;
             // 
             // Bookdate
             // 
             this.Bookdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Bookdate.CustomFormat = "dd/mm/yyyy";
-            this.Bookdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.Bookdate.CustomFormat = "";
+            this.Bookdate.Enabled = false;
             this.Bookdate.Location = new System.Drawing.Point(146, 158);
             this.Bookdate.Name = "Bookdate";
             this.Bookdate.Size = new System.Drawing.Size(258, 20);
-            this.Bookdate.TabIndex = 6;
+            this.Bookdate.TabIndex = 7;
             this.Bookdate.Value = new System.DateTime(2023, 8, 6, 0, 0, 0, 0);
             // 
             // label13
@@ -174,7 +174,7 @@
             this.Quantity.Location = new System.Drawing.Point(146, 133);
             this.Quantity.Name = "Quantity";
             this.Quantity.Size = new System.Drawing.Size(258, 20);
-            this.Quantity.TabIndex = 2;
+            this.Quantity.TabIndex = 6;
             // 
             // label11
             // 
@@ -196,7 +196,7 @@
             this.ButtonDeleteAddBook.Location = new System.Drawing.Point(375, 184);
             this.ButtonDeleteAddBook.Name = "ButtonDeleteAddBook";
             this.ButtonDeleteAddBook.Size = new System.Drawing.Size(102, 34);
-            this.ButtonDeleteAddBook.TabIndex = 0;
+            this.ButtonDeleteAddBook.TabIndex = 10;
             this.ButtonDeleteAddBook.Text = "Delete";
             this.ButtonDeleteAddBook.UseVisualStyleBackColor = false;
             this.ButtonDeleteAddBook.Click += new System.EventHandler(this.ButtonDeleteAddBook_Click);
@@ -211,7 +211,7 @@
             this.ButtonUpdateAddBook.Location = new System.Drawing.Point(267, 184);
             this.ButtonUpdateAddBook.Name = "ButtonUpdateAddBook";
             this.ButtonUpdateAddBook.Size = new System.Drawing.Size(102, 34);
-            this.ButtonUpdateAddBook.TabIndex = 0;
+            this.ButtonUpdateAddBook.TabIndex = 9;
             this.ButtonUpdateAddBook.Text = "Update";
             this.ButtonUpdateAddBook.UseVisualStyleBackColor = false;
             this.ButtonUpdateAddBook.Click += new System.EventHandler(this.ButtonUpdateAddBook_Click);
@@ -226,7 +226,7 @@
             this.ButtonSaveAddBook.Location = new System.Drawing.Point(159, 184);
             this.ButtonSaveAddBook.Name = "ButtonSaveAddBook";
             this.ButtonSaveAddBook.Size = new System.Drawing.Size(102, 34);
-            this.ButtonSaveAddBook.TabIndex = 0;
+            this.ButtonSaveAddBook.TabIndex = 8;
             this.ButtonSaveAddBook.Text = "Save";
             this.ButtonSaveAddBook.UseVisualStyleBackColor = false;
             this.ButtonSaveAddBook.Click += new System.EventHandler(this.ButtonSaveAddBook_Click);
@@ -260,7 +260,7 @@
             this.ButtonClearAddBook.Location = new System.Drawing.Point(50, 184);
             this.ButtonClearAddBook.Name = "ButtonClearAddBook";
             this.ButtonClearAddBook.Size = new System.Drawing.Size(102, 34);
-            this.ButtonClearAddBook.TabIndex = 0;
+            this.ButtonClearAddBook.TabIndex = 11;
             this.ButtonClearAddBook.Text = "Clear";
             this.ButtonClearAddBook.UseVisualStyleBackColor = false;
             this.ButtonClearAddBook.Click += new System.EventHandler(this.ButtonClearAddBook_Click);
@@ -270,7 +270,7 @@
             this.Publisher.Location = new System.Drawing.Point(146, 108);
             this.Publisher.Name = "Publisher";
             this.Publisher.Size = new System.Drawing.Size(258, 20);
-            this.Publisher.TabIndex = 2;
+            this.Publisher.TabIndex = 5;
             // 
             // label5
             // 
@@ -287,7 +287,7 @@
             this.Author.Location = new System.Drawing.Point(146, 84);
             this.Author.Name = "Author";
             this.Author.Size = new System.Drawing.Size(258, 20);
-            this.Author.TabIndex = 2;
+            this.Author.TabIndex = 4;
             // 
             // label4
             // 
@@ -301,10 +301,11 @@
             // 
             // Bkname
             // 
+            this.Bkname.BackColor = System.Drawing.SystemColors.Window;
             this.Bkname.Location = new System.Drawing.Point(146, 61);
             this.Bkname.Name = "Bkname";
             this.Bkname.Size = new System.Drawing.Size(258, 20);
-            this.Bkname.TabIndex = 2;
+            this.Bkname.TabIndex = 3;
             // 
             // label3
             // 

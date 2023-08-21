@@ -158,7 +158,7 @@
             this.button2.Location = new System.Drawing.Point(439, 208);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(80, 35);
-            this.button2.TabIndex = 6;
+            this.button2.TabIndex = 12;
             this.button2.Text = "RESET";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -171,7 +171,7 @@
             this.IssuedBook.Location = new System.Drawing.Point(528, 208);
             this.IssuedBook.Name = "IssuedBook";
             this.IssuedBook.Size = new System.Drawing.Size(80, 35);
-            this.IssuedBook.TabIndex = 6;
+            this.IssuedBook.TabIndex = 13;
             this.IssuedBook.Text = "ISSUE";
             this.IssuedBook.UseVisualStyleBackColor = false;
             this.IssuedBook.Click += new System.EventHandler(this.IssuedBook_Click);
@@ -182,7 +182,7 @@
             this.txtClass.Location = new System.Drawing.Point(463, 115);
             this.txtClass.Name = "txtClass";
             this.txtClass.Size = new System.Drawing.Size(167, 24);
-            this.txtClass.TabIndex = 4;
+            this.txtClass.TabIndex = 10;
             // 
             // txtremaining
             // 
@@ -190,7 +190,7 @@
             this.txtremaining.Location = new System.Drawing.Point(129, 206);
             this.txtremaining.Name = "txtremaining";
             this.txtremaining.Size = new System.Drawing.Size(167, 24);
-            this.txtremaining.TabIndex = 4;
+            this.txtremaining.TabIndex = 6;
             // 
             // txtIsuued
             // 
@@ -198,7 +198,7 @@
             this.txtIsuued.Location = new System.Drawing.Point(129, 178);
             this.txtIsuued.Name = "txtIsuued";
             this.txtIsuued.Size = new System.Drawing.Size(167, 24);
-            this.txtIsuued.TabIndex = 4;
+            this.txtIsuued.TabIndex = 5;
             // 
             // txtsRno
             // 
@@ -206,7 +206,7 @@
             this.txtsRno.Location = new System.Drawing.Point(463, 89);
             this.txtsRno.Name = "txtsRno";
             this.txtsRno.Size = new System.Drawing.Size(167, 24);
-            this.txtsRno.TabIndex = 4;
+            this.txtsRno.TabIndex = 9;
             // 
             // txtAuthor
             // 
@@ -214,7 +214,7 @@
             this.txtAuthor.Location = new System.Drawing.Point(129, 94);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(167, 24);
-            this.txtAuthor.TabIndex = 4;
+            this.txtAuthor.TabIndex = 2;
             // 
             // txtPublisher
             // 
@@ -222,7 +222,7 @@
             this.txtPublisher.Location = new System.Drawing.Point(129, 122);
             this.txtPublisher.Name = "txtPublisher";
             this.txtPublisher.Size = new System.Drawing.Size(167, 24);
-            this.txtPublisher.TabIndex = 4;
+            this.txtPublisher.TabIndex = 3;
             // 
             // txtquantity
             // 
@@ -238,7 +238,7 @@
             this.txtStuName.Location = new System.Drawing.Point(463, 63);
             this.txtStuName.Name = "txtStuName";
             this.txtStuName.Size = new System.Drawing.Size(167, 24);
-            this.txtStuName.TabIndex = 4;
+            this.txtStuName.TabIndex = 8;
             // 
             // txtbookname
             // 
@@ -246,7 +246,7 @@
             this.txtbookname.Location = new System.Drawing.Point(129, 66);
             this.txtbookname.Name = "txtbookname";
             this.txtbookname.Size = new System.Drawing.Size(167, 24);
-            this.txtbookname.TabIndex = 4;
+            this.txtbookname.TabIndex = 1;
             // 
             // txtSID
             // 
@@ -254,7 +254,7 @@
             this.txtSID.Location = new System.Drawing.Point(463, 37);
             this.txtSID.Name = "txtSID";
             this.txtSID.Size = new System.Drawing.Size(167, 24);
-            this.txtSID.TabIndex = 4;
+            this.txtSID.TabIndex = 7;
             this.txtSID.TextChanged += new System.EventHandler(this.txtSID_TextChanged);
             // 
             // txtbookid
@@ -263,7 +263,7 @@
             this.txtbookid.Location = new System.Drawing.Point(129, 38);
             this.txtbookid.Name = "txtbookid";
             this.txtbookid.Size = new System.Drawing.Size(167, 24);
-            this.txtbookid.TabIndex = 4;
+            this.txtbookid.TabIndex = 0;
             this.txtbookid.TextChanged += new System.EventHandler(this.textbookid_TextChanged);
             // 
             // label6

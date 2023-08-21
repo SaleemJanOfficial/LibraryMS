@@ -41,15 +41,15 @@
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
             this.UCPanel = new System.Windows.Forms.Panel();
-            this.HeaderPanel = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.ucMainHome = new LibraryMS.UCHome();
             this.ucIssueBook = new LibraryMS.UCIssueBooks();
             this.ucAddUser = new LibraryMS.UCAddUser();
             this.ucAbout = new LibraryMS.UCAbout();
             this.ucAddBooks = new LibraryMS.UCAddBooks();
             this.ucPanding = new LibraryMS.UCStatus();
+            this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).BeginInit();
@@ -83,7 +83,7 @@
             this.label1.Location = new System.Drawing.Point(32, 452);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 9;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Version 1.1";
             // 
             // buttonAddBook
@@ -98,7 +98,7 @@
             this.buttonAddBook.Location = new System.Drawing.Point(-3, 327);
             this.buttonAddBook.Name = "buttonAddBook";
             this.buttonAddBook.Size = new System.Drawing.Size(139, 49);
-            this.buttonAddBook.TabIndex = 7;
+            this.buttonAddBook.TabIndex = 5;
             this.buttonAddBook.Text = "Add Books";
             this.buttonAddBook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonAddBook.UseVisualStyleBackColor = false;
@@ -117,7 +117,7 @@
             this.AboutButton.Location = new System.Drawing.Point(-3, 382);
             this.AboutButton.Name = "AboutButton";
             this.AboutButton.Size = new System.Drawing.Size(139, 49);
-            this.AboutButton.TabIndex = 1;
+            this.AboutButton.TabIndex = 6;
             this.AboutButton.Text = "Aobut";
             this.AboutButton.UseVisualStyleBackColor = false;
             this.AboutButton.Click += new System.EventHandler(this.AboutButton_Click);
@@ -135,7 +135,7 @@
             this.ButtonAddUser.Location = new System.Drawing.Point(-3, 272);
             this.ButtonAddUser.Name = "ButtonAddUser";
             this.ButtonAddUser.Size = new System.Drawing.Size(139, 49);
-            this.ButtonAddUser.TabIndex = 1;
+            this.ButtonAddUser.TabIndex = 4;
             this.ButtonAddUser.Text = "Add Students";
             this.ButtonAddUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ButtonAddUser.UseVisualStyleBackColor = false;
@@ -154,7 +154,7 @@
             this.ReturnButton.Location = new System.Drawing.Point(-3, 217);
             this.ReturnButton.Name = "ReturnButton";
             this.ReturnButton.Size = new System.Drawing.Size(139, 49);
-            this.ReturnButton.TabIndex = 1;
+            this.ReturnButton.TabIndex = 3;
             this.ReturnButton.Text = "Return Book";
             this.ReturnButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ReturnButton.UseVisualStyleBackColor = false;
@@ -173,7 +173,7 @@
             this.IssueButton.Location = new System.Drawing.Point(-3, 162);
             this.IssueButton.Name = "IssueButton";
             this.IssueButton.Size = new System.Drawing.Size(139, 49);
-            this.IssueButton.TabIndex = 1;
+            this.IssueButton.TabIndex = 2;
             this.IssueButton.Text = "Iusse Book";
             this.IssueButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.IssueButton.UseVisualStyleBackColor = false;
@@ -205,7 +205,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(136, 100);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 0;
             // 
             // fileSystemWatcher1
             // 
@@ -233,46 +233,6 @@
             this.UCPanel.Size = new System.Drawing.Size(754, 374);
             this.UCPanel.TabIndex = 1;
             // 
-            // HeaderPanel
-            // 
-            this.HeaderPanel.BackColor = System.Drawing.Color.OrangeRed;
-            this.HeaderPanel.Controls.Add(this.label5);
-            this.HeaderPanel.Controls.Add(this.label4);
-            this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.HeaderPanel.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.HeaderPanel.Location = new System.Drawing.Point(136, 0);
-            this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(754, 100);
-            this.HeaderPanel.TabIndex = 2;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Shia", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(139, 52);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(476, 35);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "گورنمٹ پوسٹ گریجویٹ کالج گوہاٹی (صوابی)";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(34, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(686, 43);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Welcome to Library Managment System ";
-            // 
             // ucMainHome
             // 
             this.ucMainHome.AutoScroll = true;
@@ -284,7 +244,7 @@
             this.ucMainHome.Location = new System.Drawing.Point(0, 0);
             this.ucMainHome.Name = "ucMainHome";
             this.ucMainHome.Size = new System.Drawing.Size(754, 374);
-            this.ucMainHome.TabIndex = 7;
+            this.ucMainHome.TabIndex = 0;
             // 
             // ucIssueBook
             // 
@@ -333,6 +293,46 @@
             this.ucPanding.Size = new System.Drawing.Size(754, 374);
             this.ucPanding.TabIndex = 6;
             this.ucPanding.Visible = false;
+            // 
+            // HeaderPanel
+            // 
+            this.HeaderPanel.BackColor = System.Drawing.Color.OrangeRed;
+            this.HeaderPanel.Controls.Add(this.label5);
+            this.HeaderPanel.Controls.Add(this.label4);
+            this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HeaderPanel.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.HeaderPanel.Location = new System.Drawing.Point(136, 0);
+            this.HeaderPanel.Name = "HeaderPanel";
+            this.HeaderPanel.Size = new System.Drawing.Size(754, 100);
+            this.HeaderPanel.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Shia", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(139, 52);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(476, 35);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "گورنمٹ پوسٹ گریجویٹ کالج گوہاٹی (صوابی)";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(34, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(686, 43);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Welcome to Library Managment System ";
             // 
             // Main
             // 
