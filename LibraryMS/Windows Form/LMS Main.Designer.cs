@@ -49,6 +49,8 @@
             this.ucPanding = new LibraryMS.UCStatus();
             this.HeaderPanel = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblWelcome = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
@@ -95,9 +97,9 @@
             this.buttonAddBook.IconColor = System.Drawing.Color.White;
             this.buttonAddBook.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.buttonAddBook.IconSize = 40;
-            this.buttonAddBook.Location = new System.Drawing.Point(-3, 327);
+            this.buttonAddBook.Location = new System.Drawing.Point(0, 290);
             this.buttonAddBook.Name = "buttonAddBook";
-            this.buttonAddBook.Size = new System.Drawing.Size(139, 49);
+            this.buttonAddBook.Size = new System.Drawing.Size(136, 49);
             this.buttonAddBook.TabIndex = 5;
             this.buttonAddBook.Text = "Add Books";
             this.buttonAddBook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -114,9 +116,9 @@
             this.AboutButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.AboutButton.IconSize = 40;
             this.AboutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AboutButton.Location = new System.Drawing.Point(-3, 382);
+            this.AboutButton.Location = new System.Drawing.Point(0, 337);
             this.AboutButton.Name = "AboutButton";
-            this.AboutButton.Size = new System.Drawing.Size(139, 49);
+            this.AboutButton.Size = new System.Drawing.Size(136, 49);
             this.AboutButton.TabIndex = 6;
             this.AboutButton.Text = "Aobut";
             this.AboutButton.UseVisualStyleBackColor = false;
@@ -132,9 +134,9 @@
             this.ButtonAddUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ButtonAddUser.IconSize = 40;
             this.ButtonAddUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonAddUser.Location = new System.Drawing.Point(-3, 272);
+            this.ButtonAddUser.Location = new System.Drawing.Point(0, 244);
             this.ButtonAddUser.Name = "ButtonAddUser";
-            this.ButtonAddUser.Size = new System.Drawing.Size(139, 49);
+            this.ButtonAddUser.Size = new System.Drawing.Size(136, 49);
             this.ButtonAddUser.TabIndex = 4;
             this.ButtonAddUser.Text = "Add Students";
             this.ButtonAddUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -151,9 +153,9 @@
             this.ReturnButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ReturnButton.IconSize = 40;
             this.ReturnButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ReturnButton.Location = new System.Drawing.Point(-3, 217);
+            this.ReturnButton.Location = new System.Drawing.Point(0, 198);
             this.ReturnButton.Name = "ReturnButton";
-            this.ReturnButton.Size = new System.Drawing.Size(139, 49);
+            this.ReturnButton.Size = new System.Drawing.Size(136, 49);
             this.ReturnButton.TabIndex = 3;
             this.ReturnButton.Text = "Return Book";
             this.ReturnButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -170,9 +172,9 @@
             this.IssueButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.IssueButton.IconSize = 40;
             this.IssueButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.IssueButton.Location = new System.Drawing.Point(-3, 162);
+            this.IssueButton.Location = new System.Drawing.Point(0, 152);
             this.IssueButton.Name = "IssueButton";
-            this.IssueButton.Size = new System.Drawing.Size(139, 49);
+            this.IssueButton.Size = new System.Drawing.Size(136, 49);
             this.IssueButton.TabIndex = 2;
             this.IssueButton.Text = "Iusse Book";
             this.IssueButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -189,9 +191,9 @@
             this.HomeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.HomeButton.IconSize = 40;
             this.HomeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.HomeButton.Location = new System.Drawing.Point(-3, 107);
+            this.HomeButton.Location = new System.Drawing.Point(0, 106);
             this.HomeButton.Name = "HomeButton";
-            this.HomeButton.Size = new System.Drawing.Size(139, 49);
+            this.HomeButton.Size = new System.Drawing.Size(136, 49);
             this.HomeButton.TabIndex = 1;
             this.HomeButton.Text = "HOME";
             this.HomeButton.UseVisualStyleBackColor = false;
@@ -298,6 +300,8 @@
             // 
             this.HeaderPanel.BackColor = System.Drawing.Color.OrangeRed;
             this.HeaderPanel.Controls.Add(this.label5);
+            this.HeaderPanel.Controls.Add(this.lblWelcome);
+            this.HeaderPanel.Controls.Add(this.label2);
             this.HeaderPanel.Controls.Add(this.label4);
             this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.HeaderPanel.ForeColor = System.Drawing.SystemColors.ActiveBorder;
@@ -320,19 +324,47 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "گورنمٹ پوسٹ گریجویٹ کالج گوہاٹی (صوابی)";
             // 
+            // lblWelcome
+            // 
+            this.lblWelcome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
+            this.lblWelcome.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.Color.Blue;
+            this.lblWelcome.Location = new System.Drawing.Point(156, 9);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(154, 35);
+            this.lblWelcome.TabIndex = 0;
+            this.lblWelcome.Text = "User Name";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(6, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(127, 35);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Welcome";
+            // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(34, 9);
+            this.label4.Location = new System.Drawing.Point(316, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(686, 43);
+            this.label4.Size = new System.Drawing.Size(417, 35);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Welcome to Library Managment System ";
+            this.label4.Text = " to Library Managment System ";
             // 
             // Main
             // 
@@ -347,6 +379,7 @@
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Library Managment System";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -383,5 +416,7 @@
         private UCHome ucMainHome;
         private UCAbout ucAbout;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.Label label2;
     }
 }

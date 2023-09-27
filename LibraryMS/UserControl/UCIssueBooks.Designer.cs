@@ -35,15 +35,6 @@
             this.ClearbtnBk = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.IssuedBook = new System.Windows.Forms.Button();
-            this.txtClass = new System.Windows.Forms.TextBox();
-            this.txtremaining = new System.Windows.Forms.TextBox();
-            this.txtIsuued = new System.Windows.Forms.TextBox();
-            this.txtsRno = new System.Windows.Forms.TextBox();
-            this.txtAuthor = new System.Windows.Forms.TextBox();
-            this.txtPublisher = new System.Windows.Forms.TextBox();
-            this.txtquantity = new System.Windows.Forms.TextBox();
-            this.txtStuName = new System.Windows.Forms.TextBox();
-            this.txtbookname = new System.Windows.Forms.TextBox();
             this.txtSID = new System.Windows.Forms.TextBox();
             this.txtbookid = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -59,6 +50,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtremaining = new System.Windows.Forms.Label();
+            this.txtIsuued = new System.Windows.Forms.Label();
+            this.txtquantity = new System.Windows.Forms.Label();
+            this.txtPublisher = new System.Windows.Forms.Label();
+            this.txtAuthor = new System.Windows.Forms.Label();
+            this.txtbookname = new System.Windows.Forms.Label();
+            this.txtStuName = new System.Windows.Forms.Label();
+            this.txtsRno = new System.Windows.Forms.Label();
+            this.txtClass = new System.Windows.Forms.Label();
             panel1 = new System.Windows.Forms.Panel();
             label1 = new System.Windows.Forms.Label();
             panel2 = new System.Windows.Forms.Panel();
@@ -94,26 +94,26 @@
             panel2.Controls.Add(this.ClearbtnBk);
             panel2.Controls.Add(this.button2);
             panel2.Controls.Add(this.IssuedBook);
-            panel2.Controls.Add(this.txtClass);
-            panel2.Controls.Add(this.txtremaining);
-            panel2.Controls.Add(this.txtIsuued);
-            panel2.Controls.Add(this.txtsRno);
-            panel2.Controls.Add(this.txtAuthor);
-            panel2.Controls.Add(this.txtPublisher);
-            panel2.Controls.Add(this.txtquantity);
-            panel2.Controls.Add(this.txtStuName);
-            panel2.Controls.Add(this.txtbookname);
             panel2.Controls.Add(this.txtSID);
             panel2.Controls.Add(this.txtbookid);
+            panel2.Controls.Add(this.txtremaining);
             panel2.Controls.Add(this.label6);
+            panel2.Controls.Add(this.txtClass);
             panel2.Controls.Add(this.label12);
+            panel2.Controls.Add(this.txtIsuued);
             panel2.Controls.Add(this.label5);
+            panel2.Controls.Add(this.txtAuthor);
             panel2.Controls.Add(this.label14);
+            panel2.Controls.Add(this.txtPublisher);
             panel2.Controls.Add(this.label15);
+            panel2.Controls.Add(this.txtsRno);
             panel2.Controls.Add(this.label11);
+            panel2.Controls.Add(this.txtquantity);
             panel2.Controls.Add(this.label4);
+            panel2.Controls.Add(this.txtStuName);
             panel2.Controls.Add(this.label10);
             panel2.Controls.Add(this.label9);
+            panel2.Controls.Add(this.txtbookname);
             panel2.Controls.Add(this.label3);
             panel2.Controls.Add(this.label8);
             panel2.Controls.Add(this.label7);
@@ -175,78 +175,6 @@
             this.IssuedBook.Text = "ISSUE";
             this.IssuedBook.UseVisualStyleBackColor = false;
             this.IssuedBook.Click += new System.EventHandler(this.IssuedBook_Click);
-            // 
-            // txtClass
-            // 
-            this.txtClass.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClass.Location = new System.Drawing.Point(463, 115);
-            this.txtClass.Name = "txtClass";
-            this.txtClass.Size = new System.Drawing.Size(167, 24);
-            this.txtClass.TabIndex = 10;
-            // 
-            // txtremaining
-            // 
-            this.txtremaining.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtremaining.Location = new System.Drawing.Point(129, 206);
-            this.txtremaining.Name = "txtremaining";
-            this.txtremaining.Size = new System.Drawing.Size(167, 24);
-            this.txtremaining.TabIndex = 6;
-            // 
-            // txtIsuued
-            // 
-            this.txtIsuued.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIsuued.Location = new System.Drawing.Point(129, 178);
-            this.txtIsuued.Name = "txtIsuued";
-            this.txtIsuued.Size = new System.Drawing.Size(167, 24);
-            this.txtIsuued.TabIndex = 5;
-            // 
-            // txtsRno
-            // 
-            this.txtsRno.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsRno.Location = new System.Drawing.Point(463, 89);
-            this.txtsRno.Name = "txtsRno";
-            this.txtsRno.Size = new System.Drawing.Size(167, 24);
-            this.txtsRno.TabIndex = 9;
-            // 
-            // txtAuthor
-            // 
-            this.txtAuthor.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAuthor.Location = new System.Drawing.Point(129, 94);
-            this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(167, 24);
-            this.txtAuthor.TabIndex = 2;
-            // 
-            // txtPublisher
-            // 
-            this.txtPublisher.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPublisher.Location = new System.Drawing.Point(129, 122);
-            this.txtPublisher.Name = "txtPublisher";
-            this.txtPublisher.Size = new System.Drawing.Size(167, 24);
-            this.txtPublisher.TabIndex = 3;
-            // 
-            // txtquantity
-            // 
-            this.txtquantity.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtquantity.Location = new System.Drawing.Point(129, 150);
-            this.txtquantity.Name = "txtquantity";
-            this.txtquantity.Size = new System.Drawing.Size(167, 24);
-            this.txtquantity.TabIndex = 4;
-            // 
-            // txtStuName
-            // 
-            this.txtStuName.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStuName.Location = new System.Drawing.Point(463, 63);
-            this.txtStuName.Name = "txtStuName";
-            this.txtStuName.Size = new System.Drawing.Size(167, 24);
-            this.txtStuName.TabIndex = 8;
-            // 
-            // txtbookname
-            // 
-            this.txtbookname.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbookname.Location = new System.Drawing.Point(129, 66);
-            this.txtbookname.Name = "txtbookname";
-            this.txtbookname.Size = new System.Drawing.Size(167, 24);
-            this.txtbookname.TabIndex = 1;
             // 
             // txtSID
             // 
@@ -396,6 +324,97 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Book ID";
             // 
+            // txtremaining
+            // 
+            this.txtremaining.AutoSize = true;
+            this.txtremaining.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtremaining.Location = new System.Drawing.Point(126, 208);
+            this.txtremaining.Name = "txtremaining";
+            this.txtremaining.Size = new System.Drawing.Size(87, 18);
+            this.txtremaining.TabIndex = 3;
+            this.txtremaining.Text = "Remaining";
+            // 
+            // txtIsuued
+            // 
+            this.txtIsuued.AutoSize = true;
+            this.txtIsuued.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIsuued.Location = new System.Drawing.Point(126, 180);
+            this.txtIsuued.Name = "txtIsuued";
+            this.txtIsuued.Size = new System.Drawing.Size(57, 18);
+            this.txtIsuued.TabIndex = 3;
+            this.txtIsuued.Text = "Issued";
+            // 
+            // txtquantity
+            // 
+            this.txtquantity.AutoSize = true;
+            this.txtquantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtquantity.Location = new System.Drawing.Point(126, 152);
+            this.txtquantity.Name = "txtquantity";
+            this.txtquantity.Size = new System.Drawing.Size(70, 18);
+            this.txtquantity.TabIndex = 3;
+            this.txtquantity.Text = "Quantity";
+            // 
+            // txtPublisher
+            // 
+            this.txtPublisher.AutoSize = true;
+            this.txtPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPublisher.Location = new System.Drawing.Point(126, 121);
+            this.txtPublisher.Name = "txtPublisher";
+            this.txtPublisher.Size = new System.Drawing.Size(78, 18);
+            this.txtPublisher.TabIndex = 3;
+            this.txtPublisher.Text = "Publisher";
+            // 
+            // txtAuthor
+            // 
+            this.txtAuthor.AutoSize = true;
+            this.txtAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAuthor.Location = new System.Drawing.Point(126, 96);
+            this.txtAuthor.Name = "txtAuthor";
+            this.txtAuthor.Size = new System.Drawing.Size(57, 18);
+            this.txtAuthor.TabIndex = 3;
+            this.txtAuthor.Text = "Author";
+            // 
+            // txtbookname
+            // 
+            this.txtbookname.AutoSize = true;
+            this.txtbookname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbookname.Location = new System.Drawing.Point(126, 69);
+            this.txtbookname.Name = "txtbookname";
+            this.txtbookname.Size = new System.Drawing.Size(97, 18);
+            this.txtbookname.TabIndex = 3;
+            this.txtbookname.Text = "Book Name";
+            // 
+            // txtStuName
+            // 
+            this.txtStuName.AutoSize = true;
+            this.txtStuName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStuName.Location = new System.Drawing.Point(460, 64);
+            this.txtStuName.Name = "txtStuName";
+            this.txtStuName.Size = new System.Drawing.Size(114, 18);
+            this.txtStuName.TabIndex = 3;
+            this.txtStuName.Text = "Student Name";
+            // 
+            // txtsRno
+            // 
+            this.txtsRno.AutoSize = true;
+            this.txtsRno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsRno.Location = new System.Drawing.Point(460, 91);
+            this.txtsRno.Name = "txtsRno";
+            this.txtsRno.Size = new System.Drawing.Size(65, 18);
+            this.txtsRno.TabIndex = 3;
+            this.txtsRno.Text = "Roll No";
+            this.txtsRno.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtClass
+            // 
+            this.txtClass.AutoSize = true;
+            this.txtClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClass.Location = new System.Drawing.Point(460, 117);
+            this.txtClass.Name = "txtClass";
+            this.txtClass.Size = new System.Drawing.Size(129, 18);
+            this.txtClass.TabIndex = 3;
+            this.txtClass.Text = "Class/Sem/Year";
+            // 
             // UCIssueBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,16 +437,10 @@
 
         private System.Windows.Forms.TextBox txtbookid;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtIsuued;
-        private System.Windows.Forms.TextBox txtquantity;
-        private System.Windows.Forms.TextBox txtbookname;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtClass;
-        private System.Windows.Forms.TextBox txtsRno;
-        private System.Windows.Forms.TextBox txtStuName;
         private System.Windows.Forms.TextBox txtSID;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -436,13 +449,19 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button IssuedBook;
-        private System.Windows.Forms.TextBox txtremaining;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtAuthor;
-        private System.Windows.Forms.TextBox txtPublisher;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button ClearButtonst;
         private System.Windows.Forms.Button ClearbtnBk;
+        private System.Windows.Forms.Label txtremaining;
+        private System.Windows.Forms.Label txtIsuued;
+        private System.Windows.Forms.Label txtAuthor;
+        private System.Windows.Forms.Label txtPublisher;
+        private System.Windows.Forms.Label txtquantity;
+        private System.Windows.Forms.Label txtbookname;
+        private System.Windows.Forms.Label txtClass;
+        private System.Windows.Forms.Label txtsRno;
+        private System.Windows.Forms.Label txtStuName;
     }
 }

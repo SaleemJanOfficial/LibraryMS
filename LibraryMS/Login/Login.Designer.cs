@@ -38,7 +38,7 @@
             this.lableLoginPassword = new System.Windows.Forms.Label();
             this.txtLoginPassword1 = new System.Windows.Forms.TextBox();
             this.lableLoginUName = new System.Windows.Forms.Label();
-            this.txtLoginUserName1 = new System.Windows.Forms.TextBox();
+            this.txtLoginEmail1 = new System.Windows.Forms.TextBox();
             this.REGPanel = new System.Windows.Forms.Panel();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
@@ -55,6 +55,7 @@
             this.txtCnic = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.Email = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.LoginPanel.SuspendLayout();
             this.REGPanel.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LoginPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.LoginPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoginPanel.Controls.Add(this.label6);
             this.LoginPanel.Controls.Add(this.iconButton1);
             this.LoginPanel.Controls.Add(this.LableRegister0);
             this.LoginPanel.Controls.Add(this.label1);
@@ -73,7 +75,7 @@
             this.LoginPanel.Controls.Add(this.lableLoginPassword);
             this.LoginPanel.Controls.Add(this.txtLoginPassword1);
             this.LoginPanel.Controls.Add(this.lableLoginUName);
-            this.LoginPanel.Controls.Add(this.txtLoginUserName1);
+            this.LoginPanel.Controls.Add(this.txtLoginEmail1);
             this.LoginPanel.Location = new System.Drawing.Point(606, 21);
             this.LoginPanel.Name = "LoginPanel";
             this.LoginPanel.Size = new System.Drawing.Size(272, 413);
@@ -159,6 +161,7 @@
             this.txtLoginPassword1.Name = "txtLoginPassword1";
             this.txtLoginPassword1.Size = new System.Drawing.Size(192, 20);
             this.txtLoginPassword1.TabIndex = 0;
+            this.txtLoginPassword1.UseSystemPasswordChar = true;
             // 
             // lableLoginUName
             // 
@@ -171,12 +174,12 @@
             this.lableLoginUName.TabIndex = 1;
             this.lableLoginUName.Text = "Email";
             // 
-            // txtLoginUserName1
+            // txtLoginEmail1
             // 
-            this.txtLoginUserName1.Location = new System.Drawing.Point(25, 173);
-            this.txtLoginUserName1.Name = "txtLoginUserName1";
-            this.txtLoginUserName1.Size = new System.Drawing.Size(192, 20);
-            this.txtLoginUserName1.TabIndex = 0;
+            this.txtLoginEmail1.Location = new System.Drawing.Point(25, 173);
+            this.txtLoginEmail1.Name = "txtLoginEmail1";
+            this.txtLoginEmail1.Size = new System.Drawing.Size(192, 20);
+            this.txtLoginEmail1.TabIndex = 0;
             // 
             // REGPanel
             // 
@@ -401,6 +404,19 @@
             this.Email.TabIndex = 1;
             this.Email.Text = "Email";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Blue;
+            this.label6.Location = new System.Drawing.Point(174, 227);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Show";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,11 +424,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(890, 474);
-            this.Controls.Add(this.REGPanel);
             this.Controls.Add(this.LoginPanel);
+            this.Controls.Add(this.REGPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Welcome to Library Managment System";
             this.LoginPanel.ResumeLayout(false);
             this.LoginPanel.PerformLayout();
             this.REGPanel.ResumeLayout(false);
@@ -431,7 +448,7 @@
         private System.Windows.Forms.Label lableLoginPassword;
         private System.Windows.Forms.TextBox txtLoginPassword1;
         private System.Windows.Forms.Label lableLoginUName;
-        private System.Windows.Forms.TextBox txtLoginUserName1;
+        private System.Windows.Forms.TextBox txtLoginEmail1;
         private System.Windows.Forms.Panel REGPanel;
         private System.Windows.Forms.Label LableLogin0;
         private System.Windows.Forms.Label label2;
@@ -449,6 +466,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCnic;
         private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label label6;
     }
 }
 

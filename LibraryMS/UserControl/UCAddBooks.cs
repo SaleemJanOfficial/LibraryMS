@@ -164,9 +164,10 @@ namespace LibraryMS
 
         private void ViewAllBooksButton_Click(object sender, EventArgs e)
         {
-            ViewAllbooks vab = new ViewAllbooks();
-            vab.ShowDialog();
-
+            ViewAllStudent vastudent = new ViewAllStudent();
+            ViewAllStudent.vas.GEtbookRecord();
+            vastudent.ShowDialog();
+           
         }
 
         public int BookId;

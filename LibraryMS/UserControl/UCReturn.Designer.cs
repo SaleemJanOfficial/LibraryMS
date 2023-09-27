@@ -193,7 +193,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblIssuedate.AutoSize = true;
-            this.lblIssuedate.BackColor = System.Drawing.Color.Crimson;
+            this.lblIssuedate.BackColor = System.Drawing.Color.White;
             this.lblIssuedate.Font = new System.Drawing.Font("Bookshelf Symbol 7", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIssuedate.ForeColor = System.Drawing.SystemColors.InfoText;
             this.lblIssuedate.Location = new System.Drawing.Point(462, 54);
@@ -234,7 +234,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblIssueby.AutoSize = true;
-            this.lblIssueby.BackColor = System.Drawing.Color.Crimson;
+            this.lblIssueby.BackColor = System.Drawing.Color.White;
             this.lblIssueby.Font = new System.Drawing.Font("Bookshelf Symbol 7", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIssueby.ForeColor = System.Drawing.SystemColors.InfoText;
             this.lblIssueby.Location = new System.Drawing.Point(462, 36);
@@ -248,7 +248,7 @@
             this.lblsid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblsid.AutoSize = true;
-            this.lblsid.BackColor = System.Drawing.Color.Crimson;
+            this.lblsid.BackColor = System.Drawing.Color.White;
             this.lblsid.Font = new System.Drawing.Font("Bookshelf Symbol 7", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsid.ForeColor = System.Drawing.Color.Black;
             this.lblsid.Location = new System.Drawing.Point(197, 1);
@@ -275,7 +275,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblbookname.AutoSize = true;
-            this.lblbookname.BackColor = System.Drawing.Color.Crimson;
+            this.lblbookname.BackColor = System.Drawing.Color.White;
             this.lblbookname.Font = new System.Drawing.Font("Bookshelf Symbol 7", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblbookname.ForeColor = System.Drawing.SystemColors.InfoText;
             this.lblbookname.Location = new System.Drawing.Point(462, 18);
@@ -289,7 +289,7 @@
             this.lblsname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblsname.AutoSize = true;
-            this.lblsname.BackColor = System.Drawing.Color.Crimson;
+            this.lblsname.BackColor = System.Drawing.Color.White;
             this.lblsname.Font = new System.Drawing.Font("Bookshelf Symbol 7", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsname.ForeColor = System.Drawing.Color.Black;
             this.lblsname.Location = new System.Drawing.Point(197, 19);
@@ -304,7 +304,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblbookid.AutoSize = true;
-            this.lblbookid.BackColor = System.Drawing.Color.Crimson;
+            this.lblbookid.BackColor = System.Drawing.Color.White;
             this.lblbookid.Font = new System.Drawing.Font("Bookshelf Symbol 7", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblbookid.ForeColor = System.Drawing.Color.Black;
             this.lblbookid.Location = new System.Drawing.Point(462, 0);
@@ -318,7 +318,7 @@
             this.lblrno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblrno.AutoSize = true;
-            this.lblrno.BackColor = System.Drawing.Color.Crimson;
+            this.lblrno.BackColor = System.Drawing.Color.White;
             this.lblrno.Font = new System.Drawing.Font("Bookshelf Symbol 7", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblrno.ForeColor = System.Drawing.Color.Black;
             this.lblrno.Location = new System.Drawing.Point(197, 37);
@@ -357,7 +357,7 @@
             this.lblclasssem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblclasssem.AutoSize = true;
-            this.lblclasssem.BackColor = System.Drawing.Color.Crimson;
+            this.lblclasssem.BackColor = System.Drawing.Color.White;
             this.lblclasssem.Font = new System.Drawing.Font("Bookshelf Symbol 7", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblclasssem.ForeColor = System.Drawing.Color.Black;
             this.lblclasssem.Location = new System.Drawing.Point(197, 55);

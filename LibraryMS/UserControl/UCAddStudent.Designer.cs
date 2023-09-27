@@ -32,7 +32,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.PanelAddUser = new System.Windows.Forms.Panel();
             this.txtUserMNo = new System.Windows.Forms.TextBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.RadioOther = new System.Windows.Forms.RadioButton();
             this.RadioFemale = new System.Windows.Forms.RadioButton();
             this.RadioMale = new System.Windows.Forms.RadioButton();
@@ -42,11 +41,6 @@
             this.GridStudentRecord = new System.Windows.Forms.DataGridView();
             this.txtPrograme = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.ButtonDeleteAddStudents = new FontAwesome.Sharp.IconButton();
-            this.ButtonUpdateAddStudents = new FontAwesome.Sharp.IconButton();
-            this.ButtonSaveAddStudents = new FontAwesome.Sharp.IconButton();
-            this.ButtonBackAddStudents = new FontAwesome.Sharp.IconButton();
-            this.ButtonClearAddStudents = new FontAwesome.Sharp.IconButton();
             this.txtUserYearSem = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtUserDepartment = new System.Windows.Forms.TextBox();
@@ -62,9 +56,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.UserId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ButtonDeleteAddStudents = new FontAwesome.Sharp.IconButton();
+            this.ButtonUpdateAddStudents = new FontAwesome.Sharp.IconButton();
+            this.ButtonSaveAddStudents = new FontAwesome.Sharp.IconButton();
+            this.ButtonBackAddStudents = new FontAwesome.Sharp.IconButton();
+            this.ButtonClearAddStudents = new FontAwesome.Sharp.IconButton();
             this.ViewAllStudentsButton = new FontAwesome.Sharp.IconButton();
             this.AddNewStudentsButton = new FontAwesome.Sharp.IconButton();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.PanelAddUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridStudentRecord)).BeginInit();
@@ -144,28 +144,6 @@
             this.txtUserMNo.Name = "txtUserMNo";
             this.txtUserMNo.Size = new System.Drawing.Size(168, 20);
             this.txtUserMNo.TabIndex = 12;
-            // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.BorderRadius = 10;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.IconLeft = global::LibraryMS.Properties.Resources.download__1_;
-            this.guna2TextBox1.IconLeftOffset = new System.Drawing.Point(6, 0);
-            this.guna2TextBox1.Location = new System.Drawing.Point(214, 6);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "Search Here!";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(182, 24);
-            this.guna2TextBox1.TabIndex = 0;
             // 
             // RadioOther
             // 
@@ -263,86 +241,6 @@
             this.label11.Size = new System.Drawing.Size(82, 18);
             this.label11.TabIndex = 13;
             this.label11.Text = "Programe";
-            // 
-            // ButtonDeleteAddStudents
-            // 
-            this.ButtonDeleteAddStudents.BackColor = System.Drawing.Color.Black;
-            this.ButtonDeleteAddStudents.ForeColor = System.Drawing.Color.White;
-            this.ButtonDeleteAddStudents.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.ButtonDeleteAddStudents.IconColor = System.Drawing.Color.Black;
-            this.ButtonDeleteAddStudents.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonDeleteAddStudents.Location = new System.Drawing.Point(375, 184);
-            this.ButtonDeleteAddStudents.Name = "ButtonDeleteAddStudents";
-            this.ButtonDeleteAddStudents.Size = new System.Drawing.Size(102, 34);
-            this.ButtonDeleteAddStudents.TabIndex = 17;
-            this.ButtonDeleteAddStudents.Text = "Delete";
-            this.ButtonDeleteAddStudents.UseVisualStyleBackColor = false;
-            this.ButtonDeleteAddStudents.Click += new System.EventHandler(this.ButtonDeleteAdduser_Click);
-            // 
-            // ButtonUpdateAddStudents
-            // 
-            this.ButtonUpdateAddStudents.BackColor = System.Drawing.Color.Black;
-            this.ButtonUpdateAddStudents.ForeColor = System.Drawing.Color.White;
-            this.ButtonUpdateAddStudents.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.ButtonUpdateAddStudents.IconColor = System.Drawing.Color.Black;
-            this.ButtonUpdateAddStudents.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonUpdateAddStudents.Location = new System.Drawing.Point(267, 184);
-            this.ButtonUpdateAddStudents.Name = "ButtonUpdateAddStudents";
-            this.ButtonUpdateAddStudents.Size = new System.Drawing.Size(102, 34);
-            this.ButtonUpdateAddStudents.TabIndex = 16;
-            this.ButtonUpdateAddStudents.Text = "Update";
-            this.ButtonUpdateAddStudents.UseVisualStyleBackColor = false;
-            this.ButtonUpdateAddStudents.Click += new System.EventHandler(this.ButtonUpdateAdduser_Click);
-            // 
-            // ButtonSaveAddStudents
-            // 
-            this.ButtonSaveAddStudents.BackColor = System.Drawing.Color.Black;
-            this.ButtonSaveAddStudents.ForeColor = System.Drawing.Color.White;
-            this.ButtonSaveAddStudents.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.ButtonSaveAddStudents.IconColor = System.Drawing.Color.Black;
-            this.ButtonSaveAddStudents.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonSaveAddStudents.Location = new System.Drawing.Point(159, 184);
-            this.ButtonSaveAddStudents.Name = "ButtonSaveAddStudents";
-            this.ButtonSaveAddStudents.Size = new System.Drawing.Size(102, 34);
-            this.ButtonSaveAddStudents.TabIndex = 15;
-            this.ButtonSaveAddStudents.Text = "Save";
-            this.ButtonSaveAddStudents.UseVisualStyleBackColor = false;
-            this.ButtonSaveAddStudents.Click += new System.EventHandler(this.ButtonSaveAddUser_Click);
-            // 
-            // ButtonBackAddStudents
-            // 
-            this.ButtonBackAddStudents.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonBackAddStudents.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ButtonBackAddStudents.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.ButtonBackAddStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonBackAddStudents.ForeColor = System.Drawing.Color.White;
-            this.ButtonBackAddStudents.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.ButtonBackAddStudents.IconColor = System.Drawing.Color.Black;
-            this.ButtonBackAddStudents.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonBackAddStudents.IconSize = 20;
-            this.ButtonBackAddStudents.Location = new System.Drawing.Point(567, 3);
-            this.ButtonBackAddStudents.Name = "ButtonBackAddStudents";
-            this.ButtonBackAddStudents.Size = new System.Drawing.Size(43, 28);
-            this.ButtonBackAddStudents.TabIndex = 17;
-            this.ButtonBackAddStudents.Text = "X";
-            this.ButtonBackAddStudents.UseMnemonic = false;
-            this.ButtonBackAddStudents.UseVisualStyleBackColor = false;
-            this.ButtonBackAddStudents.Click += new System.EventHandler(this.ButtonBackAddUser_Click);
-            // 
-            // ButtonClearAddStudents
-            // 
-            this.ButtonClearAddStudents.BackColor = System.Drawing.Color.Black;
-            this.ButtonClearAddStudents.ForeColor = System.Drawing.Color.White;
-            this.ButtonClearAddStudents.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.ButtonClearAddStudents.IconColor = System.Drawing.Color.Black;
-            this.ButtonClearAddStudents.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonClearAddStudents.Location = new System.Drawing.Point(50, 184);
-            this.ButtonClearAddStudents.Name = "ButtonClearAddStudents";
-            this.ButtonClearAddStudents.Size = new System.Drawing.Size(102, 34);
-            this.ButtonClearAddStudents.TabIndex = 14;
-            this.ButtonClearAddStudents.Text = "Clear";
-            this.ButtonClearAddStudents.UseVisualStyleBackColor = false;
-            this.ButtonClearAddStudents.Click += new System.EventHandler(this.ButtonClearAdduser_Click);
             // 
             // txtUserYearSem
             // 
@@ -474,6 +372,119 @@
             this.label2.TabIndex = 26;
             this.label2.Text = "User ID";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Blue;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(763, 36);
+            this.panel1.TabIndex = 0;
+            // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.BorderRadius = 10;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.IconLeft = global::LibraryMS.Properties.Resources.Search;
+            this.guna2TextBox1.IconLeftOffset = new System.Drawing.Point(1, 0);
+            this.guna2TextBox1.IconLeftSize = new System.Drawing.Size(32, 32);
+            this.guna2TextBox1.Location = new System.Drawing.Point(213, 5);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderText = "Search Here!";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(182, 28);
+            this.guna2TextBox1.TabIndex = 0;
+            // 
+            // ButtonDeleteAddStudents
+            // 
+            this.ButtonDeleteAddStudents.BackColor = System.Drawing.Color.Black;
+            this.ButtonDeleteAddStudents.ForeColor = System.Drawing.Color.White;
+            this.ButtonDeleteAddStudents.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.ButtonDeleteAddStudents.IconColor = System.Drawing.Color.Black;
+            this.ButtonDeleteAddStudents.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ButtonDeleteAddStudents.Location = new System.Drawing.Point(375, 184);
+            this.ButtonDeleteAddStudents.Name = "ButtonDeleteAddStudents";
+            this.ButtonDeleteAddStudents.Size = new System.Drawing.Size(102, 34);
+            this.ButtonDeleteAddStudents.TabIndex = 17;
+            this.ButtonDeleteAddStudents.Text = "Delete";
+            this.ButtonDeleteAddStudents.UseVisualStyleBackColor = false;
+            this.ButtonDeleteAddStudents.Click += new System.EventHandler(this.ButtonDeleteAdduser_Click);
+            // 
+            // ButtonUpdateAddStudents
+            // 
+            this.ButtonUpdateAddStudents.BackColor = System.Drawing.Color.Black;
+            this.ButtonUpdateAddStudents.ForeColor = System.Drawing.Color.White;
+            this.ButtonUpdateAddStudents.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.ButtonUpdateAddStudents.IconColor = System.Drawing.Color.Black;
+            this.ButtonUpdateAddStudents.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ButtonUpdateAddStudents.Location = new System.Drawing.Point(267, 184);
+            this.ButtonUpdateAddStudents.Name = "ButtonUpdateAddStudents";
+            this.ButtonUpdateAddStudents.Size = new System.Drawing.Size(102, 34);
+            this.ButtonUpdateAddStudents.TabIndex = 16;
+            this.ButtonUpdateAddStudents.Text = "Update";
+            this.ButtonUpdateAddStudents.UseVisualStyleBackColor = false;
+            this.ButtonUpdateAddStudents.Click += new System.EventHandler(this.ButtonUpdateAdduser_Click);
+            // 
+            // ButtonSaveAddStudents
+            // 
+            this.ButtonSaveAddStudents.BackColor = System.Drawing.Color.Black;
+            this.ButtonSaveAddStudents.ForeColor = System.Drawing.Color.White;
+            this.ButtonSaveAddStudents.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.ButtonSaveAddStudents.IconColor = System.Drawing.Color.Black;
+            this.ButtonSaveAddStudents.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ButtonSaveAddStudents.Location = new System.Drawing.Point(159, 184);
+            this.ButtonSaveAddStudents.Name = "ButtonSaveAddStudents";
+            this.ButtonSaveAddStudents.Size = new System.Drawing.Size(102, 34);
+            this.ButtonSaveAddStudents.TabIndex = 15;
+            this.ButtonSaveAddStudents.Text = "Save";
+            this.ButtonSaveAddStudents.UseVisualStyleBackColor = false;
+            this.ButtonSaveAddStudents.Click += new System.EventHandler(this.ButtonSaveAddUser_Click);
+            // 
+            // ButtonBackAddStudents
+            // 
+            this.ButtonBackAddStudents.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonBackAddStudents.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonBackAddStudents.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.ButtonBackAddStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonBackAddStudents.ForeColor = System.Drawing.Color.White;
+            this.ButtonBackAddStudents.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.ButtonBackAddStudents.IconColor = System.Drawing.Color.Black;
+            this.ButtonBackAddStudents.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ButtonBackAddStudents.IconSize = 20;
+            this.ButtonBackAddStudents.Location = new System.Drawing.Point(567, 3);
+            this.ButtonBackAddStudents.Name = "ButtonBackAddStudents";
+            this.ButtonBackAddStudents.Size = new System.Drawing.Size(43, 28);
+            this.ButtonBackAddStudents.TabIndex = 17;
+            this.ButtonBackAddStudents.Text = "X";
+            this.ButtonBackAddStudents.UseMnemonic = false;
+            this.ButtonBackAddStudents.UseVisualStyleBackColor = false;
+            this.ButtonBackAddStudents.Click += new System.EventHandler(this.ButtonBackAddUser_Click);
+            // 
+            // ButtonClearAddStudents
+            // 
+            this.ButtonClearAddStudents.BackColor = System.Drawing.Color.Black;
+            this.ButtonClearAddStudents.ForeColor = System.Drawing.Color.White;
+            this.ButtonClearAddStudents.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.ButtonClearAddStudents.IconColor = System.Drawing.Color.Black;
+            this.ButtonClearAddStudents.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ButtonClearAddStudents.Location = new System.Drawing.Point(50, 184);
+            this.ButtonClearAddStudents.Name = "ButtonClearAddStudents";
+            this.ButtonClearAddStudents.Size = new System.Drawing.Size(102, 34);
+            this.ButtonClearAddStudents.TabIndex = 14;
+            this.ButtonClearAddStudents.Text = "Clear";
+            this.ButtonClearAddStudents.UseVisualStyleBackColor = false;
+            this.ButtonClearAddStudents.Click += new System.EventHandler(this.ButtonClearAdduser_Click);
+            // 
             // ViewAllStudentsButton
             // 
             this.ViewAllStudentsButton.BackColor = System.Drawing.Color.Black;
@@ -503,16 +514,6 @@
             this.AddNewStudentsButton.Text = "Add New Student";
             this.AddNewStudentsButton.UseVisualStyleBackColor = false;
             this.AddNewStudentsButton.Click += new System.EventHandler(this.AddNewUserButton_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Blue;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(763, 36);
-            this.panel1.TabIndex = 0;
             // 
             // UCAddUser
             // 

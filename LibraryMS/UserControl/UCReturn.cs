@@ -27,7 +27,8 @@ namespace LibraryMS
             SqlConnection con = new SqlConnection(Constr);
             try
             {
-                SqlCommand cmd = new SqlCommand("SELECT i.Issue_Id,s.S_Id, s.Name AS Student_Name,s.Program+' '+s.Department+' '+s.Year_Semester AS Class ,s.Roll_No, b.Book_Id ,b.Book_Name AS BookName , i.Issue_by, i.Issue_date FROM IssuedBooks i JOIN Students s ON i.S_Id = s.S_Id Join Books b ON i.Book_Id = b.Book_Id  where Return_Date IS NULL", con);
+                string query = "SELECT i.Issue_Id,s.S_Id, s.Name AS Student_Name,s.Program+' '+s.Department+' '+s.Year_Semester AS Class ,s.Roll_No, b.Book_Id ,b.Book_Name AS BookName , l.UserName As Issued_by, i.Issue_date,l2.UserName as Returned_by, i.Return_Date FROM IssuedBooks i JOIN Students s ON i.S_Id = s.S_Id Join Books b ON i.Book_Id = b.Book_Id join Librarian l on i.Issue_by= l.UserId left join Librarian l2 on i.Return_by=l2.UserId where Return_Date is  null";
+                SqlCommand cmd = new SqlCommand(query, con);
                 if (con.State != ConnectionState.Open)
                 {
                     con.Open();
@@ -87,10 +88,11 @@ namespace LibraryMS
                 {
                     try
                     {
-                        SqlCommand cmd = new SqlCommand("Update IssuedBooks set Return_by='Admin', Return_Date=GETDATE() where Issue_Id=@issueid; UPDATE Books SET Issued_Books = Issued_Books - 1 WHERE Book_Id = @bookId;", con);
+                        SqlCommand cmd = new SqlCommand("Update IssuedBooks set Return_by=@Return_by, Return_Date=GETDATE() where Issue_Id=@issueid; UPDATE Books SET Issued_Books = Issued_Books - 1 WHERE Book_Id = @bookId;", con);
 
                         cmd.Parameters.AddWithValue("@issueid", issueid);
                         cmd.Parameters.AddWithValue("@bookId", bookid);
+                        cmd.Parameters.AddWithValue("@Return_by", Login.lno.loginId);
                         if (con.State != ConnectionState.Open)
                         {
                             con.Open();
@@ -99,7 +101,7 @@ namespace LibraryMS
                         MessageBox.Show("Succefuly Return Books", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ClearValueLabel();
                         GetIssuebook();
-
+                       UCHome.FromHome.CurrentIssueBook();
                     }
                     catch (Exception ex)
                     {

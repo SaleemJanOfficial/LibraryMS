@@ -41,8 +41,7 @@ namespace LibraryMS
 
                                 cmd.Parameters.AddWithValue("@studentId", txtSID.Text);
                                 cmd.Parameters.AddWithValue("@bookId", txtbookid.Text);
-                                cmd.Parameters.AddWithValue("@issueBy", "Saleem Jan");
-                                // cmd.Parameters.AddWithValue("@returnBy", "NULL");
+                                cmd.Parameters.AddWithValue("@issueBy", Login.lno.loginId);
 
                                 con.Open();
                                 cmd.ExecuteNonQuery();
@@ -122,9 +121,9 @@ namespace LibraryMS
                 {
                     con.Open();
                 }
-                SqlDataReader sdr;
+                SqlDataReader sdr = cmd.ExecuteReader();
 
-                sdr = cmd.ExecuteReader();
+               
                 if (sdr.Read())
                 {
                     txtbookname.Text = sdr.GetValue(1).ToString();
@@ -164,12 +163,12 @@ namespace LibraryMS
 
         private void ClearSelectBookvalue()
         {
-            txtbookname.Clear();
-            txtquantity.Clear();
-            txtIsuued.Clear();
-            txtAuthor.Clear();
-            txtPublisher.Clear();
-            txtremaining.Clear();
+            txtbookname.Text = string.Empty;
+            txtquantity.Text = string.Empty;
+            txtIsuued.Text = string.Empty;
+            txtAuthor.Text = string.Empty;
+            txtPublisher.Text = string.Empty;
+            txtremaining.Text = string.Empty;
         }
 
         //Load Student from Database
@@ -223,9 +222,9 @@ namespace LibraryMS
 
         private void ClearSelectStudentvalue()
         {
-            txtStuName.Clear();
-            txtsRno.Clear();
-            txtClass.Clear();
+            txtStuName.Text = string.Empty;
+            txtsRno.Text = string.Empty;
+            txtClass.Text = string.Empty;
         }
 
         private void button1_Click(object sender, EventArgs e)

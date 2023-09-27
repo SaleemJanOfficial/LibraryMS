@@ -9,6 +9,7 @@ namespace LibraryMS
 {
     public partial class UCAddUser : UserControl
     {
+
         // Connection String from App.config
         //  string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
@@ -39,23 +40,25 @@ namespace LibraryMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Eror in GitStudentRecord", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Eror in Get StudentRecord", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
                 con.Close();
             }
         }
-
-        //view all form object created
-        ViewAllStudent vastudent = new ViewAllStudent();
+        
 
         //show all user List
         private void ViewAllUserButton_Click(object sender, EventArgs e)
         {
+            ViewAllStudent vastudent = new ViewAllStudent();
+            ViewAllStudent.vas.GetStudentRecord();
             vastudent.ShowDialog();
-            GetStudentRecord();
+
+
         }
+
 
         //Panel Add new Button
         private void AddNewUserButton_Click(object sender, EventArgs e)
@@ -132,7 +135,7 @@ namespace LibraryMS
                     {
                         try
                         {
-                            SqlCommand cmd = new SqlCommand("INSERT INTO Students VALUES ( @Name, @F_Name, @Gender, @Roll_No, @Program, @Department, @Year_Semester, @Address_, @Mobile_No, @Enrl_Date) ", con);
+                            SqlCommand cmd = new SqlCommand("INSERT INTO Students VALUES ( @Name, @F_Name, @Gender, @Roll_No, @Program, @Department, @Year_Semester, @Address_, @Mobile_No, GETDATE()) ", con);
                             cmd.CommandType = CommandType.Text;
 
                             cmd.Parameters.AddWithValue("@Name", txtUName.Text);
@@ -144,7 +147,7 @@ namespace LibraryMS
                             cmd.Parameters.AddWithValue("@Year_Semester", txtUserYearSem.Text);
                             cmd.Parameters.AddWithValue("@Address_", txtUserAddress.Text);
                             cmd.Parameters.AddWithValue("@Mobile_No", txtUserMNo.Text);
-                            cmd.Parameters.AddWithValue("@Enrl_Date", txtUserEdate.Text);
+                            //cmd.Parameters.AddWithValue("@Enrl_Date", "GETDATE()");
 
                             if (con.State != ConnectionState.Open)
                             {
