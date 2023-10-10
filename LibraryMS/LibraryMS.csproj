@@ -93,6 +93,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserControl\UCAdminPassChan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\UCAdminPassChan.Designer.cs">
+      <DependentUpon>UCAdminPassChan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows Form\AdminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows Form\AdminLogin.Designer.cs">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,11 +113,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControl\UCAddBooks.cs">
+    <Compile Include="UserControl\UCAddBook.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\UCAddBooks.Designer.cs">
-      <DependentUpon>UCAddBooks.cs</DependentUpon>
+    <Compile Include="UserControl\.Designer.cs">
+      <DependentUpon>UCAddBook.cs</DependentUpon>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControl\UCAbout.cs">
       <SubType>UserControl</SubType>
@@ -113,11 +126,11 @@
     <Compile Include="UserControl\UCAbout.Designer.cs">
       <DependentUpon>UCAbout.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\UCAddStudent.cs">
+    <Compile Include="UserControl\UCAddUsers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\UCAddStudent.Designer.cs">
-      <DependentUpon>UCAddStudent.cs</DependentUpon>
+    <Compile Include="UserControl\UCAddUsers.Designer.cs">
+      <DependentUpon>UCAddUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl\UCReturn.cs">
       <SubType>UserControl</SubType>
@@ -143,12 +156,6 @@
     <Compile Include="Windows Form\LMS Main.Designer.cs">
       <DependentUpon>LMS Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows Form\ViewAllbooks.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows Form\ViewAllbooks.Designer.cs">
-      <DependentUpon>ViewAllbooks.cs</DependentUpon>
-    </Compile>
     <Compile Include="Windows Form\ViewAllStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,8 +175,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserControl\UCAddBooks.resx">
-      <DependentUpon>UCAddBooks.cs</DependentUpon>
+    <EmbeddedResource Include="UserControl\UCAdminPassChan.resx">
+      <DependentUpon>UCAdminPassChan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UCAddBook.resx">
+      <DependentUpon>UCAddBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\UCAbout.resx">
       <DependentUpon>UCAbout.cs</DependentUpon>
@@ -177,8 +187,8 @@
     <EmbeddedResource Include="UserControl\UCIssueBooks.resx">
       <DependentUpon>UCIssueBooks.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\UCAddStudent.resx">
-      <DependentUpon>UCAddStudent.cs</DependentUpon>
+    <EmbeddedResource Include="UserControl\UCAddUsers.resx">
+      <DependentUpon>UCAddUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\UHome.resx">
       <DependentUpon>UHome.cs</DependentUpon>
@@ -186,11 +196,11 @@
     <EmbeddedResource Include="UserControl\UCReturn.resx">
       <DependentUpon>UCReturn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows Form\AdminLogin.resx">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows Form\LMS Main.resx">
       <DependentUpon>LMS Main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows Form\ViewAllbooks.resx">
-      <DependentUpon>ViewAllbooks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows Form\ViewAllStudent.resx">
       <DependentUpon>ViewAllStudent.cs</DependentUpon>
@@ -235,6 +245,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Admin\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

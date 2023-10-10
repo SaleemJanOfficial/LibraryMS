@@ -31,7 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.PanelAddBook = new System.Windows.Forms.Panel();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.Bookdate = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.Booksgrid = new System.Windows.Forms.DataGridView();
@@ -53,6 +52,7 @@
             this.ViewAllBooksButton = new FontAwesome.Sharp.IconButton();
             this.AddNewBookButton = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.boxSearchBook = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             this.PanelAddBook.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Booksgrid)).BeginInit();
@@ -88,7 +88,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelAddBook.BackColor = System.Drawing.Color.SkyBlue;
-            this.PanelAddBook.Controls.Add(this.guna2TextBox1);
+            this.PanelAddBook.Controls.Add(this.boxSearchBook);
             this.PanelAddBook.Controls.Add(this.Bookdate);
             this.PanelAddBook.Controls.Add(this.label13);
             this.PanelAddBook.Controls.Add(this.Booksgrid);
@@ -112,28 +112,6 @@
             this.PanelAddBook.Size = new System.Drawing.Size(613, 289);
             this.PanelAddBook.TabIndex = 6;
             this.PanelAddBook.Visible = false;
-            // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.BorderRadius = 10;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.IconLeft = global::LibraryMS.Properties.Resources.download__1_;
-            this.guna2TextBox1.IconLeftOffset = new System.Drawing.Point(6, 0);
-            this.guna2TextBox1.Location = new System.Drawing.Point(222, 6);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "Search Here!";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(182, 24);
-            this.guna2TextBox1.TabIndex = 1;
             // 
             // Bookdate
             // 
@@ -375,6 +353,31 @@
             this.panel2.Size = new System.Drawing.Size(763, 36);
             this.panel2.TabIndex = 2;
             // 
+            // boxSearchBook
+            // 
+            this.boxSearchBook.BorderRadius = 10;
+            this.boxSearchBook.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.boxSearchBook.DefaultText = "";
+            this.boxSearchBook.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.boxSearchBook.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.boxSearchBook.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.boxSearchBook.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.boxSearchBook.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.boxSearchBook.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.boxSearchBook.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.boxSearchBook.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.boxSearchBook.IconLeft = global::LibraryMS.Properties.Resources.Search;
+            this.boxSearchBook.IconLeftOffset = new System.Drawing.Point(1, 0);
+            this.boxSearchBook.IconLeftSize = new System.Drawing.Size(32, 32);
+            this.boxSearchBook.Location = new System.Drawing.Point(187, 3);
+            this.boxSearchBook.Name = "boxSearchBook";
+            this.boxSearchBook.PasswordChar = '\0';
+            this.boxSearchBook.PlaceholderText = "Search Books Here!";
+            this.boxSearchBook.SelectedText = "";
+            this.boxSearchBook.Size = new System.Drawing.Size(182, 28);
+            this.boxSearchBook.TabIndex = 12;
+            this.boxSearchBook.TextChanged += new System.EventHandler(this.btnSearchBook_TextChanged);
+            // 
             // UCAddBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -400,8 +403,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel PanelAddBook;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private System.Windows.Forms.DataGridView Booksgrid;
         private System.Windows.Forms.TextBox Quantity;
         private System.Windows.Forms.Label label11;
         private FontAwesome.Sharp.IconButton ButtonDeleteAddBook;
@@ -421,5 +422,7 @@
         private FontAwesome.Sharp.IconButton AddNewBookButton;
         private System.Windows.Forms.DateTimePicker Bookdate;
         private System.Windows.Forms.Label label13;
+        private Guna.UI2.WinForms.Guna2TextBox boxSearchBook;
+        private System.Windows.Forms.DataGridView Booksgrid;
     }
 }

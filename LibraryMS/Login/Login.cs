@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryMS.Admin;
 
 namespace LibraryMS
 {
@@ -16,12 +17,16 @@ namespace LibraryMS
         public string LoginName;
         public int loginId;
 
+        public string AdLoginName;
+        public int AdloginId;
+
         public string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
         public static Login lno;
         public Login()
         {
             InitializeComponent();
             lno = this;
+            txtLoginEmail1.Focus();
         }
 
 
@@ -39,6 +44,7 @@ namespace LibraryMS
 
             LoginPanel.Hide();
             REGPanel.Show();
+            txtName.Focus();
 
         }
 
@@ -49,21 +55,22 @@ namespace LibraryMS
 
             if (isvalid1())
             {
-                SqlCommand cmd = new SqlCommand("select * from Librarian where Email=@Email and UPassword=@UPassword", con);
+                SqlCommand cmd = new SqlCommand("select * from Librarian where Email=@Email and UPassword=@UPassword and LibStatus=@Libstatus", con);
 
                 cmd.Parameters.AddWithValue("@Email", txtLoginEmail1.Text);
                 cmd.Parameters.AddWithValue("@UPassword", txtLoginPassword1.Text);
+                cmd.Parameters.AddWithValue("@LibStatus", "Active");
                 con.Open();
 
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
 
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
-               
-             
+
+
                 if (dt.Rows.Count > 0)
                 {
-                    MessageBox.Show("Ok ", "Okworking");
+                    MessageBox.Show("Login Successfuly Click Ok To Continue", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoginName = dt.Rows[0]["UserName"].ToString();
                     string tempuid = dt.Rows[0]["UserId"].ToString();
                     loginId = Convert.ToInt32(tempuid);
@@ -74,7 +81,7 @@ namespace LibraryMS
                 }
                 else
                 {
-                    MessageBox.Show("Your Entered Wrong Password");
+                    MessageBox.Show(" Entered Wrong EMail or Password");
                 }
             }
 
@@ -89,7 +96,7 @@ namespace LibraryMS
             }
             else if (txtLoginPassword1.Text == string.Empty)
             {
-                MessageBox.Show("Please Enter Your Your Password", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please Enter Your Password", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
             return true;
@@ -115,16 +122,20 @@ namespace LibraryMS
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("insert into Librarian values (@UserName, @cnic,  @Email,  @UPassword)", con);
+                    SqlCommand cmd = new SqlCommand("insert into Librarian values (@UserName, @cnic,  @Email,  @UPassword,@LibStatus)", con);
                     cmd.Parameters.AddWithValue("@UserName", txtName.Text);
                     cmd.Parameters.AddWithValue("@cnic", txtCnic.Text);
                     cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
                     cmd.Parameters.AddWithValue("@UPassword", TxtPassword.Text);
+                    cmd.Parameters.AddWithValue("@Libstatus", "Not Approve");
 
                     con.Open();
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Successfly Add User", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Successfly Registered! Waiting For Admin Approval..", "Registered", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearTextBoxVAlue();
+                    REGPanel.Hide();
+                    LoginPanel.Show();
+
                 }
                 catch (Exception ex)
                 {
@@ -198,5 +209,112 @@ namespace LibraryMS
                 txtLoginPassword1.UseSystemPasswordChar = false;
             }
         }
+
+        private void AdminClick(object sender, EventArgs e)
+        {
+            LoginPanel.Hide();
+            REGPanel.Hide();
+            AdminPanel.Show();
+
+        }
+
+        private void admclick_Click(object sender, EventArgs e)
+        {
+            LoginPanel.Hide();
+            REGPanel.Hide();
+            AdminPanel.Show();
+            AdminEmail.Focus();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            AdminPanel.Hide();
+            LoginPanel.Show();
+
+        }
+        
+        private void buttonlogin2_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(Constr);
+
+            if (isvalid2())
+            {
+                SqlCommand cmd = new SqlCommand("select * from Admin where Email=@Email and Password=@Password", con);
+
+                cmd.Parameters.AddWithValue("@Email", AdminEmail.Text);
+                cmd.Parameters.AddWithValue("@Password", AdminPassword.Text);
+                con.Open();
+
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("Login Successfuly Click Ok To Continue", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AdLoginName = dt.Rows[0]["Name"].ToString();
+                    string tempuid = dt.Rows[0]["Admin_Id"].ToString();
+                    AdloginId = Convert.ToInt32(tempuid);
+
+
+                    Admin.AdminLogin adnlgn = new Admin.AdminLogin();
+                    this.Hide();
+                    adnlgn.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Wrong E-Mail or Password");
+                }
+
+
+            }
+        }
+
+        public bool isvalid2()
+        {
+            if (AdminEmail.Text == string.Empty)
+            {
+                MessageBox.Show("Please Enter Your Email", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            else if (AdminPassword.Text == string.Empty)
+            {
+                MessageBox.Show("Please Enter Your Your Password", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            return true;
+        }
+
+        private void Buttonclose2_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void ChangePass_Click(object sender, EventArgs e)
+        {
+            LoginPanel.Hide();
+
+
+            adminPassChan1.Visible = true;
+            adminPassChan1.BringToFront();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            txtLoginEmail1.Focus();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            txtLoginEmail1.Focus();
+        }
     }
 }
+

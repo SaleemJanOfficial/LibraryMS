@@ -193,7 +193,7 @@ namespace LibraryMS
                 {
                     try
                     {
-                        SqlCommand cmd = new SqlCommand("UPDATE Books set Book_Name=@Book_Name, Author=@Author, Publisher=@Publisher, Quantity=@Quantity, Date=@Date where Book_Id=@Book_Id;", con);
+                        SqlCommand cmd = new SqlCommand("UPDATE Books set Book_Name=@Book_Name, Author=@Author, Publisher=@Publisher, Quantity=@Quantity where Book_Id=@Book_Id;", con);
                         cmd.CommandType = CommandType.Text;
 
                         cmd.Parameters.AddWithValue("@Book_Id", BookId);
@@ -201,7 +201,6 @@ namespace LibraryMS
                         cmd.Parameters.AddWithValue("@Author", Author.Text);
                         cmd.Parameters.AddWithValue("@Publisher", Publisher.Text);
                         cmd.Parameters.AddWithValue("@Quantity", Quantity.Text);
-                        cmd.Parameters.AddWithValue("@Date", Bookdate.Text);
 
                         con.Open();
                         cmd.ExecuteNonQuery();
@@ -264,6 +263,35 @@ namespace LibraryMS
             else
             {
                 MessageBox.Show("Please Select Book From GridView", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnSearchBook_TextChanged(object sender, EventArgs e)
+        {
+            Booksearching();
+        }
+
+        private void Booksearching()
+        {
+            SqlConnection con = new SqlConnection(Constr);
+
+            try
+            {
+                SqlDataAdapter sda = new SqlDataAdapter("Select * from Books where Book_Name like '%' + @Name +'%' ", con);
+                sda.SelectCommand.Parameters.AddWithValue("@Name", boxSearchBook.Text.Trim());
+
+                DataTable dt = new DataTable();
+
+                sda.Fill(dt);
+                Booksgrid.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error In Book Searchng", ex.Message);
+            }
+            finally
+            {
+                con.Close();
             }
         }
     }

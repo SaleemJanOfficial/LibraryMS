@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Sidepanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonAddBook = new FontAwesome.Sharp.IconButton();
             this.AboutButton = new FontAwesome.Sharp.IconButton();
@@ -62,6 +63,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Maroon;
+            this.panel1.Controls.Add(this.Sidepanel);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.buttonAddBook);
             this.panel1.Controls.Add(this.AboutButton);
@@ -75,6 +77,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(136, 474);
             this.panel1.TabIndex = 0;
+            // 
+            // Sidepanel
+            // 
+            this.Sidepanel.BackColor = System.Drawing.Color.Red;
+            this.Sidepanel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Sidepanel.Location = new System.Drawing.Point(127, 100);
+            this.Sidepanel.Name = "Sidepanel";
+            this.Sidepanel.Size = new System.Drawing.Size(7, 49);
+            this.Sidepanel.TabIndex = 9;
             // 
             // label1
             // 
@@ -91,13 +102,15 @@
             // buttonAddBook
             // 
             this.buttonAddBook.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonAddBook.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonAddBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddBook.ForeColor = System.Drawing.Color.White;
             this.buttonAddBook.IconChar = FontAwesome.Sharp.IconChar.Book;
             this.buttonAddBook.IconColor = System.Drawing.Color.White;
             this.buttonAddBook.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.buttonAddBook.IconSize = 40;
-            this.buttonAddBook.Location = new System.Drawing.Point(0, 290);
+            this.buttonAddBook.Location = new System.Drawing.Point(0, 196);
             this.buttonAddBook.Name = "buttonAddBook";
             this.buttonAddBook.Size = new System.Drawing.Size(136, 49);
             this.buttonAddBook.TabIndex = 5;
@@ -109,6 +122,9 @@
             // AboutButton
             // 
             this.AboutButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.AboutButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.AboutButton.FlatAppearance.BorderSize = 0;
+            this.AboutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AboutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AboutButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.AboutButton.IconChar = FontAwesome.Sharp.IconChar.Info;
@@ -116,17 +132,19 @@
             this.AboutButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.AboutButton.IconSize = 40;
             this.AboutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AboutButton.Location = new System.Drawing.Point(0, 337);
+            this.AboutButton.Location = new System.Drawing.Point(0, 343);
             this.AboutButton.Name = "AboutButton";
             this.AboutButton.Size = new System.Drawing.Size(136, 49);
             this.AboutButton.TabIndex = 6;
-            this.AboutButton.Text = "Aobut";
+            this.AboutButton.Text = "About";
             this.AboutButton.UseVisualStyleBackColor = false;
             this.AboutButton.Click += new System.EventHandler(this.AboutButton_Click);
             // 
             // ButtonAddUser
             // 
             this.ButtonAddUser.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ButtonAddUser.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ButtonAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonAddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonAddUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ButtonAddUser.IconChar = FontAwesome.Sharp.IconChar.User;
@@ -134,11 +152,11 @@
             this.ButtonAddUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ButtonAddUser.IconSize = 40;
             this.ButtonAddUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonAddUser.Location = new System.Drawing.Point(0, 244);
+            this.ButtonAddUser.Location = new System.Drawing.Point(0, 147);
             this.ButtonAddUser.Name = "ButtonAddUser";
             this.ButtonAddUser.Size = new System.Drawing.Size(136, 49);
             this.ButtonAddUser.TabIndex = 4;
-            this.ButtonAddUser.Text = "Add Students";
+            this.ButtonAddUser.Text = "Add Users";
             this.ButtonAddUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ButtonAddUser.UseVisualStyleBackColor = false;
             this.ButtonAddUser.Click += new System.EventHandler(this.ButtonAddUser_Click);
@@ -146,6 +164,8 @@
             // ReturnButton
             // 
             this.ReturnButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ReturnButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ReturnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ReturnButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReturnButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ReturnButton.IconChar = FontAwesome.Sharp.IconChar.Sync;
@@ -153,7 +173,7 @@
             this.ReturnButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ReturnButton.IconSize = 40;
             this.ReturnButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ReturnButton.Location = new System.Drawing.Point(0, 198);
+            this.ReturnButton.Location = new System.Drawing.Point(0, 294);
             this.ReturnButton.Name = "ReturnButton";
             this.ReturnButton.Size = new System.Drawing.Size(136, 49);
             this.ReturnButton.TabIndex = 3;
@@ -165,6 +185,8 @@
             // IssueButton
             // 
             this.IssueButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.IssueButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.IssueButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.IssueButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IssueButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.IssueButton.IconChar = FontAwesome.Sharp.IconChar.SpellCheck;
@@ -172,11 +194,11 @@
             this.IssueButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.IssueButton.IconSize = 40;
             this.IssueButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.IssueButton.Location = new System.Drawing.Point(0, 152);
+            this.IssueButton.Location = new System.Drawing.Point(0, 245);
             this.IssueButton.Name = "IssueButton";
             this.IssueButton.Size = new System.Drawing.Size(136, 49);
             this.IssueButton.TabIndex = 2;
-            this.IssueButton.Text = "Iusse Book";
+            this.IssueButton.Text = "Issue Book";
             this.IssueButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.IssueButton.UseVisualStyleBackColor = false;
             this.IssueButton.Click += new System.EventHandler(this.IssueButton_Click);
@@ -184,6 +206,8 @@
             // HomeButton
             // 
             this.HomeButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.HomeButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.HomeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HomeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HomeButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.HomeButton.IconChar = FontAwesome.Sharp.IconChar.Home;
@@ -191,7 +215,7 @@
             this.HomeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.HomeButton.IconSize = 40;
             this.HomeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.HomeButton.Location = new System.Drawing.Point(0, 106);
+            this.HomeButton.Location = new System.Drawing.Point(0, 98);
             this.HomeButton.Name = "HomeButton";
             this.HomeButton.Size = new System.Drawing.Size(136, 49);
             this.HomeButton.TabIndex = 1;
@@ -262,6 +286,7 @@
             // ucAddUser
             // 
             this.ucAddUser.AutoSize = true;
+            this.ucAddUser.BackColor = System.Drawing.Color.Magenta;
             this.ucAddUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucAddUser.Location = new System.Drawing.Point(0, 0);
             this.ucAddUser.Name = "ucAddUser";
@@ -407,7 +432,7 @@
         private FontAwesome.Sharp.IconButton buttonAddBook;
         private System.Windows.Forms.Panel UCPanel;
         private UCAddBooks ucAddBooks;
-        private UCStatus ucPanding;
+        internal protected UCStatus ucPanding;
         private UCIssueBooks ucIssueBook;
         private UCAddUser ucAddUser;
        private System.Windows.Forms.Panel HeaderPanel;
@@ -418,5 +443,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel Sidepanel;
     }
 }
