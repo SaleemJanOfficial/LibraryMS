@@ -529,6 +529,7 @@
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 4;
             this.label7.Text = "Show";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // iconButton3
             // 

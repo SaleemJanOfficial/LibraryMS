@@ -9,14 +9,14 @@ namespace LibraryMS
     public partial class Main : Form
     {
         public static Main mainpage;
+     //  public string Constring= @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
 
 
         public Main()
         {
-            InitializeComponent();
-           
+           InitializeComponent();
            lblWelcome.Text = Login.lno.LoginName;
-            mainpage = this;
+           mainpage = this;
         }
 
 
@@ -109,6 +109,11 @@ namespace LibraryMS
             System.Windows.Forms.Application.Exit();
         }
 
-
+        private void Logout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login lgn = new Login();
+            lgn.Show();
+        }
     }
 }

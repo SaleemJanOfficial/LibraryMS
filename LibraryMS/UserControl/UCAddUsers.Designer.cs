@@ -144,7 +144,7 @@
             this.TActiveButton.Name = "TActiveButton";
             this.TActiveButton.Size = new System.Drawing.Size(126, 34);
             this.TActiveButton.TabIndex = 4;
-            this.TActiveButton.Text = "Active Student";
+            this.TActiveButton.Text = "Active Teacher";
             this.TActiveButton.UseVisualStyleBackColor = false;
             this.TActiveButton.Visible = false;
             this.TActiveButton.Click += new System.EventHandler(this.TActiveButton_Click);
@@ -160,7 +160,7 @@
             this.TDeletedButton.Name = "TDeletedButton";
             this.TDeletedButton.Size = new System.Drawing.Size(126, 34);
             this.TDeletedButton.TabIndex = 5;
-            this.TDeletedButton.Text = "Deleted Student";
+            this.TDeletedButton.Text = "Deleted Teacher";
             this.TDeletedButton.UseVisualStyleBackColor = false;
             this.TDeletedButton.Visible = false;
             this.TDeletedButton.Click += new System.EventHandler(this.TDeletedButton_Click);

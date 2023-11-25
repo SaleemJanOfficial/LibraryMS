@@ -6,12 +6,14 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 using LibraryMS.Windows_Form;
+using LibraryMS.Class;
 
 namespace LibraryMS
 {
     public partial class UCStatus : UserControl
     {
-        string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
+        SqlConnection con = new SqlConnection(SqlConnectionClass.Constr());
+       // string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
         public static UCStatus ucpandig;
 
         public UCStatus()
@@ -22,29 +24,10 @@ namespace LibraryMS
 
 
         int ShowAllorNot = 0;
-        /* void ShowIssuedBook()
-          {
-              if (StudentAndTeacherCheck == 1 && ShowAllorNot == 1 || StudentAndTeacherCheck == 1)
-              {
-                  GetIssuebook();
-              }
-              else if (StudentAndTeacherCheck == 1 && ShowAllorNot == 2)
-              {
-                  getNoreturn();
-              }
-              else if (StudentAndTeacherCheck == 2 && ShowAllorNot == 1 || StudentAndTeacherCheck == 2)
-              {
-                  GetIssueBookTeacher();
-              }
-              else if (StudentAndTeacherCheck == 2 && ShowAllorNot == 2)
-              {
-                  getNoreturnTeacher();
-              }
-          }
-          */
+      
         public void GetIssuebook()
         {
-            SqlConnection con = new SqlConnection(Constr);
+           // SqlConnection con = new SqlConnection(Constr);
             try
             {
                 string query = "  SELECT i.Issue_Id,s.S_Id, s.Name AS Student_Name,s.Program+' '+s.Department+' '+s.Year_Semester  AS Class ,s.Roll_No, b.Book_Id ,b.Book_Name AS BookName , l.UserName  As Issued_by, i.Issue_date,datediff(day,i.Issue_date,getdate()) as Days_Passed, 0 as Latedays FROM IssuedBooks i JOIN Students s ON i.S_Id = s.S_Id Join Books b ON i.Book_Id = b.Book_Id  join Librarian l on i.Issue_by= l.UserId left join Librarian l2 on i.Return_by=l2.UserId  where Return_Date is null and datediff(day,Issue_date,getdate())-7<8";
@@ -118,7 +101,7 @@ namespace LibraryMS
             ClearValueLabel();
 
         }
-        //Rerurn Button
+        //Rerurn Button Students
         private void btnReturn_Click(object sender, EventArgs e)
         {
 
@@ -154,7 +137,7 @@ namespace LibraryMS
 
         private void Returnbook()
         {
-            SqlConnection con = new SqlConnection(Constr);
+            //SqlConnection con = new SqlConnection(Constr);
             if (issueid > 0 && lblissueid.Text != string.Empty)
             {
                 DialogResult mbx = MessageBox.Show("Are You Sure?", "Return", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -354,17 +337,13 @@ namespace LibraryMS
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-
+            ShowAllorNot = 1;
             getNoreturn();
-
-
-
         }
 
         public void getNoreturn()
         {
-            SqlConnection con = new SqlConnection(Constr);
+          //  SqlConnection con = new SqlConnection(Constr);
             try
             {
                 string query = "SELECT i.Issue_Id,s.S_Id, s.Name AS Student_Name,s.Program+' '+s.Department+' '+s.Year_Semester  AS Class ,s.Roll_No, b.Book_Id ,b.Book_Name AS BookName , l.UserName  As Issued_by, i.Issue_date,datediff(day,i.Issue_date,getdate()) as Days_Passed, case when datediff(day,i.Issue_date,getdate())-7>0 then datediff(day,i.Issue_date,getdate())-7 else 0 end  as OverDays FROM IssuedBooks i JOIN Students s ON i.S_Id = s.S_Id Join Books b ON i.Book_Id = b.Book_Id  join Librarian l on i.Issue_by= l.UserId left join Librarian l2 on i.Return_by=l2.UserId  where Return_Date is  null and datediff(day,Issue_date,getdate())-7>8";
@@ -419,7 +398,7 @@ namespace LibraryMS
         }
         public void GetIssueBookTeacher()
         {
-            SqlConnection con = new SqlConnection(Constr);
+           // SqlConnection con = new SqlConnection(Constr);
             try
             {
                 string query = "  SELECT i.Issue_Id,T.T_Id, T.Name AS Teacher_Name,T.Department ,T.P_No, b.Book_Id ,b.Book_Name AS BookName , l.UserName  As Issued_by, i.Issue_date,datediff(day,i.Issue_date,getdate()) as Days_Passed, 0 as Latedays FROM TeacherIssuedBooks i JOIN Teachers T ON i.T_Id = T.T_Id Join Books b ON i.Book_Id = b.Book_Id  join Librarian l on i.Issue_by= l.UserId left join Librarian l2 on i.Return_by=l2.UserId  where Return_Date is  null and datediff(day,Issue_date,getdate())-7<8";
@@ -480,7 +459,7 @@ namespace LibraryMS
         }
         private void ReturnbookTeacher()
         {
-            SqlConnection con = new SqlConnection(Constr);
+            //SqlConnection con = new SqlConnection(Constr);
             if (issueid > 0 && lblissueid.Text != string.Empty)
             {
                 DialogResult mbx = MessageBox.Show("Are You Sure?", "Return", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -538,7 +517,7 @@ namespace LibraryMS
         public void getNoreturnTeacher()
         {
 
-            SqlConnection con = new SqlConnection(Constr);
+           // SqlConnection con = new SqlConnection(Constr);
             try
             {
                 string query = "SELECT i.Issue_Id,t.T_Id, t.Name AS Teacher_Name,t.Department,t.P_No, b.Book_Id ,b.Book_Name AS BookName , l.UserName  As Issued_by, i.Issue_date,datediff(day,i.Issue_date,getdate()) as Days_Passed, case when datediff(day,i.Issue_date,getdate())-7>0 then datediff(day,i.Issue_date,getdate())-7 else 0 end  as OverDays FROM TeacherIssuedBooks i JOIN Teachers t ON i.T_Id = t.T_Id Join Books b ON i.Book_Id = b.Book_Id  join Librarian l on i.Issue_by= l.UserId left join Librarian l2 on i.Return_by=l2.UserId  where Return_Date is  null and datediff(day,Issue_date,getdate())-7>8";

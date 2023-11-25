@@ -30,22 +30,26 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
             this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.TstudentLable = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.lblTIssueBook = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.label14 = new System.Windows.Forms.Label();
             this.CurrentIssuedStud = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.lblTeacherIssue = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.CurrentIssueTeach = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.lblStudentIssue = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.GUnaIssuedBook = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.lblCurrentIssue = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TTeacherCount = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.TTeacher = new System.Windows.Forms.Label();
@@ -55,27 +59,24 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.guna2GradientPanel4.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
+            this.guna2GradientPanel5.SuspendLayout();
+            this.guna2GradientPanel1.SuspendLayout();
             this.CurrentIssuedStud.SuspendLayout();
             this.CurrentIssueTeach.SuspendLayout();
             this.GUnaIssuedBook.SuspendLayout();
             this.TTeacherCount.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.guna2GradientPanel1.SuspendLayout();
-            this.guna2GradientPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -88,6 +89,8 @@
             // 
             this.panel3.AutoScroll = true;
             this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Controls.Add(this.guna2GradientPanel4);
             this.panel3.Controls.Add(this.guna2GradientPanel3);
             this.panel3.Controls.Add(this.guna2GradientPanel5);
@@ -101,18 +104,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(649, 304);
             this.panel3.TabIndex = 5;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Al_Qalam Tehreeri", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label14.Location = new System.Drawing.Point(16, 10);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(39, 45);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "+";
             // 
             // guna2GradientPanel4
             // 
@@ -191,6 +182,60 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Overall Issued";
             // 
+            // guna2GradientPanel5
+            // 
+            this.guna2GradientPanel5.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.guna2GradientPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.guna2GradientPanel5.BorderRadius = 30;
+            this.guna2GradientPanel5.Controls.Add(this.label6);
+            this.guna2GradientPanel5.FillColor = System.Drawing.Color.DeepPink;
+            this.guna2GradientPanel5.FillColor2 = System.Drawing.Color.Maroon;
+            this.guna2GradientPanel5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.guna2GradientPanel5.Location = new System.Drawing.Point(413, 187);
+            this.guna2GradientPanel5.Name = "guna2GradientPanel5";
+            this.guna2GradientPanel5.Size = new System.Drawing.Size(67, 64);
+            this.guna2GradientPanel5.TabIndex = 4;
+            this.guna2GradientPanel5.Click += new System.EventHandler(this.CurrentIssuedStud_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Al_Qalam Tehreeri", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Location = new System.Drawing.Point(16, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(36, 45);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "=";
+            // 
+            // guna2GradientPanel1
+            // 
+            this.guna2GradientPanel1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.guna2GradientPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.guna2GradientPanel1.BorderRadius = 30;
+            this.guna2GradientPanel1.Controls.Add(this.label14);
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.DeepPink;
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.Maroon;
+            this.guna2GradientPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(168, 187);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(67, 64);
+            this.guna2GradientPanel1.TabIndex = 4;
+            this.guna2GradientPanel1.Click += new System.EventHandler(this.CurrentIssuedStud_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Al_Qalam Tehreeri", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label14.Location = new System.Drawing.Point(16, 10);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(39, 45);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "+";
+            // 
             // CurrentIssuedStud
             // 
             this.CurrentIssuedStud.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -214,11 +259,23 @@
             this.lblTeacherIssue.BackColor = System.Drawing.Color.Transparent;
             this.lblTeacherIssue.Font = new System.Drawing.Font("Al_Qalam Tehreeri", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTeacherIssue.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTeacherIssue.Location = new System.Drawing.Point(11, 23);
+            this.lblTeacherIssue.Location = new System.Drawing.Point(11, 33);
             this.lblTeacherIssue.Name = "lblTeacherIssue";
             this.lblTeacherIssue.Size = new System.Drawing.Size(56, 45);
             this.lblTeacherIssue.TabIndex = 0;
             this.lblTeacherIssue.Text = "00";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Azure;
+            this.label16.Location = new System.Drawing.Point(27, 99);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(104, 17);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Issued Books";
             // 
             // label11
             // 
@@ -254,11 +311,23 @@
             this.lblStudentIssue.BackColor = System.Drawing.Color.Transparent;
             this.lblStudentIssue.Font = new System.Drawing.Font("Al_Qalam Tehreeri", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStudentIssue.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblStudentIssue.Location = new System.Drawing.Point(8, 20);
+            this.lblStudentIssue.Location = new System.Drawing.Point(8, 30);
             this.lblStudentIssue.Name = "lblStudentIssue";
             this.lblStudentIssue.Size = new System.Drawing.Size(56, 45);
             this.lblStudentIssue.TabIndex = 0;
             this.lblStudentIssue.Text = "00";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Azure;
+            this.label8.Location = new System.Drawing.Point(24, 98);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 17);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Issued Books";
             // 
             // label9
             // 
@@ -275,7 +344,7 @@
             // GUnaIssuedBook
             // 
             this.GUnaIssuedBook.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.GUnaIssuedBook.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.GUnaIssuedBook.BackColor = System.Drawing.Color.Transparent;
             this.GUnaIssuedBook.BorderRadius = 40;
             this.GUnaIssuedBook.Controls.Add(this.lblCurrentIssue);
             this.GUnaIssuedBook.Controls.Add(this.label2);
@@ -293,23 +362,11 @@
             this.lblCurrentIssue.BackColor = System.Drawing.Color.Transparent;
             this.lblCurrentIssue.Font = new System.Drawing.Font("Al_Qalam Tehreeri", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrentIssue.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCurrentIssue.Location = new System.Drawing.Point(6, 31);
+            this.lblCurrentIssue.Location = new System.Drawing.Point(5, 30);
             this.lblCurrentIssue.Name = "lblCurrentIssue";
             this.lblCurrentIssue.Size = new System.Drawing.Size(56, 45);
             this.lblCurrentIssue.TabIndex = 0;
             this.lblCurrentIssue.Text = "00";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Azure;
-            this.label16.Location = new System.Drawing.Point(27, 99);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(104, 17);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Issued Books";
             // 
             // label2
             // 
@@ -424,60 +481,6 @@
             this.label1.Text = "Home";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2GradientPanel1
-            // 
-            this.guna2GradientPanel1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.guna2GradientPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.guna2GradientPanel1.BorderRadius = 30;
-            this.guna2GradientPanel1.Controls.Add(this.label14);
-            this.guna2GradientPanel1.FillColor = System.Drawing.Color.DeepPink;
-            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.Maroon;
-            this.guna2GradientPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(168, 187);
-            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(67, 64);
-            this.guna2GradientPanel1.TabIndex = 4;
-            this.guna2GradientPanel1.Click += new System.EventHandler(this.CurrentIssuedStud_Click);
-            // 
-            // guna2GradientPanel5
-            // 
-            this.guna2GradientPanel5.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.guna2GradientPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.guna2GradientPanel5.BorderRadius = 30;
-            this.guna2GradientPanel5.Controls.Add(this.label6);
-            this.guna2GradientPanel5.FillColor = System.Drawing.Color.DeepPink;
-            this.guna2GradientPanel5.FillColor2 = System.Drawing.Color.Maroon;
-            this.guna2GradientPanel5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.guna2GradientPanel5.Location = new System.Drawing.Point(413, 187);
-            this.guna2GradientPanel5.Name = "guna2GradientPanel5";
-            this.guna2GradientPanel5.Size = new System.Drawing.Size(67, 64);
-            this.guna2GradientPanel5.TabIndex = 4;
-            this.guna2GradientPanel5.Click += new System.EventHandler(this.CurrentIssuedStud_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Al_Qalam Tehreeri", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(16, 10);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 45);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "=";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Azure;
-            this.label8.Location = new System.Drawing.Point(24, 98);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 17);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Issued Books";
-            // 
             // UCHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -492,6 +495,10 @@
             this.guna2GradientPanel4.PerformLayout();
             this.guna2GradientPanel3.ResumeLayout(false);
             this.guna2GradientPanel3.PerformLayout();
+            this.guna2GradientPanel5.ResumeLayout(false);
+            this.guna2GradientPanel5.PerformLayout();
+            this.guna2GradientPanel1.ResumeLayout(false);
+            this.guna2GradientPanel1.PerformLayout();
             this.CurrentIssuedStud.ResumeLayout(false);
             this.CurrentIssuedStud.PerformLayout();
             this.CurrentIssueTeach.ResumeLayout(false);
@@ -504,10 +511,6 @@
             this.guna2GradientPanel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.guna2GradientPanel1.ResumeLayout(false);
-            this.guna2GradientPanel1.PerformLayout();
-            this.guna2GradientPanel5.ResumeLayout(false);
-            this.guna2GradientPanel5.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibraryMS.Admin;
+using LibraryMS.Class;
 
 namespace LibraryMS
 {
@@ -20,7 +21,8 @@ namespace LibraryMS
         public string AdLoginName;
         public int AdloginId;
 
-        public string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
+        SqlConnection con = new SqlConnection(SqlConnectionClass.Constr());
+       // public string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
         public static Login lno;
         public Login()
         {
@@ -51,40 +53,51 @@ namespace LibraryMS
         //login button
         public void bttonLogin1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Constr);
-
-            if (isvalid1())
+            //SqlConnection con = new SqlConnection(Constr);
+            try
             {
-                SqlCommand cmd = new SqlCommand("select * from Librarian where Email=@Email and UPassword=@UPassword and LibStatus=@Libstatus", con);
-
-                cmd.Parameters.AddWithValue("@Email", txtLoginEmail1.Text);
-                cmd.Parameters.AddWithValue("@UPassword", txtLoginPassword1.Text);
-                cmd.Parameters.AddWithValue("@LibStatus", "Active");
-                con.Open();
-
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-
-
-                if (dt.Rows.Count > 0)
+                if (isvalid1())
                 {
-                    MessageBox.Show("Login Successfuly Click Ok To Continue", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoginName = dt.Rows[0]["UserName"].ToString();
-                    string tempuid = dt.Rows[0]["UserId"].ToString();
-                    loginId = Convert.ToInt32(tempuid);
+                    SqlCommand cmd = new SqlCommand("select * from Librarian where Email=@Email and UPassword=@UPassword and LibStatus=@Libstatus", con);
 
-                    Main form3 = new Main();
-                    this.Hide();
-                    form3.Show();
-                }
-                else
-                {
-                    MessageBox.Show(" Entered Wrong EMail or Password");
+                    cmd.Parameters.AddWithValue("@Email", txtLoginEmail1.Text);
+                    cmd.Parameters.AddWithValue("@UPassword", txtLoginPassword1.Text);
+                    cmd.Parameters.AddWithValue("@LibStatus", "Active");
+                    if (con.State != ConnectionState.Open)
+                    {
+                        con.Open();
+                    }
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        MessageBox.Show("Login Successfuly Click Ok To Continue", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoginName = dt.Rows[0]["UserName"].ToString();
+                        string tempuid = dt.Rows[0]["UserId"].ToString();
+                        loginId = Convert.ToInt32(tempuid);
+
+                        Main form3 = new Main();
+                        this.Hide();
+                        form3.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show(" Entered Wrong EMail or Password");
+                    }
                 }
             }
-
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error While Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
 
         private bool isvalid1()
@@ -117,7 +130,7 @@ namespace LibraryMS
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Constr);
+         //   SqlConnection con = new SqlConnection(Constr);
             if (isvalid())
             {
                 try
@@ -235,7 +248,7 @@ namespace LibraryMS
         
         private void buttonlogin2_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Constr);
+          //  SqlConnection con = new SqlConnection(Constr);
 
             if (isvalid2())
             {
@@ -315,6 +328,20 @@ namespace LibraryMS
         {
             txtLoginEmail1.Focus();
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            if (AdminPassword.UseSystemPasswordChar != true)
+            {
+                AdminPassword.UseSystemPasswordChar = true;
+            }
+            else
+            {
+                AdminPassword.UseSystemPasswordChar = false;
+            }
+        }
+
+
     }
 }
 

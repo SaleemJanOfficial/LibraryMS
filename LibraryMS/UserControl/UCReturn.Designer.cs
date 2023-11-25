@@ -64,7 +64,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.lblsid = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.ShowAllTeacher = new System.Windows.Forms.Button();
             this.NotReturnTeacher = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.TeachersMark = new System.Windows.Forms.RadioButton();
@@ -76,8 +75,9 @@
             this.exportToCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vIewHIstoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnReturn = new FontAwesome.Sharp.IconButton();
             this.btnClear = new FontAwesome.Sharp.IconButton();
+            this.btnReturn = new FontAwesome.Sharp.IconButton();
+            this.ShowAllTeacher = new System.Windows.Forms.Button();
             this.ReturnFromTEacher = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
@@ -118,6 +118,7 @@
             // GridIssuebook
             // 
             this.GridIssuebook.AllowUserToAddRows = false;
+            this.GridIssuebook.AllowUserToOrderColumns = true;
             this.GridIssuebook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridIssuebook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridIssuebook.Cursor = System.Windows.Forms.Cursors.Cross;
@@ -560,35 +561,21 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.ShowAllTeacher);
-            this.panel4.Controls.Add(this.NotReturnTeacher);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.btnshowall);
             this.panel4.Controls.Add(this.btnNoReturn);
             this.panel4.Controls.Add(this.menuStrip1);
             this.panel4.Controls.Add(this.btnClear);
-            this.panel4.Controls.Add(this.ReturnFromTEacher);
             this.panel4.Controls.Add(this.btnReturn);
+            this.panel4.Controls.Add(this.ShowAllTeacher);
+            this.panel4.Controls.Add(this.ReturnFromTEacher);
+            this.panel4.Controls.Add(this.NotReturnTeacher);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 292);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(664, 27);
             this.panel4.TabIndex = 13;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
-            // 
-            // ShowAllTeacher
-            // 
-            this.ShowAllTeacher.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ShowAllTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ShowAllTeacher.ForeColor = System.Drawing.Color.White;
-            this.ShowAllTeacher.Location = new System.Drawing.Point(285, 2);
-            this.ShowAllTeacher.Name = "ShowAllTeacher";
-            this.ShowAllTeacher.Size = new System.Drawing.Size(75, 23);
-            this.ShowAllTeacher.TabIndex = 4;
-            this.ShowAllTeacher.Text = "Show All";
-            this.ShowAllTeacher.UseVisualStyleBackColor = false;
-            this.ShowAllTeacher.Visible = false;
-            this.ShowAllTeacher.Click += new System.EventHandler(this.ShowAllTeacher_Click);
             // 
             // NotReturnTeacher
             // 
@@ -599,7 +586,7 @@
             this.NotReturnTeacher.Name = "NotReturnTeacher";
             this.NotReturnTeacher.Size = new System.Drawing.Size(75, 23);
             this.NotReturnTeacher.TabIndex = 3;
-            this.NotReturnTeacher.Text = "Not Return";
+            this.NotReturnTeacher.Text = "Late (7days)";
             this.NotReturnTeacher.UseVisualStyleBackColor = false;
             this.NotReturnTeacher.Visible = false;
             this.NotReturnTeacher.Click += new System.EventHandler(this.NotReturnTeacher_Click);
@@ -656,7 +643,7 @@
             this.btnNoReturn.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnNoReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNoReturn.ForeColor = System.Drawing.Color.White;
-            this.btnNoReturn.Location = new System.Drawing.Point(370, 2);
+            this.btnNoReturn.Location = new System.Drawing.Point(369, 0);
             this.btnNoReturn.Name = "btnNoReturn";
             this.btnNoReturn.Size = new System.Drawing.Size(75, 23);
             this.btnNoReturn.TabIndex = 3;
@@ -710,27 +697,6 @@
             this.vIewHIstoryToolStripMenuItem.Text = "VIew HIstory";
             this.vIewHIstoryToolStripMenuItem.Click += new System.EventHandler(this.vIewHIstoryToolStripMenuItem_Click);
             // 
-            // btnReturn
-            // 
-            this.btnReturn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReturn.ForeColor = System.Drawing.Color.White;
-            this.btnReturn.IconChar = FontAwesome.Sharp.IconChar.UserXmark;
-            this.btnReturn.IconColor = System.Drawing.Color.White;
-            this.btnReturn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnReturn.IconSize = 25;
-            this.btnReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReturn.Location = new System.Drawing.Point(573, 0);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(88, 30);
-            this.btnReturn.TabIndex = 1;
-            this.btnReturn.Text = "Return";
-            this.btnReturn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReturn.UseVisualStyleBackColor = false;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
-            // 
             // btnClear
             // 
             this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -742,7 +708,7 @@
             this.btnClear.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClear.IconSize = 20;
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(485, 1);
+            this.btnClear.Location = new System.Drawing.Point(450, 1);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(84, 27);
             this.btnClear.TabIndex = 0;
@@ -751,6 +717,41 @@
             this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.ForeColor = System.Drawing.Color.White;
+            this.btnReturn.IconChar = FontAwesome.Sharp.IconChar.UserXmark;
+            this.btnReturn.IconColor = System.Drawing.Color.White;
+            this.btnReturn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnReturn.IconSize = 25;
+            this.btnReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReturn.Location = new System.Drawing.Point(531, -5);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(88, 30);
+            this.btnReturn.TabIndex = 1;
+            this.btnReturn.Text = "Return";
+            this.btnReturn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // ShowAllTeacher
+            // 
+            this.ShowAllTeacher.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ShowAllTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowAllTeacher.ForeColor = System.Drawing.Color.White;
+            this.ShowAllTeacher.Location = new System.Drawing.Point(285, 2);
+            this.ShowAllTeacher.Name = "ShowAllTeacher";
+            this.ShowAllTeacher.Size = new System.Drawing.Size(75, 23);
+            this.ShowAllTeacher.TabIndex = 4;
+            this.ShowAllTeacher.Text = "Show All";
+            this.ShowAllTeacher.UseVisualStyleBackColor = false;
+            this.ShowAllTeacher.Visible = false;
+            this.ShowAllTeacher.Click += new System.EventHandler(this.ShowAllTeacher_Click);
             // 
             // ReturnFromTEacher
             // 

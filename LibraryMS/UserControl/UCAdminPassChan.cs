@@ -3,12 +3,14 @@ using System.Data;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using LibraryMS.Admin;
+using LibraryMS.Class;
 
 namespace LibraryMS
 {
     public partial class AdminPassChan : UserControl
     {
-        public string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
+        SqlConnection con = new SqlConnection(SqlConnectionClass.Constr());
+       // public string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
 
         public AdminPassChan()
         {
@@ -35,7 +37,7 @@ namespace LibraryMS
 
         private void ChangepasswordLIB()
         {
-            SqlConnection con = new SqlConnection(Constr);
+           // SqlConnection con = new SqlConnection(Constr);
 
             if (isvalid1())
             {
@@ -114,7 +116,7 @@ namespace LibraryMS
         }
         private void Changepassword()
         {
-            SqlConnection con = new SqlConnection(Constr);
+           // SqlConnection con = new SqlConnection(Constr);
 
             if (isvalid1())
             {
@@ -234,5 +236,7 @@ namespace LibraryMS
         {
             EmailChan.Focus();
         }
+
+       
     }
 }

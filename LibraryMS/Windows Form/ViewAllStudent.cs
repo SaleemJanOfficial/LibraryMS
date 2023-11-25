@@ -7,14 +7,16 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
 using System.Text;
+using LibraryMS.Class;
 
 namespace LibraryMS.Windows_Form
 {
     public partial class ViewAllStudent : Form
     {
+        SqlConnection con = new SqlConnection(SqlConnectionClass.Constr());
         public static ViewAllStudent vas;
         //  static string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-        string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
+       // string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
 
         public ViewAllStudent()
         {
@@ -25,7 +27,7 @@ namespace LibraryMS.Windows_Form
 
         public void GetStudentRecord()
         {
-            SqlConnection con = new SqlConnection(Constr);
+           // SqlConnection con = new SqlConnection(Constr);
             SqlCommand cmd1 = new SqlCommand("Select * from Students where Status='Active'", con);
 
             DataTable dt1 = new DataTable();
@@ -41,7 +43,7 @@ namespace LibraryMS.Windows_Form
 
         public void GetTeacherRecord()
         {
-            SqlConnection con = new SqlConnection(Constr);
+            //SqlConnection con = new SqlConnection(Constr);
             SqlCommand cmd1 = new SqlCommand("Select * from Teachers where Status='Active'", con);
 
             DataTable dt1 = new DataTable();
@@ -54,7 +56,7 @@ namespace LibraryMS.Windows_Form
         }
         public void GEtbookRecord()
         {
-            SqlConnection con = new SqlConnection(Constr);
+           // SqlConnection con = new SqlConnection(Constr);
             try
             {
                 SqlCommand cmd1 = new SqlCommand("Select * from Books", con);
@@ -80,7 +82,7 @@ namespace LibraryMS.Windows_Form
 
         public void GetHistory()
         {
-            SqlConnection con = new SqlConnection(Constr);
+           // SqlConnection con = new SqlConnection(Constr);
             try
             {
                 string query = "SELECT i.Issue_Id,s.S_Id, s.Name AS Student_Name,s.Program+' '+s.Department+' '+s.Year_Semester AS Class ,s.Roll_No, b.Book_Id ,b.Book_Name AS BookName , l.UserName As Issued_by, i.Issue_date,l2.UserName as Returned_by, i.Return_Date FROM IssuedBooks i JOIN Students s ON i.S_Id = s.S_Id Join Books b ON i.Book_Id = b.Book_Id join Librarian l on i.Issue_by= l.UserId left join Librarian l2 on i.Return_by=l2.UserId";
@@ -225,7 +227,7 @@ namespace LibraryMS.Windows_Form
 
         public void GetIssuebook()
         {
-            SqlConnection con = new SqlConnection(Constr);
+           // SqlConnection con = new SqlConnection(Constr);
             try
             {
                 string query = "SELECT i.Issue_Id,s.S_Id, s.Name AS Student_Name,s.Program+' '+s.Department+' '+s.Year_Semester AS Class ,s.Roll_No, b.Book_Id ,b.Book_Name AS BookName , l.UserName As Issued_by, i.Issue_date,l2.UserName as Returned_by, i.Return_Date FROM IssuedBooks i JOIN Students s ON i.S_Id = s.S_Id Join Books b ON i.Book_Id = b.Book_Id join Librarian l on i.Issue_by= l.UserId left join Librarian l2 on i.Return_by=l2.UserId where Return_Date is null";
@@ -252,7 +254,7 @@ namespace LibraryMS.Windows_Form
 
         public void GetIssuebookTeacher()
         {
-            SqlConnection con = new SqlConnection(Constr);
+           //SqlConnection con = new SqlConnection(Constr);
             try
             {
                 string query = "SELECT i.Issue_Id,T.T_Id, T.Name AS Teacher_Name,T.Department ,T.P_No, b.Book_Id ,b.Book_Name AS BookName , l.UserName  As Issued_by, i.Issue_date,datediff(day,i.Issue_date,getdate()) as Days_Passed, 0 as Latedays FROM TeacherIssuedBooks i JOIN Teachers T ON i.T_Id = T.T_Id Join Books b ON i.Book_Id = b.Book_Id  join Librarian l on i.Issue_by= l.UserId left join Librarian l2 on i.Return_by=l2.UserId  where Return_Date is  null ";

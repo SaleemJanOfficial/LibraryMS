@@ -75,7 +75,6 @@
             this.PanelviewLibrarian.Controls.Add(this.Lid);
             this.PanelviewLibrarian.Controls.Add(this.SearchBox);
             this.PanelviewLibrarian.Controls.Add(this.lable);
-            this.PanelviewLibrarian.Controls.Add(this.btnRecover);
             this.PanelviewLibrarian.Controls.Add(this.ButtonDeleteAddStudents);
             this.PanelviewLibrarian.Controls.Add(this.ButtonClearAddStudents);
             this.PanelviewLibrarian.Controls.Add(this.label12);
@@ -83,6 +82,7 @@
             this.PanelviewLibrarian.Controls.Add(this.label3);
             this.PanelviewLibrarian.Controls.Add(this.label2);
             this.PanelviewLibrarian.Controls.Add(this.GridLibraryRecord);
+            this.PanelviewLibrarian.Controls.Add(this.btnRecover);
             this.PanelviewLibrarian.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelviewLibrarian.Location = new System.Drawing.Point(0, 0);
             this.PanelviewLibrarian.Name = "PanelviewLibrarian";
@@ -113,50 +113,50 @@
             // LPassword
             // 
             this.LPassword.AutoSize = true;
-            this.LPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LPassword.Location = new System.Drawing.Point(534, 70);
+            this.LPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LPassword.Location = new System.Drawing.Point(531, 65);
             this.LPassword.Name = "LPassword";
-            this.LPassword.Size = new System.Drawing.Size(14, 13);
+            this.LPassword.Size = new System.Drawing.Size(17, 17);
             this.LPassword.TabIndex = 27;
             this.LPassword.Text = "0";
             // 
             // Lemail
             // 
             this.Lemail.AutoSize = true;
-            this.Lemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lemail.Location = new System.Drawing.Point(534, 44);
+            this.Lemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lemail.Location = new System.Drawing.Point(531, 40);
             this.Lemail.Name = "Lemail";
-            this.Lemail.Size = new System.Drawing.Size(14, 13);
+            this.Lemail.Size = new System.Drawing.Size(17, 17);
             this.Lemail.TabIndex = 27;
             this.Lemail.Text = "0";
             // 
             // Lcnic
             // 
             this.Lcnic.AutoSize = true;
-            this.Lcnic.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lcnic.Location = new System.Drawing.Point(238, 96);
+            this.Lcnic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lcnic.Location = new System.Drawing.Point(238, 93);
             this.Lcnic.Name = "Lcnic";
-            this.Lcnic.Size = new System.Drawing.Size(14, 13);
+            this.Lcnic.Size = new System.Drawing.Size(17, 17);
             this.Lcnic.TabIndex = 27;
             this.Lcnic.Text = "0";
             // 
             // Lname
             // 
             this.Lname.AutoSize = true;
-            this.Lname.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lname.Location = new System.Drawing.Point(238, 64);
+            this.Lname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lname.Location = new System.Drawing.Point(238, 68);
             this.Lname.Name = "Lname";
-            this.Lname.Size = new System.Drawing.Size(14, 13);
+            this.Lname.Size = new System.Drawing.Size(17, 17);
             this.Lname.TabIndex = 27;
             this.Lname.Text = "0";
             // 
             // Lid
             // 
             this.Lid.AutoSize = true;
-            this.Lid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lid.Location = new System.Drawing.Point(238, 40);
+            this.Lid.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lid.Location = new System.Drawing.Point(238, 39);
             this.Lid.Name = "Lid";
-            this.Lid.Size = new System.Drawing.Size(14, 13);
+            this.Lid.Size = new System.Drawing.Size(17, 17);
             this.Lid.TabIndex = 27;
             this.Lid.Text = "0";
             // 
@@ -288,7 +288,9 @@
             this.GridLibraryRecord.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.GridLibraryRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridLibraryRecord.Location = new System.Drawing.Point(0, 166);
+            this.GridLibraryRecord.MultiSelect = false;
             this.GridLibraryRecord.Name = "GridLibraryRecord";
+            this.GridLibraryRecord.ReadOnly = true;
             this.GridLibraryRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridLibraryRecord.Size = new System.Drawing.Size(739, 262);
             this.GridLibraryRecord.TabIndex = 3;
@@ -306,7 +308,8 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel1.BackColor = System.Drawing.Color.Blue;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -319,15 +322,15 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label1.Location = new System.Drawing.Point(297, 9);
+            this.label1.Location = new System.Drawing.Point(352, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(322, 31);
+            this.label1.Size = new System.Drawing.Size(180, 31);
             this.label1.TabIndex = 26;
-            this.label1.Text = "Login as a Adminstrator";
+            this.label1.Text = "Adminstrator";
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel3.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel3.Controls.Add(this.vdashboard);
             this.panel3.Controls.Add(this.ActiveButton);
             this.panel3.Controls.Add(this.changepass);

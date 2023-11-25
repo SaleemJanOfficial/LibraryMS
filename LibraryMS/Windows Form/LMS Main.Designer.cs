@@ -53,6 +53,7 @@
             this.lblWelcome = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.Logout = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).BeginInit();
@@ -66,6 +67,7 @@
             this.panel1.Controls.Add(this.Sidepanel);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.buttonAddBook);
+            this.panel1.Controls.Add(this.Logout);
             this.panel1.Controls.Add(this.AboutButton);
             this.panel1.Controls.Add(this.ButtonAddUser);
             this.panel1.Controls.Add(this.ReturnButton);
@@ -296,6 +298,7 @@
             // 
             // ucAbout
             // 
+            this.ucAbout.BackColor = System.Drawing.Color.BurlyWood;
             this.ucAbout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucAbout.Location = new System.Drawing.Point(0, 0);
             this.ucAbout.Name = "ucAbout";
@@ -391,6 +394,27 @@
             this.label4.TabIndex = 0;
             this.label4.Text = " to Library Managment System ";
             // 
+            // Logout
+            // 
+            this.Logout.BackColor = System.Drawing.Color.Red;
+            this.Logout.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Logout.FlatAppearance.BorderSize = 0;
+            this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Logout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Logout.IconChar = FontAwesome.Sharp.IconChar.RightFromBracket;
+            this.Logout.IconColor = System.Drawing.Color.White;
+            this.Logout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Logout.IconSize = 40;
+            this.Logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Logout.Location = new System.Drawing.Point(3, 398);
+            this.Logout.Name = "Logout";
+            this.Logout.Size = new System.Drawing.Size(130, 40);
+            this.Logout.TabIndex = 6;
+            this.Logout.Text = "Log Out";
+            this.Logout.UseVisualStyleBackColor = false;
+            this.Logout.Click += new System.EventHandler(this.Logout_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -444,5 +468,6 @@
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel Sidepanel;
+        private FontAwesome.Sharp.IconButton Logout;
     }
 }

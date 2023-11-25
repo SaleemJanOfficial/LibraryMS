@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryMS.Class;
+using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -8,8 +9,9 @@ namespace LibraryMS
 {
     public partial class UCIssueBooks : UserControl
     {
+        SqlConnection con = new SqlConnection(SqlConnectionClass.Constr());
         // string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-        string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
+        // string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
         public UCIssueBooks()
         {
             InitializeComponent();
@@ -17,7 +19,7 @@ namespace LibraryMS
         int CheckALreadyIssued;
         private void IssuedBook_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Constr);
+            // SqlConnection con = new SqlConnection(Constr);
             int Remaining = -1;
             if (txtremaining.Text != string.Empty && txtbookid.Text != string.Empty)
             {
@@ -34,7 +36,10 @@ namespace LibraryMS
 
                             SqlCommand cmd1 = new SqlCommand("Select  i.Issue_Id, b.Book_Id, b.Book_Name  from IssuedBooks i join Books b on i.Book_Id=b.Book_Id where S_Id =@S_Id and Return_by is null ", con);
                             cmd1.Parameters.AddWithValue("@S_Id", txtSID.Text);
-                            con.Open();
+                            if (con.State != ConnectionState.Open)
+                            {
+                                con.Open();
+                            }
                             cmd1.ExecuteNonQuery();
                             SqlDataAdapter sda = new SqlDataAdapter(cmd1);
 
@@ -83,9 +88,9 @@ namespace LibraryMS
 
                                         // For SHow Count
                                         UCHome.FromHome.Update();
+                                        con.Close();
 
-
-                                        MessageBox.Show("Successfully Issued", "Info", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                                        MessageBox.Show("Successfully Issued", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         ClearAllIssueValue();
                                     }
 
@@ -147,7 +152,7 @@ namespace LibraryMS
         // Load Books from Database
         private void textbookid_TextChanged(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Constr);
+            // SqlConnection con = new SqlConnection(Constr);
             try
             {
                 SqlCommand cmd = new SqlCommand("Select * from Books where Book_Id=@Book_Id", con);
@@ -164,9 +169,10 @@ namespace LibraryMS
 
                 if (sdr.Read())
                 {
-                    txtbookname.Text = sdr.GetValue(1) + " By " + sdr.GetValue(2).ToString();
+                    txtbookname.Text = sdr.GetValue(1).ToString();
+                    Wby.Text=sdr.GetValue(2).ToString();
 
-
+                    
                     //  txtPublisher.Text = sdr.GetValue(3).ToString();
                     txtPublisher.Text = sdr.GetValue(3).ToString();
                     TxtStatus.Text = "Total:" + sdr.GetValue(4) + " Issued:" + sdr.GetValue(6) + " Remaining:" + sdr.GetValue(7).ToString();
@@ -180,7 +186,6 @@ namespace LibraryMS
                 }
                 else
                 {
-
                     // MessageBox.Show("No Book Found");
                     ClearSelectBookvalue();
 
@@ -204,6 +209,7 @@ namespace LibraryMS
         {
             txtbookname.Text = string.Empty;
             TxtStatus.Text = string.Empty;
+            Wby.Text = string.Empty;
             txtPublisher.Text = string.Empty;
             txtremaining.Text = string.Empty;
             txtBookSearch.Clear();
@@ -222,14 +228,18 @@ namespace LibraryMS
         //Load Student from Database
         private void txtSID_TextChanged(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Constr);
+            // SqlConnection con = new SqlConnection(Constr);
 
             try
             {
 
                 SqlCommand cmd = new SqlCommand("Select Name,Roll_No, Program + ' ' +Department +' ' + Year_Semester as Class from Students where S_Id=@S_Id and Status='Active'", con);
 
-                con.Open();
+                if (con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                }
+
                 cmd.Parameters.AddWithValue("S_Id", txtSID.Text);
 
 
@@ -241,7 +251,9 @@ namespace LibraryMS
                     txtStuName.Text = sdr1.GetValue(0).ToString();
                     txtsRno.Text = sdr1.GetValue(1).ToString();
                     txtClass.Text = sdr1.GetValue(2).ToString();
+                    con.Close();
                     IfBookIssue();
+                   
 
                 }
                 else if (txtbookid.Text == string.Empty)
@@ -267,6 +279,7 @@ namespace LibraryMS
             {
                 con.Close();
             }
+
         }
 
         private void ClearSelectStudentvalue()
@@ -307,7 +320,7 @@ namespace LibraryMS
         }
         public int status = 0;
 
-        // Button for Book Search
+       
 
         //Button For Student Search
         private void txtstudentSearchBox_TextChanged(object sender, EventArgs e)
@@ -318,6 +331,7 @@ namespace LibraryMS
             BookandStudentSearching();
 
         }
+        // Button for Book Search
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
             txtstudentSearch.Clear();
@@ -329,7 +343,7 @@ namespace LibraryMS
         public void GetBooksearchingRecord()
 
         {
-            SqlConnection con = new SqlConnection(Constr);
+            // SqlConnection con = new SqlConnection(Constr);
             try
             {
 
@@ -377,7 +391,7 @@ namespace LibraryMS
         //Function For Searching Both Book And Student
         private void BookandStudentSearching()
         {
-            SqlConnection con = new SqlConnection(Constr);
+            //  SqlConnection con = new SqlConnection(Constr);
 
             try
             {
@@ -427,7 +441,7 @@ namespace LibraryMS
                         GridBookview.DataSource = null;
                     }
                 }
-                if (txtstudentSearch.Text == string.Empty && txtBookSearch.Text == string.Empty && SearchTeacher.Text==string.Empty)
+                if (txtstudentSearch.Text == string.Empty && txtBookSearch.Text == string.Empty && SearchTeacher.Text == string.Empty)
                 {
                     GridBookview.DataSource = null;
                     GridBookview.Hide();
@@ -437,12 +451,9 @@ namespace LibraryMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error In Recovering", ex.Message);
+                MessageBox.Show(ex.Message, "Error In Recovering");
             }
-            finally
-            {
-                con.Close();
-            }
+
         }
 
         //Data Gridview to TextBox
@@ -461,14 +472,14 @@ namespace LibraryMS
             else if (status == 3)
             {
                 TId.Text = GridBookview.SelectedRows[0].Cells[0].Value.ToString();
-                teacherBookissueornot();
+              teacherBookissueornot();
             }
         }
 
         //if Book issue or not
         private void IfBookIssue()
         {
-            SqlConnection con = new SqlConnection(Constr);
+            //  SqlConnection con = new SqlConnection(Constr);
             SqlCommand cmd1 = new SqlCommand("Select  i.Issue_Id, b.Book_Id, b.Book_Name  from IssuedBooks i join Books b on i.Book_Id=b.Book_Id where S_Id =@S_Id and Return_by is null", con);
             cmd1.Parameters.AddWithValue("@S_Id", txtSID.Text);
             if (con.State != ConnectionState.Open)
@@ -481,6 +492,7 @@ namespace LibraryMS
             DataTable dt2 = new DataTable();
             sda2.Fill(dt2);
             CheckALreadyIssued = dt2.Rows.Count;
+            con.Close();
             if (CheckALreadyIssued == 0)
             {
                 AlreadyIssued.Text = "No";
@@ -493,9 +505,10 @@ namespace LibraryMS
 
         private void teacherBookissueornot()
         {
-            SqlConnection con = new SqlConnection(Constr);
+            //   SqlConnection con = new SqlConnection(Constr);
             SqlCommand cmd1 = new SqlCommand("Select  i.Issue_Id, b.Book_Id, b.Book_Name  from TeacherIssuedBooks i join Books b on i.Book_Id=b.Book_Id where T_Id =@T_Id and Return_by is null", con);
             cmd1.Parameters.AddWithValue("@T_Id", TId.Text);
+
             if (con.State != ConnectionState.Open)
             {
                 con.Open();
@@ -506,6 +519,7 @@ namespace LibraryMS
             DataTable dt2 = new DataTable();
             sda2.Fill(dt2);
             CheckALreadyIssued = dt2.Rows.Count;
+            con.Close();
             if (CheckALreadyIssued == 0)
             {
                 ALreadyIssuedTeacher.Text = "No";
@@ -514,6 +528,7 @@ namespace LibraryMS
             {
                 ALreadyIssuedTeacher.Text = "Yes";
             }
+            
         }
 
         private void txtBookSearch_Click(object sender, EventArgs e)
@@ -544,26 +559,30 @@ namespace LibraryMS
 
         private void txtIdbox_TextChanged(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Constr);
+            // SqlConnection con = new SqlConnection(Constr);
 
             try
             {
 
                 SqlCommand cmd = new SqlCommand("Select Name,Department, P_No from Teachers where T_Id=@T_Id and Status='Active'", con);
-
-                con.Open();
                 cmd.Parameters.AddWithValue("T_Id", TId.Text);
 
-
-                SqlDataReader sdr1;
-                sdr1 = cmd.ExecuteReader();
-
-                if (sdr1.Read())
+                if (con.State != ConnectionState.Open)
                 {
-                    txtTName.Text = sdr1.GetValue(0).ToString();
-                    txtDepartment.Text = sdr1.GetValue(1).ToString();
-                    txtPno.Text = sdr1.GetValue(2).ToString();
+                    con.Open();
+                }
+
+                SqlDataReader sdr2;
+                sdr2 = cmd.ExecuteReader();
+
+                if (sdr2.Read())
+                {
+                    txtTName.Text = sdr2.GetValue(0).ToString();
+                    txtDepartment.Text = sdr2.GetValue(1).ToString();
+                    txtPno.Text = sdr2.GetValue(2).ToString();
+                    con.Close();
                     teacherBookissueornot();
+                   
 
                 }
                 else if (TId.Text == string.Empty)
@@ -642,7 +661,7 @@ namespace LibraryMS
 
         private void IssuetoTeacher_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Constr);
+            //  SqlConnection con = new SqlConnection(Constr);
             int Remaining = -1;
             if (txtremaining.Text != string.Empty && txtbookid.Text != string.Empty)
             {
@@ -651,7 +670,7 @@ namespace LibraryMS
 
                 if (Remaining > 0)
                 {
-                    if (txtPno.Text != string.Empty && TId.Text!=string.Empty)
+                    if (txtPno.Text != string.Empty && TId.Text != string.Empty)
                     {
                         DialogResult mb1a = MessageBox.Show(" Are You Sure?", "Issue Book to Teacher", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (mb1a == DialogResult.Yes)
@@ -659,7 +678,10 @@ namespace LibraryMS
 
                             SqlCommand cmd1 = new SqlCommand("Select  i.Issue_Id, b.Book_Id, b.Book_Name  from TeacherIssuedBooks i join Books b on i.Book_Id=b.Book_Id where T_Id =@T_Id and Return_by is null", con);
                             cmd1.Parameters.AddWithValue("@T_Id", TId.Text);
-                            con.Open();
+                            if (con.State != ConnectionState.Open)
+                            {
+                                con.Open();
+                            }
                             cmd1.ExecuteNonQuery();
                             SqlDataAdapter sda = new SqlDataAdapter(cmd1);
 
@@ -710,13 +732,13 @@ namespace LibraryMS
                                         UCHome.FromHome.Update();
                                         ClearAllIssueValue();
 
-                                        MessageBox.Show("Successfully Issued", "Info", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                                        MessageBox.Show("Successfully Issued", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     }
 
                                     catch (Exception ex)
                                     {
 
-                                        MessageBox.Show(ex.Message,"While Issue book");
+                                        MessageBox.Show(ex.Message, "While Issue book");
                                     }
 
                                     finally

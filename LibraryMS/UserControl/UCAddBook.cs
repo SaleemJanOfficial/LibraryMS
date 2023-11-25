@@ -3,15 +3,17 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using LibraryMS.Class;
 using LibraryMS.Windows_Form;
 
 namespace LibraryMS
 {
     public partial class UCAddBooks : UserControl
     {
-        // string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-        string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
-
+        SqlConnection con = new SqlConnection(SqlConnectionClass.Constr());
+        //string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+      //  string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
+        
 
         public UCAddBooks()
         {
@@ -39,7 +41,7 @@ namespace LibraryMS
         // add Book
         private void ButtonSaveAddBook_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Constr);
+          //  SqlConnection con = new SqlConnection(Constr);
             if (isvalid())
             {
                 DialogResult mbx = MessageBox.Show("Are You Sure?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -85,12 +87,11 @@ namespace LibraryMS
 
         public void GetBookRecord()
         {
-            SqlConnection con = new SqlConnection(Constr);
+           // SqlConnection con = new SqlConnection(Constr);
 
             try
             {
-
-
+          
                 SqlCommand cmd = new SqlCommand("Select * from Books", con);
 
                 DataTable dt = new DataTable();
@@ -112,12 +113,7 @@ namespace LibraryMS
             {
                 con.Close();
             }
-
-
-
-
-
-
+    
 
         }
         //check if book field is empty or not
@@ -157,17 +153,13 @@ namespace LibraryMS
             Quantity.Clear();
             //Bookdate.Value = DateTime.Today;
             Bkname.Focus();
-
-
         }
-
 
         private void ViewAllBooksButton_Click(object sender, EventArgs e)
         {
             ViewAllStudent vastudent = new ViewAllStudent();
             ViewAllStudent.vas.GEtbookRecord();
-            vastudent.ShowDialog();
-           
+            vastudent.ShowDialog();          
         }
 
         public int BookId;
@@ -180,12 +172,11 @@ namespace LibraryMS
             Publisher.Text = Booksgrid.SelectedRows[0].Cells[3].Value.ToString();
             Quantity.Text = Booksgrid.SelectedRows[0].Cells[4].Value.ToString();
             Bookdate.Text = Booksgrid.SelectedRows[0].Cells[5].Value.ToString();
-
         }
 
         private void ButtonUpdateAddBook_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Constr);
+            //SqlConnection con = new SqlConnection(Constr);
             if (isvalid())
             {
                 DialogResult mbx = MessageBox.Show("Are You Sure?", "Updating", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -226,7 +217,7 @@ namespace LibraryMS
         // For Delete Book 
         private void ButtonDeleteAddBook_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Constr);
+          //  SqlConnection con = new SqlConnection(Constr);
             if (txtBookId.Text != string.Empty)
             {
                 DialogResult mbx = MessageBox.Show("Are You Sure?", "Deleteing", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -273,7 +264,7 @@ namespace LibraryMS
 
         private void Booksearching()
         {
-            SqlConnection con = new SqlConnection(Constr);
+           // SqlConnection con = new SqlConnection(Constr);
 
             try
             {
@@ -295,8 +286,6 @@ namespace LibraryMS
             }
         }
     }
-
-
 
 
 }

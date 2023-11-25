@@ -38,8 +38,8 @@
             this.SHowStudent = new System.Windows.Forms.Button();
             this.showteacher = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.IssuetoTeacher = new System.Windows.Forms.Button();
             this.IssuedBook = new System.Windows.Forms.Button();
+            this.IssuetoTeacher = new System.Windows.Forms.Button();
             this.txtBookSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.ClearbtnBk = new System.Windows.Forms.Button();
             this.txtbookid = new System.Windows.Forms.TextBox();
@@ -49,20 +49,6 @@
             this.label33 = new System.Windows.Forms.Label();
             this.TxtStatus = new System.Windows.Forms.Label();
             this.stockbook = new System.Windows.Forms.Label();
-            this.PanelStudent = new System.Windows.Forms.Panel();
-            this.viewAllStudent = new System.Windows.Forms.Button();
-            this.txtstudentSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtStuName = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtsRno = new System.Windows.Forms.Label();
-            this.ClearButton = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtClass = new System.Windows.Forms.Label();
-            this.txtSID = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.AlreadyIssued = new System.Windows.Forms.Label();
             this.txtbookname = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -80,6 +66,22 @@
             this.label17 = new System.Windows.Forms.Label();
             this.ALreadyIssuedTeacher = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.PanelStudent = new System.Windows.Forms.Panel();
+            this.viewAllStudent = new System.Windows.Forms.Button();
+            this.txtstudentSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtStuName = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtsRno = new System.Windows.Forms.Label();
+            this.ClearButton = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtClass = new System.Windows.Forms.Label();
+            this.txtSID = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.AlreadyIssued = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Wby = new System.Windows.Forms.Label();
             panel1 = new System.Windows.Forms.Panel();
             label1 = new System.Windows.Forms.Label();
             PanelTeacher = new System.Windows.Forms.Panel();
@@ -88,8 +90,8 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridBookview)).BeginInit();
             this.panel3.SuspendLayout();
-            this.PanelStudent.SuspendLayout();
             this.PanelTacher.SuspendLayout();
+            this.PanelStudent.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -128,11 +130,13 @@
             PanelTeacher.Controls.Add(this.label33);
             PanelTeacher.Controls.Add(this.TxtStatus);
             PanelTeacher.Controls.Add(this.stockbook);
-            PanelTeacher.Controls.Add(this.PanelStudent);
+            PanelTeacher.Controls.Add(this.Wby);
             PanelTeacher.Controls.Add(this.txtbookname);
+            PanelTeacher.Controls.Add(this.label9);
             PanelTeacher.Controls.Add(this.label3);
             PanelTeacher.Controls.Add(this.label2);
             PanelTeacher.Controls.Add(this.PanelTacher);
+            PanelTeacher.Controls.Add(this.PanelStudent);
             PanelTeacher.Dock = System.Windows.Forms.DockStyle.Fill;
             PanelTeacher.Location = new System.Drawing.Point(0, 36);
             PanelTeacher.Name = "PanelTeacher";
@@ -228,20 +232,6 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // IssuetoTeacher
-            // 
-            this.IssuetoTeacher.BackColor = System.Drawing.Color.GreenYellow;
-            this.IssuetoTeacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IssuetoTeacher.ForeColor = System.Drawing.Color.Black;
-            this.IssuetoTeacher.Location = new System.Drawing.Point(579, 1);
-            this.IssuetoTeacher.Name = "IssuetoTeacher";
-            this.IssuetoTeacher.Size = new System.Drawing.Size(64, 29);
-            this.IssuetoTeacher.TabIndex = 13;
-            this.IssuetoTeacher.Text = "ISSUE";
-            this.IssuetoTeacher.UseVisualStyleBackColor = false;
-            this.IssuetoTeacher.Visible = false;
-            this.IssuetoTeacher.Click += new System.EventHandler(this.IssuetoTeacher_Click);
-            // 
             // IssuedBook
             // 
             this.IssuedBook.BackColor = System.Drawing.Color.GreenYellow;
@@ -255,6 +245,20 @@
             this.IssuedBook.UseVisualStyleBackColor = false;
             this.IssuedBook.Visible = false;
             this.IssuedBook.Click += new System.EventHandler(this.IssuedBook_Click);
+            // 
+            // IssuetoTeacher
+            // 
+            this.IssuetoTeacher.BackColor = System.Drawing.Color.GreenYellow;
+            this.IssuetoTeacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IssuetoTeacher.ForeColor = System.Drawing.Color.Black;
+            this.IssuetoTeacher.Location = new System.Drawing.Point(579, 1);
+            this.IssuetoTeacher.Name = "IssuetoTeacher";
+            this.IssuetoTeacher.Size = new System.Drawing.Size(64, 29);
+            this.IssuetoTeacher.TabIndex = 13;
+            this.IssuetoTeacher.Text = "ISSUE";
+            this.IssuetoTeacher.UseVisualStyleBackColor = false;
+            this.IssuetoTeacher.Visible = false;
+            this.IssuetoTeacher.Click += new System.EventHandler(this.IssuetoTeacher_Click);
             // 
             // txtBookSearch
             // 
@@ -286,7 +290,7 @@
             this.ClearbtnBk.BackColor = System.Drawing.Color.Red;
             this.ClearbtnBk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClearbtnBk.ForeColor = System.Drawing.Color.White;
-            this.ClearbtnBk.Location = new System.Drawing.Point(289, 33);
+            this.ClearbtnBk.Location = new System.Drawing.Point(289, 32);
             this.ClearbtnBk.Name = "ClearbtnBk";
             this.ClearbtnBk.Size = new System.Drawing.Size(53, 29);
             this.ClearbtnBk.TabIndex = 6;
@@ -297,7 +301,7 @@
             // txtbookid
             // 
             this.txtbookid.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbookid.Location = new System.Drawing.Point(116, 36);
+            this.txtbookid.Location = new System.Drawing.Point(116, 33);
             this.txtbookid.Name = "txtbookid";
             this.txtbookid.Size = new System.Drawing.Size(167, 24);
             this.txtbookid.TabIndex = 0;
@@ -307,7 +311,7 @@
             // 
             this.txtremaining.AutoSize = true;
             this.txtremaining.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtremaining.Location = new System.Drawing.Point(113, 127);
+            this.txtremaining.Location = new System.Drawing.Point(113, 131);
             this.txtremaining.Name = "txtremaining";
             this.txtremaining.Size = new System.Drawing.Size(17, 18);
             this.txtremaining.TabIndex = 3;
@@ -318,7 +322,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 127);
+            this.label6.Location = new System.Drawing.Point(15, 131);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 18);
             this.label6.TabIndex = 3;
@@ -329,7 +333,7 @@
             // 
             this.txtPublisher.AutoSize = true;
             this.txtPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPublisher.Location = new System.Drawing.Point(113, 89);
+            this.txtPublisher.Location = new System.Drawing.Point(113, 96);
             this.txtPublisher.Name = "txtPublisher";
             this.txtPublisher.Size = new System.Drawing.Size(17, 18);
             this.txtPublisher.TabIndex = 3;
@@ -339,7 +343,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(15, 89);
+            this.label33.Location = new System.Drawing.Point(15, 96);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(78, 18);
             this.label33.TabIndex = 3;
@@ -349,7 +353,7 @@
             // 
             this.TxtStatus.AutoSize = true;
             this.TxtStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtStatus.Location = new System.Drawing.Point(113, 111);
+            this.TxtStatus.Location = new System.Drawing.Point(113, 114);
             this.TxtStatus.Name = "TxtStatus";
             this.TxtStatus.Size = new System.Drawing.Size(17, 18);
             this.TxtStatus.TabIndex = 3;
@@ -359,189 +363,17 @@
             // 
             this.stockbook.AutoSize = true;
             this.stockbook.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stockbook.Location = new System.Drawing.Point(15, 111);
+            this.stockbook.Location = new System.Drawing.Point(15, 114);
             this.stockbook.Name = "stockbook";
             this.stockbook.Size = new System.Drawing.Size(52, 18);
             this.stockbook.TabIndex = 3;
             this.stockbook.Text = "Stock";
             // 
-            // PanelStudent
-            // 
-            this.PanelStudent.Controls.Add(this.viewAllStudent);
-            this.PanelStudent.Controls.Add(this.txtstudentSearch);
-            this.PanelStudent.Controls.Add(this.label8);
-            this.PanelStudent.Controls.Add(this.label10);
-            this.PanelStudent.Controls.Add(this.txtStuName);
-            this.PanelStudent.Controls.Add(this.label11);
-            this.PanelStudent.Controls.Add(this.txtsRno);
-            this.PanelStudent.Controls.Add(this.ClearButton);
-            this.PanelStudent.Controls.Add(this.label12);
-            this.PanelStudent.Controls.Add(this.txtClass);
-            this.PanelStudent.Controls.Add(this.txtSID);
-            this.PanelStudent.Controls.Add(this.label4);
-            this.PanelStudent.Controls.Add(this.AlreadyIssued);
-            this.PanelStudent.Location = new System.Drawing.Point(367, -2);
-            this.PanelStudent.Name = "PanelStudent";
-            this.PanelStudent.Size = new System.Drawing.Size(388, 145);
-            this.PanelStudent.TabIndex = 22;
-            this.PanelStudent.Visible = false;
-            // 
-            // viewAllStudent
-            // 
-            this.viewAllStudent.BackColor = System.Drawing.SystemColors.WindowText;
-            this.viewAllStudent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.viewAllStudent.ForeColor = System.Drawing.Color.White;
-            this.viewAllStudent.Location = new System.Drawing.Point(306, 7);
-            this.viewAllStudent.Name = "viewAllStudent";
-            this.viewAllStudent.Size = new System.Drawing.Size(75, 23);
-            this.viewAllStudent.TabIndex = 21;
-            this.viewAllStudent.Text = "View All";
-            this.viewAllStudent.UseVisualStyleBackColor = false;
-            this.viewAllStudent.Click += new System.EventHandler(this.viewAllStudent_Click);
-            // 
-            // txtstudentSearch
-            // 
-            this.txtstudentSearch.BorderRadius = 8;
-            this.txtstudentSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtstudentSearch.DefaultText = "";
-            this.txtstudentSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtstudentSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtstudentSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtstudentSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtstudentSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtstudentSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtstudentSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtstudentSearch.IconLeft = global::LibraryMS.Properties.Resources.Search;
-            this.txtstudentSearch.IconLeftSize = new System.Drawing.Size(22, 22);
-            this.txtstudentSearch.IconRightSize = new System.Drawing.Size(0, 0);
-            this.txtstudentSearch.Location = new System.Drawing.Point(130, 7);
-            this.txtstudentSearch.Name = "txtstudentSearch";
-            this.txtstudentSearch.PasswordChar = '\0';
-            this.txtstudentSearch.PlaceholderText = "Search Students!";
-            this.txtstudentSearch.SelectedText = "";
-            this.txtstudentSearch.Size = new System.Drawing.Size(167, 23);
-            this.txtstudentSearch.TabIndex = 15;
-            this.txtstudentSearch.TextChanged += new System.EventHandler(this.txtstudentSearchBox_TextChanged);
-            this.txtstudentSearch.Click += new System.EventHandler(this.txtstudentSearch_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 38);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 18);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Student ID";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(6, 63);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(114, 18);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Student Name";
-            // 
-            // txtStuName
-            // 
-            this.txtStuName.AutoSize = true;
-            this.txtStuName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStuName.Location = new System.Drawing.Point(133, 62);
-            this.txtStuName.Name = "txtStuName";
-            this.txtStuName.Size = new System.Drawing.Size(17, 18);
-            this.txtStuName.TabIndex = 3;
-            this.txtStuName.Text = "0";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(6, 85);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 18);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Roll No";
-            // 
-            // txtsRno
-            // 
-            this.txtsRno.AutoSize = true;
-            this.txtsRno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsRno.Location = new System.Drawing.Point(133, 85);
-            this.txtsRno.Name = "txtsRno";
-            this.txtsRno.Size = new System.Drawing.Size(17, 18);
-            this.txtsRno.TabIndex = 3;
-            this.txtsRno.Text = "0";
-            this.txtsRno.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // ClearButton
-            // 
-            this.ClearButton.BackColor = System.Drawing.Color.Red;
-            this.ClearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClearButton.ForeColor = System.Drawing.Color.White;
-            this.ClearButton.Location = new System.Drawing.Point(306, 34);
-            this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(64, 26);
-            this.ClearButton.TabIndex = 6;
-            this.ClearButton.Text = "Clear";
-            this.ClearButton.UseVisualStyleBackColor = false;
-            this.ClearButton.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(6, 106);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(129, 18);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "Class/Sem/Year";
-            // 
-            // txtClass
-            // 
-            this.txtClass.AutoSize = true;
-            this.txtClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClass.Location = new System.Drawing.Point(133, 106);
-            this.txtClass.Name = "txtClass";
-            this.txtClass.Size = new System.Drawing.Size(17, 18);
-            this.txtClass.TabIndex = 3;
-            this.txtClass.Text = "0";
-            // 
-            // txtSID
-            // 
-            this.txtSID.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSID.Location = new System.Drawing.Point(130, 36);
-            this.txtSID.Name = "txtSID";
-            this.txtSID.Size = new System.Drawing.Size(167, 24);
-            this.txtSID.TabIndex = 7;
-            this.txtSID.TextChanged += new System.EventHandler(this.txtSID_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 126);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 18);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Already Issued";
-            // 
-            // AlreadyIssued
-            // 
-            this.AlreadyIssued.AutoSize = true;
-            this.AlreadyIssued.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AlreadyIssued.Location = new System.Drawing.Point(133, 126);
-            this.AlreadyIssued.Name = "AlreadyIssued";
-            this.AlreadyIssued.Size = new System.Drawing.Size(17, 18);
-            this.AlreadyIssued.TabIndex = 3;
-            this.AlreadyIssued.Text = "0";
-            // 
             // txtbookname
             // 
             this.txtbookname.AutoSize = true;
             this.txtbookname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbookname.Location = new System.Drawing.Point(113, 67);
+            this.txtbookname.Location = new System.Drawing.Point(113, 59);
             this.txtbookname.Name = "txtbookname";
             this.txtbookname.Size = new System.Drawing.Size(17, 18);
             this.txtbookname.TabIndex = 3;
@@ -551,7 +383,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 66);
+            this.label3.Location = new System.Drawing.Point(15, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 18);
             this.label3.TabIndex = 3;
@@ -561,7 +393,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 38);
+            this.label2.Location = new System.Drawing.Point(15, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 18);
             this.label2.TabIndex = 3;
@@ -738,6 +570,198 @@
             this.label15.TabIndex = 3;
             this.label15.Text = "P.NO";
             // 
+            // PanelStudent
+            // 
+            this.PanelStudent.Controls.Add(this.viewAllStudent);
+            this.PanelStudent.Controls.Add(this.txtstudentSearch);
+            this.PanelStudent.Controls.Add(this.label8);
+            this.PanelStudent.Controls.Add(this.label10);
+            this.PanelStudent.Controls.Add(this.txtStuName);
+            this.PanelStudent.Controls.Add(this.label11);
+            this.PanelStudent.Controls.Add(this.txtsRno);
+            this.PanelStudent.Controls.Add(this.ClearButton);
+            this.PanelStudent.Controls.Add(this.label12);
+            this.PanelStudent.Controls.Add(this.txtClass);
+            this.PanelStudent.Controls.Add(this.txtSID);
+            this.PanelStudent.Controls.Add(this.label4);
+            this.PanelStudent.Controls.Add(this.AlreadyIssued);
+            this.PanelStudent.Location = new System.Drawing.Point(367, -2);
+            this.PanelStudent.Name = "PanelStudent";
+            this.PanelStudent.Size = new System.Drawing.Size(388, 145);
+            this.PanelStudent.TabIndex = 22;
+            this.PanelStudent.Visible = false;
+            // 
+            // viewAllStudent
+            // 
+            this.viewAllStudent.BackColor = System.Drawing.SystemColors.WindowText;
+            this.viewAllStudent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.viewAllStudent.ForeColor = System.Drawing.Color.White;
+            this.viewAllStudent.Location = new System.Drawing.Point(306, 7);
+            this.viewAllStudent.Name = "viewAllStudent";
+            this.viewAllStudent.Size = new System.Drawing.Size(75, 23);
+            this.viewAllStudent.TabIndex = 21;
+            this.viewAllStudent.Text = "View All";
+            this.viewAllStudent.UseVisualStyleBackColor = false;
+            this.viewAllStudent.Click += new System.EventHandler(this.viewAllStudent_Click);
+            // 
+            // txtstudentSearch
+            // 
+            this.txtstudentSearch.BorderRadius = 8;
+            this.txtstudentSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtstudentSearch.DefaultText = "";
+            this.txtstudentSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtstudentSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtstudentSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtstudentSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtstudentSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtstudentSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtstudentSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtstudentSearch.IconLeft = global::LibraryMS.Properties.Resources.Search;
+            this.txtstudentSearch.IconLeftSize = new System.Drawing.Size(22, 22);
+            this.txtstudentSearch.IconRightSize = new System.Drawing.Size(0, 0);
+            this.txtstudentSearch.Location = new System.Drawing.Point(130, 7);
+            this.txtstudentSearch.Name = "txtstudentSearch";
+            this.txtstudentSearch.PasswordChar = '\0';
+            this.txtstudentSearch.PlaceholderText = "Search Students!";
+            this.txtstudentSearch.SelectedText = "";
+            this.txtstudentSearch.Size = new System.Drawing.Size(167, 23);
+            this.txtstudentSearch.TabIndex = 15;
+            this.txtstudentSearch.TextChanged += new System.EventHandler(this.txtstudentSearchBox_TextChanged);
+            this.txtstudentSearch.Click += new System.EventHandler(this.txtstudentSearch_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 38);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 18);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Student ID";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(6, 63);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(114, 18);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Student Name";
+            // 
+            // txtStuName
+            // 
+            this.txtStuName.AutoSize = true;
+            this.txtStuName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStuName.Location = new System.Drawing.Point(133, 62);
+            this.txtStuName.Name = "txtStuName";
+            this.txtStuName.Size = new System.Drawing.Size(17, 18);
+            this.txtStuName.TabIndex = 3;
+            this.txtStuName.Text = "0";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(6, 85);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 18);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Roll No";
+            // 
+            // txtsRno
+            // 
+            this.txtsRno.AutoSize = true;
+            this.txtsRno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsRno.Location = new System.Drawing.Point(133, 85);
+            this.txtsRno.Name = "txtsRno";
+            this.txtsRno.Size = new System.Drawing.Size(17, 18);
+            this.txtsRno.TabIndex = 3;
+            this.txtsRno.Text = "0";
+            this.txtsRno.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // ClearButton
+            // 
+            this.ClearButton.BackColor = System.Drawing.Color.Red;
+            this.ClearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearButton.ForeColor = System.Drawing.Color.White;
+            this.ClearButton.Location = new System.Drawing.Point(306, 34);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(64, 26);
+            this.ClearButton.TabIndex = 6;
+            this.ClearButton.Text = "Clear";
+            this.ClearButton.UseVisualStyleBackColor = false;
+            this.ClearButton.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(6, 106);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(129, 18);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "Class/Sem/Year";
+            // 
+            // txtClass
+            // 
+            this.txtClass.AutoSize = true;
+            this.txtClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClass.Location = new System.Drawing.Point(133, 106);
+            this.txtClass.Name = "txtClass";
+            this.txtClass.Size = new System.Drawing.Size(17, 18);
+            this.txtClass.TabIndex = 3;
+            this.txtClass.Text = "0";
+            // 
+            // txtSID
+            // 
+            this.txtSID.Font = new System.Drawing.Font("Calibri Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSID.Location = new System.Drawing.Point(130, 36);
+            this.txtSID.Name = "txtSID";
+            this.txtSID.Size = new System.Drawing.Size(167, 24);
+            this.txtSID.TabIndex = 7;
+            this.txtSID.TextChanged += new System.EventHandler(this.txtSID_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 126);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 18);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Already Issued";
+            // 
+            // AlreadyIssued
+            // 
+            this.AlreadyIssued.AutoSize = true;
+            this.AlreadyIssued.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AlreadyIssued.Location = new System.Drawing.Point(133, 126);
+            this.AlreadyIssued.Name = "AlreadyIssued";
+            this.AlreadyIssued.Size = new System.Drawing.Size(17, 18);
+            this.AlreadyIssued.TabIndex = 3;
+            this.AlreadyIssued.Text = "0";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(15, 77);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 18);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Written By";
+            // 
+            // Wby
+            // 
+            this.Wby.AutoSize = true;
+            this.Wby.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Wby.Location = new System.Drawing.Point(113, 77);
+            this.Wby.Name = "Wby";
+            this.Wby.Size = new System.Drawing.Size(17, 18);
+            this.Wby.TabIndex = 3;
+            this.Wby.Text = "0";
+            // 
             // UCIssueBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -755,10 +779,10 @@
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridBookview)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.PanelStudent.ResumeLayout(false);
-            this.PanelStudent.PerformLayout();
             this.PanelTacher.ResumeLayout(false);
             this.PanelTacher.PerformLayout();
+            this.PanelStudent.ResumeLayout(false);
+            this.PanelStudent.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -814,5 +838,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label ALreadyIssuedTeacher;
         private System.Windows.Forms.Button IssuetoTeacher;
+        private System.Windows.Forms.Label Wby;
+        private System.Windows.Forms.Label label9;
     }
 }

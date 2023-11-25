@@ -4,15 +4,17 @@ using System.Data;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using LibraryMS.Class;
 
 namespace LibraryMS
 {
     public partial class UCAddUser : UserControl
     {
-
+        SqlConnection con = new SqlConnection(SqlConnectionClass.Constr());
         // Connection String from App.config
-        //  string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-        string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
+        // string Constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        //  string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
+
         public UCAddUser()
         {
             InitializeComponent();
@@ -24,7 +26,7 @@ namespace LibraryMS
         public void GetStudentRecord()
 
         {
-            SqlConnection con = new SqlConnection(Constr);
+           // SqlConnection con = new SqlConnection(Constr);
             try
             {
 
@@ -122,7 +124,7 @@ namespace LibraryMS
         //For Add User
         private void ButtonSaveAddUser_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Constr);
+            //SqlConnection con = new SqlConnection(Constr);
             if (isvalid())
             {
                 DialogResult mbx = MessageBox.Show("Are You Sure?", "Saving", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -245,7 +247,7 @@ namespace LibraryMS
 
         private void ButtonUpdateAdduser_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Constr);
+            //SqlConnection con = new SqlConnection(Constr);
             if (isvalid())
             {
                 DialogResult mbx = MessageBox.Show("Are You Sure?", "Updating", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -292,7 +294,7 @@ namespace LibraryMS
         // For Delete Students
         private void ButtonDeleteAdduser_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Constr);
+          //  SqlConnection con = new SqlConnection(Constr);
             if (txtUName.Text != string.Empty)
             {
                 DialogResult mbx = MessageBox.Show("Are You Sure?", "Deleteing", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -410,7 +412,7 @@ namespace LibraryMS
 
         private void NonActive()
         {
-            SqlConnection con = new SqlConnection(Constr);
+            //SqlConnection con = new SqlConnection(Constr);
             SqlCommand cmd1 = new SqlCommand("Select * from Students where Status='Not Active'", con);
 
             DataTable dt1 = new DataTable();
@@ -435,7 +437,7 @@ namespace LibraryMS
 
         private void btnRecover_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Constr);
+           // SqlConnection con = new SqlConnection(Constr);
             if (isvalid())
             {
                 DialogResult mbx = MessageBox.Show("Are You Sure?", "Updating", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -454,6 +456,7 @@ namespace LibraryMS
                         }
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Successfully Recovered Student", "Recovered", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        con.Close();
                         NonActive();
                         UserId.Clear();
                         ClearAllValueAdduser();
@@ -476,7 +479,7 @@ namespace LibraryMS
 
         private void StudentSearching()
         {
-            SqlConnection con = new SqlConnection(Constr);
+           // SqlConnection con = new SqlConnection(Constr);
 
             try
             {
@@ -527,7 +530,7 @@ namespace LibraryMS
         public void GetTeacherRecord()
 
         {
-            SqlConnection con = new SqlConnection(Constr);
+           // SqlConnection con = new SqlConnection(Constr);
             try
             {
                 DataTable GridDt = new DataTable();
@@ -578,7 +581,7 @@ namespace LibraryMS
         //for save Teacher in Database
         private void tSave_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Constr);
+           // SqlConnection con = new SqlConnection(Constr);
             if (isvalidteacher())
             {
                 DialogResult mbx = MessageBox.Show("Are You Sure?", "Saving", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -685,7 +688,7 @@ namespace LibraryMS
 
         private void TUpdate_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Constr);
+            //SqlConnection con = new SqlConnection(Constr);
             if (isvalidteacher())
             {
                 DialogResult mbx = MessageBox.Show("Are You Sure?", "Saving", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -731,7 +734,7 @@ namespace LibraryMS
 
         private void Tdelete_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Constr);
+           // SqlConnection con = new SqlConnection(Constr);
             if (TName.Text != string.Empty)
             {
                 DialogResult mbx = MessageBox.Show("Are You Sure?", "Deleteing", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -800,7 +803,7 @@ namespace LibraryMS
 
         private void NonActiveTeacher()
         {
-            SqlConnection con = new SqlConnection(Constr);
+          //  SqlConnection con = new SqlConnection(Constr);
             SqlCommand cmd1 = new SqlCommand("Select * from Teachers where Status='Not Active'", con);
 
             DataTable dt1 = new DataTable();
@@ -828,7 +831,7 @@ namespace LibraryMS
 
         private void TRecover_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Constr);
+           // SqlConnection con = new SqlConnection(Constr);
             if (isvalidteacher())
             {
                 DialogResult mbx = MessageBox.Show("Are You Sure?", "Updating", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -847,13 +850,14 @@ namespace LibraryMS
                         }
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Successfully Recovered Teacher", "Recovered", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        con.Close();
                         NonActiveTeacher();
                         TID.Clear();
                         ClearAllValueAddTeacher();
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error In Recovering", ex.Message);
+                        MessageBox.Show( ex.Message, "Error In Recovering");
                     }
                     finally
                     {
@@ -873,7 +877,7 @@ namespace LibraryMS
         }
         private void SearchTeacher()
         {
-            SqlConnection con = new SqlConnection(Constr);
+          //  SqlConnection con = new SqlConnection(Constr);
 
             try
             {

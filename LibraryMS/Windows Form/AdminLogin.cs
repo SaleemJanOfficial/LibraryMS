@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryMS.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,8 +14,9 @@ namespace LibraryMS.Admin
 {
     public partial class AdminLogin : Form
     {
+        SqlConnection con = new SqlConnection(SqlConnectionClass.Constr());
         public static AdminLogin alogin;
-        string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
+       // string Constr = @"Data Source=DESKTOP-SRFLLT9\SQLSERVER1;Initial Catalog=LibraryDB;Integrated Security=True";
 
         public AdminLogin()
         {
@@ -32,7 +34,7 @@ namespace LibraryMS.Admin
         public void GetLibraryRecord()
 
         {
-            SqlConnection con = new SqlConnection(Constr);
+            //SqlConnection con = new SqlConnection(Constr);
             try
             {
 
@@ -140,7 +142,7 @@ namespace LibraryMS.Admin
         //function for Deleted librarian
         private void NotActive()
         {
-            SqlConnection con = new SqlConnection(Constr);
+           // SqlConnection con = new SqlConnection(Constr);
             SqlCommand cmd1 = new SqlCommand("Select * from Librarian where LibStatus='Not Active'", con);
 
             DataTable dt1 = new DataTable();
@@ -178,20 +180,23 @@ namespace LibraryMS.Admin
         private void NotApprove()
         {
 
-            SqlConnection con = new SqlConnection(Constr);
+         //   SqlConnection con = new SqlConnection(Constr);
             SqlCommand cmd1 = new SqlCommand("Select * from Librarian where LibStatus='Not Approve'", con);
 
             DataTable dt1 = new DataTable();
             try
             {
-                con.Open();
+                if (con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                }
                 SqlDataReader sdr1 = cmd1.ExecuteReader();
                 dt1.Load(sdr1);
                 GridLibraryRecord.DataSource = dt1;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("When Not Approve List Updtaing", ex.Message);
+                MessageBox.Show(ex.Message, "When Not Approve List Updtaing");
             }
             finally
             {
@@ -225,7 +230,7 @@ namespace LibraryMS.Admin
         private void ButtonDeleteAddStudents_Click(object sender, EventArgs e)
         {
 
-            SqlConnection con = new SqlConnection(Constr);
+          //  SqlConnection con = new SqlConnection(Constr);
             if (Lname.Text != string.Empty)
             {
                 DialogResult mbx = MessageBox.Show("Are You Sure?", "Deleteing", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -275,7 +280,7 @@ namespace LibraryMS.Admin
 
         private void btnRecover_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Constr);
+           // SqlConnection con = new SqlConnection(Constr);
             if (isvalid())
             {
                 DialogResult mbx = MessageBox.Show("Are You Sure?", "Rocovering", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -327,7 +332,7 @@ namespace LibraryMS.Admin
 
         private void LibrarianSearching()
         {
-            SqlConnection con = new SqlConnection(Constr);
+         //   SqlConnection con = new SqlConnection(Constr);
 
             try
             {
