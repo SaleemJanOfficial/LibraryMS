@@ -128,7 +128,7 @@
             this.GridIssuebook.Name = "GridIssuebook";
             this.GridIssuebook.ReadOnly = true;
             this.GridIssuebook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridIssuebook.Size = new System.Drawing.Size(664, 204);
+            this.GridIssuebook.Size = new System.Drawing.Size(664, 199);
             this.GridIssuebook.StandardTab = true;
             this.GridIssuebook.TabIndex = 0;
             this.GridIssuebook.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridIssuebook_CellClick);
@@ -571,9 +571,9 @@
             this.panel4.Controls.Add(this.ReturnFromTEacher);
             this.panel4.Controls.Add(this.NotReturnTeacher);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 292);
+            this.panel4.Location = new System.Drawing.Point(0, 287);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(664, 27);
+            this.panel4.Size = new System.Drawing.Size(664, 32);
             this.panel4.TabIndex = 13;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -630,7 +630,7 @@
             this.btnshowall.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnshowall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnshowall.ForeColor = System.Drawing.Color.White;
-            this.btnshowall.Location = new System.Drawing.Point(286, 2);
+            this.btnshowall.Location = new System.Drawing.Point(288, 2);
             this.btnshowall.Name = "btnshowall";
             this.btnshowall.Size = new System.Drawing.Size(75, 23);
             this.btnshowall.TabIndex = 4;
@@ -643,7 +643,7 @@
             this.btnNoReturn.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnNoReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNoReturn.ForeColor = System.Drawing.Color.White;
-            this.btnNoReturn.Location = new System.Drawing.Point(369, 0);
+            this.btnNoReturn.Location = new System.Drawing.Point(369, 2);
             this.btnNoReturn.Name = "btnNoReturn";
             this.btnNoReturn.Size = new System.Drawing.Size(75, 23);
             this.btnNoReturn.TabIndex = 3;
@@ -708,7 +708,7 @@
             this.btnClear.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClear.IconSize = 20;
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(450, 1);
+            this.btnClear.Location = new System.Drawing.Point(483, 1);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(84, 27);
             this.btnClear.TabIndex = 0;
@@ -729,7 +729,7 @@
             this.btnReturn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnReturn.IconSize = 25;
             this.btnReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReturn.Location = new System.Drawing.Point(531, -5);
+            this.btnReturn.Location = new System.Drawing.Point(573, -2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(88, 30);
             this.btnReturn.TabIndex = 1;

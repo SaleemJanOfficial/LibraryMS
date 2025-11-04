@@ -7,12 +7,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("LibraryMS")]
-[assembly: AssemblyDescription("LIbrary Mangment System Project for University Of Swabi")]
+[assembly: AssemblyDescription("Library Managment System Project for University Of Swabi")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("GPGC Swabi (University Of Swabi)")]
 [assembly: AssemblyProduct("LibraryMS")]
 [assembly: AssemblyCopyright("Copyright ©  2023 All Rights Reserved")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("SaleemJanOfficial")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -35,5 +35,5 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: NeutralResourcesLanguage("")]
+[assembly: NeutralResourcesLanguage("en-BW")]
 

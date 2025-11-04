@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\SaleemJanOfficial\Desktop\LMS\</PublishUrl>
+    <PublishUrl>G:\LMS\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,8 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>4</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -40,6 +40,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,19 +52,31 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>D26D4FEC34BC0CF9D28506D4570DA4B32D9E297A</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>307F4351F0291998BE100369C58D678F620E91A7</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LibraryMS_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>LibraryMS_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>png-transparent-e-book-publishing-online-book-e-readers-book-computer-publishing-book-thumbnail %281%29.ico</ApplicationIcon>
+    <ApplicationIcon>books_library_1768.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>LibraryMS.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>newKeyFile.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FontAwesome.Sharp, Version=6.1.1.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
@@ -109,6 +122,9 @@
     <Compile Include="UserControl\UCAdminPassChan.Designer.cs">
       <DependentUpon>UCAdminPassChan.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\UCReturn.Designer.cs">
+      <DependentUpon>UCReturn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows Form\AdminLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,9 +160,6 @@
     </Compile>
     <Compile Include="UserControl\UCReturn.cs">
       <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl\UCReturn.Designer.cs">
-      <DependentUpon>UCReturn.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl\UHome.cs">
       <SubType>UserControl</SubType>
@@ -211,6 +224,7 @@
       <DependentUpon>ViewAllStudent.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="LibraryMS_TemporaryKey.pfx" />
+    <None Include="newKeyFile.snk" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -260,6 +274,7 @@
     <None Include="Resources\Saleem Jan.jpeg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="books_library_1768.ico" />
     <Content Include="Database\LibraryDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
